@@ -1,13 +1,11 @@
 package princetonPlainsboro;
 
 class Date implements Comparable {
-    private int jour;
-    private int mois;
-    private int annee;
-    private int heure;
-    private int minutes;
+    protected int jour;
+    protected int mois;
+    protected int annee;
     
-    public Date(int jour, int mois, int annee,int heure,int minutes) {
+    public Date(int jour, int mois, int annee) {
         if((annee%4==0&&annee%100!=0)||annee%400==0){
             if(mois==1||mois==3||mois==5||mois==7||mois==8||mois==10||mois==12){
                 if(jour>0&&jour<32){
@@ -49,13 +47,13 @@ class Date implements Comparable {
         }
     }
     public String toString() {
-        return this.heure+":"+this.minutes+" "+this.jour + "/" + this.mois + "/" + this.annee;
+        return this.jour + "/" + this.mois + "/" + this.annee;
         }
     
     public boolean equals(Object o) {
         if (o instanceof Date) {
             Date d = (Date)o;
-            return (annee == d.annee) && (mois == d.mois) && (jour == d.jour) &&(minutes==d.minutes)&&(heure==d.heure);
+            return (annee == d.annee) && (mois == d.mois) && (jour == d.jour);
             }
         else
             return false;
@@ -70,11 +68,9 @@ class Date implements Comparable {
         if (mois != d.mois)
             return mois  - d.mois;
         // ici on a forcement annee == d.annee et mois == d.mois :
-        if (jour != d.jour)
+       
            return jour - d.jour;
-        if (heure != d.heure)
-            return heure -d.heure;
-        return minutes-d.minutes;
+        
     }
     
     }
