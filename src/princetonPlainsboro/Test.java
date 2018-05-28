@@ -4,7 +4,7 @@ class Test {
 
     public static void main(String[] args) {
         LectureXML test = new LectureXML("dossiers.xml");
-        DossierMedical dm = test.getDossier();
+        SIH dm = test.getDossier();
         dm.afficher();
 
         System.out.println("\n********\n");

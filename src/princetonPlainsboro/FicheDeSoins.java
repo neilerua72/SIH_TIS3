@@ -1,18 +1,19 @@
 package princetonPlainsboro;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 class FicheDeSoins {
     private Patient patient;
     private Medecin medecin;
-    private Date date;
-    private Vector<Acte> actes;       // contient des objets de classe 'Acte'
+    private DateH date;
+    private ArrayList<Acte> actes;       // contient des objets de classe 'Acte'
     
-    public FicheDeSoins(Patient patient, Medecin medecin, Date date) {
+    public FicheDeSoins(Patient patient, Medecin medecin, DateH date) {
         this.patient = patient;
         this.medecin = medecin;
         this.date = date;
-        actes = new Vector<Acte>();   // liste vide
+        actes = new ArrayList<Acte>();   // liste vide
         }
     
     public Patient getPatient() { return patient; }

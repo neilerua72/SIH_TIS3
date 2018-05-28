@@ -33,8 +33,8 @@ public class LectureXML {
         this.nomFichier = nomFichier;
     }
     
-    public DossierMedical getDossier() {
-        DossierMedical dossierCourant = null;
+    public SIH getDossier() {
+        SIH dossierCourant = null;
         Date date = null;
         Medecin medecinCourant = null;
         Patient patientCourant= null;
@@ -59,7 +59,7 @@ public class LectureXML {
                 switch (event) {
                     case XMLStreamConstants.START_ELEMENT:
                         if (parser.getLocalName().equals("dossiers")) {
-                            dossierCourant = new DossierMedical();
+                            dossierCourant = new SIH();
                         }
                         break;
                     case XMLStreamConstants.END_ELEMENT:
