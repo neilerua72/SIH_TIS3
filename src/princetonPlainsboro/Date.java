@@ -10,7 +10,7 @@ class Date implements Comparable {
         this.mois = mois;
         this.annee = annee;
         }
-    
+    //bite couille chatte
     public String toString() {
         return jour + "/" + mois + "/" + annee;
         }
