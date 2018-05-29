@@ -14,17 +14,23 @@ import java.util.Iterator;
  */
 public class DossierPatient {
 
-    Patient patient;
-    ArrayList<FicheDeSoins> lfds;
-
+    private Patient patient;
+    private ArrayList<FicheDeSoins> lfds;
+    public DossierPatient(Patient patient, ArrayList<FicheDeSoins> ldfs) {
+        this.patient = patient;
+        lfds = new ArrayList<FicheDeSoins>(ldfs);
+    }
     public DossierPatient(Patient patient) {
         this.patient = patient;
+        lfds = new ArrayList<FicheDeSoins>();
+    }
+    public DossierPatient(){
         lfds = new ArrayList<FicheDeSoins>();
     }
 
     public double coutPatient() {
         double cout = 0;
-        for (Iterator<FicheDeSoins> it = this.lfds.iterator(); it.hasNext(); /*	rien	*/) {
+        for (Iterator<FicheDeSoins> it = this.getLfds().iterator(); it.hasNext(); /*	rien	*/) {
             FicheDeSoins fds = it.next();	//	renvoie	l'élément	courant	et	passe	au	suivant
            cout+=fds.coutTotal();
         }
@@ -32,15 +38,36 @@ public class DossierPatient {
     }
 
     public void ajouterFiche(FicheDeSoins fiche) {
-        lfds.add(fiche);
+        getLfds().add(fiche);
 
     }
 
-    public void afficher() {
+    public String toString() {
+        String s="";
+        s+=this.getPatient().toString();
+        for (Iterator<FicheDeSoins> it = this.getLfds().iterator(); it.hasNext(); /*	rien	*/) {
+            FicheDeSoins fds = it.next();	//	renvoie	l'élément	courant	et	passe	au	suivant
+           s+=fds.toString();
+        }
+        return s;
 
     }
 
     public void imprimer() {
 
+    }
+
+    /**
+     * @return the lfds
+     */
+    public ArrayList<FicheDeSoins> getLfds() {
+        return lfds;
+    }
+
+    /**
+     * @return the patient
+     */
+    public Patient getPatient() {
+        return patient;
     }
 }
