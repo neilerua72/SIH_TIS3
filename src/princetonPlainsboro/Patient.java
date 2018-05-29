@@ -7,10 +7,10 @@ class Patient {
     private String adresse;
     private Date dateDeNaissance;
     
-    public Patient(String nom, String prenom, NumDeSS numDeSS, String adresse, Date dateDeNaissance) {
+    public Patient(String nom, String prenom, String numDeSS, String adresse, Date dateDeNaissance) {
         this.nom = nom;
         this.prenom = prenom;
-        this.numDeSS=numDeSS;
+        this.numDeSS=new NumDeSS(numDeSS);
         this.adresse=adresse;
         this.dateDeNaissance=dateDeNaissance;
         }

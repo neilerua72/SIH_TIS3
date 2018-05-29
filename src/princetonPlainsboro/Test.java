@@ -9,8 +9,9 @@ class Test {
 
         System.out.println("\n********\n");
 
-        Patient p1 = new Patient("Bole", "Pat");
-        System.out.println("> cout de " + p1.toString() + " : " + dm.coutPatient(p1));
+        Patient p1 = new Patient("Bole", "Pat","2549875634587","Wesh alors",new Date(6,5,1997));
+        DossierPatient dp = new DossierPatient(p1);
+        System.out.println("> cout de " + p1.toString() + " : " + dp.coutPatient());
 
         System.out.println("\n********\n");
 
@@ -20,7 +21,7 @@ class Test {
         System.out.println("\n********\n");
 
         Medecin m1 = new Medecin("Deblouze", "Agathe", "Cardiologue");
-        dm.afficherListePatients(m1);
+        //dm.afficherListePatients(m1);
 
         System.out.println("\n********\n");
 

@@ -48,7 +48,7 @@ public class LectureXML {
         String adresseCourant="";
         String numDeSSstring="";
         int tab[] = new int[13];
-        NumDeSS numDeSScourant= null;
+        NumDeSS numDeSScourant= new NumDeSS("0000000000000");
         Code codeCourant = null;
         DossierPatient dpcourant = null;
         int coefCourant = 0;
@@ -69,6 +69,9 @@ public class LectureXML {
                     case XMLStreamConstants.START_ELEMENT:
                         if (parser.getLocalName().equals("dossiers")) {
                             dossierCourant = new SIH();
+                        }
+                        if (parser.getLocalName().equals("dp")){
+                            dpcourant=new DossierPatient();
                         }
                         break;
                     case XMLStreamConstants.END_ELEMENT:
@@ -122,7 +125,7 @@ public class LectureXML {
                             nomCourant = donneesCourantes;
                         }
                         if (parser.getLocalName().equals("patient")) {
-                            patientCourant = new Patient(nomCourant, prenomCourant,numDeSScourant,adresseCourant,date);
+                            patientCourant = new Patient(nomCourant, prenomCourant,numDeSSstring,adresseCourant,date);
                         }
                         if (parser.getLocalName().equals("prenom")) {
                             prenomCourant = donneesCourantes;
@@ -132,10 +135,11 @@ public class LectureXML {
                         }
                          if (parser.getLocalName().equals("numDeSS")) {
                              numDeSSstring=donneesCourantes;
-                            for(int i=0;i<numDeSSstring.length();i++ ){
+                            for(int i=0;i<13;i++ ){
                                 char c1 = numDeSSstring.charAt(i);
                                 String c = Character.toString(c1);;
-                               int pro = Integer.parseInt(c);
+                               int pro =Character.getNumericValue(c1) ; 
+                               System.out.println(pro);
                                tab[i]=pro;
                             }
                             numDeSScourant.setNum(tab);
