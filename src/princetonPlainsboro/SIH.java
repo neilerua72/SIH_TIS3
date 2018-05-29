@@ -85,24 +85,36 @@ class SIH {
     public int nombreFichesIntervalle(Date d1, Date d2) {
         int n = 0;
         for (int i = 0; i < ldp.size(); i++) {
-            DossierPatient f = ldp.get(i);
-            Date d = f.getDate();
+            DossierPatient dp = ldp.get(i);
+            ArrayList<FicheDeSoins> ldfs=dp.getLfds();
+            for(int j=0;j<ldfs.size();j++){
+                
+            Date d = ldfs.get(i).getDate();
             if (d.compareTo(d1) >= 0 && d.compareTo(d2) <= 0) {
                 n++;
             }
         }
-        return n;
+       
     }
-
+         return n;
+    }
     public void trierDates() {
-        ArrayList<DossierPatient> copieFiches = new ArrayList<DossierPatient>(DossierPatient);
+        ArrayList<FicheDeSoins> fiches = new ArrayList<FicheDeSoins>();
+        for(int i=0;i<ldp.size();i++){
+            for(int j=0;j<ldp.get(i).getLfds().size();j++){
+                fiches.add(ldp.get(i).getLfds().get(j));
+            }
+        }
+        ArrayList<FicheDeSoins> copieFiches = new ArrayList<FicheDeSoins>(fiches);
+
+        
 
         while (!copieFiches.isEmpty()) {
             // on cherche la fiche de soins de date minimale :
             int imin = 0;
-            DossierPatient f1 = copieFiches.get(imin);
+            FicheDeSoins f1 = copieFiches.get(imin);
             for (int i = 1; i < copieFiches.size(); i++) {
-                DossierPatient f2 = copieFiches.get(i);
+                FicheDeSoins f2 = copieFiches.get(i);
                 if (f2.getDate().compareTo(f1.getDate()) < 0) {
                     imin = i;
                     f1 = f2;
@@ -115,17 +127,26 @@ class SIH {
             copieFiches.remove(imin);
         }
     }
+    
 
     // tri generique :
     public void trier(ComparaisonFiches c) {
-        ArrayList<DossierPatient> copieFiches = new ArrayList<DossierPatient>(ldp);
+        ArrayList<FicheDeSoins> fiches = new ArrayList<FicheDeSoins>();
+        for(int i=0;i<ldp.size();i++){
+            for(int j=0;j<ldp.get(i).getLfds().size();j++){
+                fiches.add(ldp.get(i).getLfds().get(j));
+            }
+        }
+        ArrayList<FicheDeSoins> copieFiches = new ArrayList<FicheDeSoins>(fiches);
+
+        
 
         while (!copieFiches.isEmpty()) {
             // on cherche la fiche de soins minimale :
             int imin = 0;
-            DossierPatient f1 = copieFiches.get(imin);
+            FicheDeSoins f1 = copieFiches.get(imin);
             for (int i = 1; i < copieFiches.size(); i++) {
-                DossierPatient f2 = copieFiches.get(i);
+               FicheDeSoins f2 = copieFiches.get(i);
                 if (c.comparer(f2, f1) < 0) {
                     imin = i;
                     f1 = f2;
