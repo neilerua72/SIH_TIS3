@@ -29,15 +29,17 @@ class FicheDeSoins {
         actes.add(acte);
         }
     
-    public void afficher() {
-        System.out.println("Fiche de soins du " + date.toString());
-        System.out.println("- medecin : " + medecin.toString());
-        System.out.println("- patient : " + patient.toString());
-        System.out.println("- actes medicaux :");
-        for (int i=0; i<actes.size(); i++) {
-            Acte a = actes.get(i);
-            System.out.println("    > " + a.toString());
+    public String toString() {
+        String s="";
+        s+="Fiche de soins du " + this.date.toString() +"\n";
+        s+="- medecin : " + this.medecin.toString()+"\n";
+        s+="- patient : " + this.patient.toString()+"\n";
+        s+="- actes medicaux :"+"\n";
+        for (int i=0; i<this.actes.size(); i++) {
+            Acte a = this.actes.get(i);
+            s+="    > " + a.toString()+"\n";
             }
+        return s;
         }
     
     public double coutTotal() {

@@ -30,7 +30,7 @@ public class DossierPatient {
 
     public double coutPatient() {
         double cout = 0;
-        for (Iterator<FicheDeSoins> it = this.getLfds().iterator(); it.hasNext(); /*	rien	*/) {
+        for (Iterator<FicheDeSoins> it = this.lfds.iterator(); it.hasNext(); /*	rien	*/) {
             FicheDeSoins fds = it.next();	//	renvoie	l'élément	courant	et	passe	au	suivant
            cout+=fds.coutTotal();
         }
@@ -45,7 +45,7 @@ public class DossierPatient {
     public String toString() {
         String s="";
         s+=this.getPatient().toString();
-        for (Iterator<FicheDeSoins> it = this.getLfds().iterator(); it.hasNext(); /*	rien	*/) {
+        for (Iterator<FicheDeSoins> it = this.lfds.iterator(); it.hasNext(); /*	rien	*/) {
             FicheDeSoins fds = it.next();	//	renvoie	l'élément	courant	et	passe	au	suivant
            s+=fds.toString();
         }
@@ -69,5 +69,19 @@ public class DossierPatient {
      */
     public Patient getPatient() {
         return patient;
+    }
+
+    /**
+     * @param patient the patient to set
+     */
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    /**
+     * @param lfds the lfds to set
+     */
+    public void setLfds(ArrayList<FicheDeSoins> lfds) {
+        this.lfds = lfds;
     }
 }

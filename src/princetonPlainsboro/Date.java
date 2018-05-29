@@ -11,17 +11,20 @@ class Date implements Comparable {
                 if(jour>0&&jour<32){
                     this.jour=jour;
                     this.mois=mois;
+                    this.annee=annee;
                 }
             }
             else if (mois==2){
                 if(jour>0&&jour<30)
                     this.jour=jour;
                 this.mois=mois;
+                this.annee=annee;
             }
             else{
                 if(jour>0&&jour<31){
                     this.jour=jour;
                     this.mois=mois;
+                    this.annee=annee;
                 }
             }
         }
@@ -30,17 +33,20 @@ class Date implements Comparable {
                 if(jour>0&&jour<32){
                     this.jour=jour;
                     this.mois=mois;
+                    this.annee=annee;
                 }
             }
             else if (mois==2){
                 if(jour>0&&jour<29)
                     this.jour=jour;
                 this.mois=mois;
+                this.annee=annee;
             }
             else{
                 if(jour>0&&jour<31){
                     this.jour=jour;
                     this.mois=mois;
+                    this.annee=annee;
                 }
             }
             

@@ -22,7 +22,7 @@ class SIH {
             DossierPatient f = ldp.get(i);
             f.toString();
             // pour separer les fiches de soins :
-            System.out.println("--------------------------------------");
+            System.out.println("------------------*--------------------");
         }
     }
 
@@ -121,7 +121,7 @@ class SIH {
                 }
             }
             // on affiche la fiche de soins trouvee :
-            f1.afficher();
+            System.out.println(f1.toString());
             System.out.println("------------------------");
             //on la supprime de la liste :
             copieFiches.remove(imin);
@@ -153,11 +153,14 @@ class SIH {
                 }
             }
             // on affiche la fiche de soins trouvee :
-            f1.afficher();
+            System.out.println(f1.toString());
             System.out.println("------------------------");
             //on la supprime de la liste :
             copieFiches.remove(imin);
         }
+    }
+    public void ajouterDp(DossierPatient dp){
+        ldp.add(dp);
     }
 }
 

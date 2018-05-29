@@ -40,7 +40,7 @@ public class LectureXML {
         Date date=null;
         Medecin medecinCourant = null;
         Patient patientCourant= null;
-        List<Acte> actes = new Vector<Acte>();
+        ArrayList<Acte> actes = new ArrayList<Acte>();
         String donneesCourantes = "";
         String nomCourant = "";
         String prenomCourant = "";
@@ -76,7 +76,10 @@ public class LectureXML {
                         break;
                     case XMLStreamConstants.END_ELEMENT:
                         if (parser.getLocalName().equals("dp")){
-                            ldp.add(new DossierPatient(patientCourant,ldfscourant));
+                            dpcourant.setPatient(patientCourant);
+                            dpcourant.setLfds(ldfscourant);
+                            dossierCourant.ajouterDp(dpcourant);
+                            System.out.println(dpcourant.toString());
                             
                         }
                         if (parser.getLocalName().equals("acte")) {
@@ -90,7 +93,7 @@ public class LectureXML {
                         if (parser.getLocalName().equals("coef")) {
                             coefCourant = Integer.parseInt(donneesCourantes);
                         }
-                        if (parser.getLocalName().equals("dateH")) {
+                        if (parser.getLocalName().equals("dateh")) {
                             int heure=Integer.parseInt(donneesCourantes.substring(0, donneesCourantes.indexOf(':')));
                             int minute=Integer.parseInt(donneesCourantes.substring(donneesCourantes.indexOf(':')+1, donneesCourantes.lastIndexOf(';')));
                             int annee = Integer.parseInt(donneesCourantes.substring(donneesCourantes.indexOf(';')+1, donneesCourantes.indexOf('-')));
@@ -111,10 +114,13 @@ public class LectureXML {
                             // ajout des actes
                             for (int i=0;i<actes.size();i++) {
                                 Acte a = (Acte) actes.get(i);
-                                f.ajouterActe(a);                                
+                                f.ajouterActe(a); 
+                                
                             }
                             // effacer tous les actes de la liste
                             actes.clear();
+                            
+                            
                             // ajouter la fiche de soin au dossiers
                             dpcourant.ajouterFiche(f);
                         }
@@ -135,14 +141,17 @@ public class LectureXML {
                         }
                          if (parser.getLocalName().equals("numDeSS")) {
                              numDeSSstring=donneesCourantes;
-                            for(int i=0;i<13;i++ ){
-                                char c1 = numDeSSstring.charAt(i);
-                                String c = Character.toString(c1);;
-                               int pro =Character.getNumericValue(c1) ; 
-                               System.out.println(pro);
-                               tab[i]=pro;
-                            }
-                            numDeSScourant.setNum(tab);
+//                            for(int i=0;i<tab.length;i++ ){
+//                                char c1 = numDeSSstring.charAt(i);
+//                                String c = Character.toString(c1);;
+//                               int pro =Character.getNumericValue(c1) ; 
+//                               System.out.println(pro);
+//                               tab[i]=pro;
+//                           }
+                               
+                            numDeSScourant=new NumDeSS(numDeSSstring);
+                            System.out.println(numDeSScourant);
+                            //numDeSScourant.setNum(tab);
                         }
                         if (parser.getLocalName().equals("specialite")) {
                             specialiteCourante = donneesCourantes;
