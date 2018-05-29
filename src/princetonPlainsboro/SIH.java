@@ -20,30 +20,26 @@ class SIH {
         System.out.println("-----------------------------");
         for (int i = 0; i < ldp.size(); i++) {
             DossierPatient f = ldp.get(i);
-            f.afficher();
+            f.toString();
             // pour separer les fiches de soins :
             System.out.println("--------------------------------------");
         }
     }
 
-    public double coutPatient(Patient p) {
-        double cout = 0;
-        for (int i = 0; i < ldp.size(); i++) {
-            DossierPatient f = ldp.get(i);
-            if (p.equals(f.getPatient())) {
-                cout += f.coutTotal();
-            }
-        }
-        return cout;
-    }
-
+   
     public double coutMedecin(Medecin m) {
         double cout = 0;
         for (int i = 0; i < ldp.size(); i++) {
-            DossierPatient f = ldp.get(i);
-            if (m.equals(f.getMedecin())) {
+            DossierPatient p = ldp.get(i);
+            ArrayList<FicheDeSoins> ldfs = new ArrayList<FicheDeSoins>();
+            ldfs=p.getLfds();
+            for(int j=0;j<ldfs.size();j++){
+                FicheDeSoins f= ldfs.get(i);
+                if (m.equals(f.getMedecin())) {
                 cout += f.coutTotal();
             }
+            }
+            
         }
         return cout;
     }
@@ -51,29 +47,39 @@ class SIH {
     public double coutSpecialite(String specialite) {
         double cout = 0;
         for (int i = 0; i < ldp.size(); i++) {
-            DossierPatient f = ldp.get(i);
-            if (specialite.equals(f.getMedecin().getSpecialite())) {
+            DossierPatient p = ldp.get(i);
+            ArrayList<FicheDeSoins> ldfs = new ArrayList<FicheDeSoins>();
+            ldfs=p.getLfds();
+            for(int j=0;j<ldfs.size();j++){
+                FicheDeSoins f= ldfs.get(i);
+                if (specialite.equals(f.getMedecin().getSpecialite())) {
                 cout += f.coutTotal();
             }
+            }
+            
         }
         return cout;
     }
 
-    public void afficherListePatients(Medecin m) {
+    public ArrayList<DossierPatient> ListePatients(Medecin m) {
         System.out.println("> liste des patients du " + m.toString() + " :");
-        Vector<Patient> liste = new Vector<Patient>();
+        ArrayList<DossierPatient> liste = new ArrayList<DossierPatient>();
         // 'liste' contient tous les patients deja affiches
         // --> ceci permet de ne pas reafficher un patient deja affiche
         for (int i = 0; i < ldp.size(); i++) {
-            DossierPatient f = ldp.get(i);
+            DossierPatient dp = ldp.get(i);
+            ArrayList<FicheDeSoins> ldfs=dp.getLfds();
+            for(int j=0;j<ldfs.size();j++){
+                FicheDeSoins f = ldfs.get(j);
             if (m.equals(f.getMedecin())) {
-                Patient p = f.getPatient();
-                if (!liste.contains(p)) {
-                    System.out.println(" - " + p.toString());
-                    liste.add(p);
+                if (!liste.contains(dp)) {
+                    
+                    liste.add(dp);
                 }
             }
         }
+        }
+        return liste;
     }
 
     public int nombreFichesIntervalle(Date d1, Date d2) {
