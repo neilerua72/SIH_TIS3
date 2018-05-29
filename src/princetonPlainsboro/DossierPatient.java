@@ -16,9 +16,15 @@ public class DossierPatient {
 
     private Patient patient;
     private ArrayList<FicheDeSoins> lfds;
-
+    public DossierPatient(Patient patient, ArrayList<FicheDeSoins> ldfs) {
+        this.patient = patient;
+        lfds = new ArrayList<FicheDeSoins>(ldfs);
+    }
     public DossierPatient(Patient patient) {
         this.patient = patient;
+        lfds = new ArrayList<FicheDeSoins>();
+    }
+    public DossierPatient(){
         lfds = new ArrayList<FicheDeSoins>();
     }
 

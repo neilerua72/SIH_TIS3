@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <dossiers>
-
+<dp>
+    <patient>
+        <nom>
+            Track
+        </nom>
+        <prenom>
+            Pat
+        </prenom>
+        <adresse>
+            ZIZILAND
+        </adresse>
+        <numDeSS>
+            1254789654789
+        </numDeSS>
+        <date>1998-05-08</date>
+    </patient>
   <ficheDeSoins>
-    <date>2006-01-06</date>
+    <date>12:06;2006-01-06</date>
     <medecin>
         <nom>Bono</nom>
         <prenom>Jean</prenom>
@@ -25,9 +40,25 @@
         <coef>150</coef>
     </acte>
   </ficheDeSoins>
-  
+ <dp>
+<dp>
+    <patient>
+        <nom>
+            Bole
+        </nom>
+        <prenom>
+            Pat
+        </prenom>
+        <adresse>
+            ZIZILAND
+        </adresse>
+        <numDeSS>
+            1254789654788
+        </numDeSS>
+        <date>1998-05-08</date>
+    </patient>
   <ficheDeSoins>
-    <date>2005-10-23</date>
+    <date>12:38;2005-10-23</date>
     <medecin>
         <nom>Deblouze</nom>
         <prenom>Agathe</prenom>
@@ -46,9 +77,25 @@
         <coef>120</coef>
     </acte>
   </ficheDeSoins>
-
+</dp>
+<dp>
+    <patient>
+        <nom>
+            Bole
+        </nom>
+        <prenom>
+            Maggy
+        </prenom>
+        <adresse>
+            ZIZILAND
+        </adresse>
+        <numDeSS>
+            1254789653789
+        </numDeSS>
+        <date>1998-05-08</date>
+    </patient>
   <ficheDeSoins>
-    <date>2006-01-03</date>
+    <date>13:56;2006-01-03</date>
     <medecin>
         <nom>Deblouze</nom>
         <prenom>Agathe</prenom>
@@ -63,9 +110,10 @@
         <coef>2</coef>
     </acte>
   </ficheDeSoins>
-  
+</dp>
+<dp>
   <ficheDeSoins>
-    <date>2005-11-13</date>
+    <date>14:25;2005-11-13</date>
     <medecin>
         <nom>Heget</nom>
         <prenom>Yves</prenom>
@@ -80,9 +128,25 @@
         <coef>1</coef>
     </acte>
   </ficheDeSoins>
-
+</dp>
+ <dp>
+     <patient>
+        <nom>
+            Epi
+        </nom>
+        <prenom>
+            Fanie
+        </prenom>
+        <adresse>
+            ZIZILAND
+        </adresse>
+        <numDeSS>
+            1254689654789
+        </numDeSS>
+        <date>1998-05-08</date>
+    </patient>
   <ficheDeSoins>
-    <date>2005-08-31</date>
+    <date>16:52;2005-08-31</date>
     <medecin>
         <nom>Covert</nom>
         <prenom>Harry</prenom>
@@ -101,9 +165,25 @@
         <coef>72</coef>
     </acte>
   </ficheDeSoins>
-    
+ </dp>
+ <dp>
+     <patient>
+        <nom>
+            Henfayitte
+        </nom>
+        <prenom>
+            MelusineJean
+        </prenom>
+        <adresse>
+            ZIZILAND
+        </adresse>
+        <numDeSS>
+            1254789684789
+        </numDeSS>
+        <date>1998-05-08</date>
+    </patient>
   <ficheDeSoins>
-    <date>2005-08-31</date>
+    <date>9:41;2005-08-31</date>
     <medecin>
         <nom>Foupasune</nom>
         <prenom>Jean</prenom>
@@ -138,5 +218,5 @@
         <coef>850</coef>
     </acte>
   </ficheDeSoins>
-  
+  <dp>
 </dossiers>

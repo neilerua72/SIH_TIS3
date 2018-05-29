@@ -11,6 +11,7 @@ package princetonPlainsboro;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 import javax.xml.stream.XMLInputFactory;
@@ -35,7 +36,8 @@ public class LectureXML {
     
     public SIH getDossier() {
         SIH dossierCourant = null;
-        Date date = null;
+        DateH dateh = null;
+        Date date=null;
         Medecin medecinCourant = null;
         Patient patientCourant= null;
         List<Acte> actes = new Vector<Acte>();
@@ -43,8 +45,15 @@ public class LectureXML {
         String nomCourant = "";
         String prenomCourant = "";
         String specialiteCourante = "";
+        String adresseCourant="";
+        String numDeSSstring="";
+        int tab[] = new int[13];
+        NumDeSS numDeSScourant= null;
         Code codeCourant = null;
+        DossierPatient dpcourant = null;
         int coefCourant = 0;
+        ArrayList<DossierPatient> ldp = new ArrayList<DossierPatient>();
+        ArrayList<FicheDeSoins> ldfscourant = new ArrayList<FicheDeSoins>();
         
         // analyser le fichier par StAX
         try {
@@ -63,6 +72,10 @@ public class LectureXML {
                         }
                         break;
                     case XMLStreamConstants.END_ELEMENT:
+                        if (parser.getLocalName().equals("dp")){
+                            ldp.add(new DossierPatient(patientCourant,ldfscourant));
+                            
+                        }
                         if (parser.getLocalName().equals("acte")) {
                             actes.add(new Acte(codeCourant, coefCourant));
                         }                        
@@ -74,6 +87,15 @@ public class LectureXML {
                         if (parser.getLocalName().equals("coef")) {
                             coefCourant = Integer.parseInt(donneesCourantes);
                         }
+                        if (parser.getLocalName().equals("dateH")) {
+                            int heure=Integer.parseInt(donneesCourantes.substring(0, donneesCourantes.indexOf(':')));
+                            int minute=Integer.parseInt(donneesCourantes.substring(donneesCourantes.indexOf(':')+1, donneesCourantes.lastIndexOf(';')));
+                            int annee = Integer.parseInt(donneesCourantes.substring(donneesCourantes.indexOf(';')+1, donneesCourantes.indexOf('-')));
+                            int mois = Integer.parseInt(donneesCourantes.substring(donneesCourantes.indexOf('-')+1, donneesCourantes.lastIndexOf('-')));
+                            int jour = Integer.parseInt(donneesCourantes.substring(donneesCourantes.lastIndexOf('-')+1, donneesCourantes.length()));
+                            
+                            dateh = new DateH(jour, mois, annee,heure,minute);
+                        }
                         if (parser.getLocalName().equals("date")) {
                             int annee = Integer.parseInt(donneesCourantes.substring(0, donneesCourantes.indexOf('-')));
                             int mois = Integer.parseInt(donneesCourantes.substring(donneesCourantes.indexOf('-')+1, donneesCourantes.lastIndexOf('-')));
@@ -82,7 +104,7 @@ public class LectureXML {
                             date = new Date(jour, mois, annee);
                         }
                         if (parser.getLocalName().equals("ficheDeSoins")) {
-                            FicheDeSoins f = new FicheDeSoins(patientCourant, medecinCourant, date);
+                            FicheDeSoins f = new FicheDeSoins(patientCourant, medecinCourant, dateh);
                             // ajout des actes
                             for (int i=0;i<actes.size();i++) {
                                 Acte a = (Acte) actes.get(i);
@@ -91,7 +113,7 @@ public class LectureXML {
                             // effacer tous les actes de la liste
                             actes.clear();
                             // ajouter la fiche de soin au dossiers
-                            dossierCourant.ajouterFiche(f);
+                            dpcourant.ajouterFiche(f);
                         }
                         if (parser.getLocalName().equals("medecin")) {
                             medecinCourant = new Medecin(nomCourant, prenomCourant, specialiteCourante);
@@ -100,10 +122,23 @@ public class LectureXML {
                             nomCourant = donneesCourantes;
                         }
                         if (parser.getLocalName().equals("patient")) {
-                            patientCourant = new Patient(nomCourant, prenomCourant);
+                            patientCourant = new Patient(nomCourant, prenomCourant,numDeSScourant,adresseCourant,date);
                         }
                         if (parser.getLocalName().equals("prenom")) {
                             prenomCourant = donneesCourantes;
+                        }
+                        if (parser.getLocalName().equals("adresse")) {
+                            adresseCourant = donneesCourantes;
+                        }
+                         if (parser.getLocalName().equals("numDeSS")) {
+                             numDeSSstring=donneesCourantes;
+                            for(int i=0;i<numDeSSstring.length();i++ ){
+                                char c1 = numDeSSstring.charAt(i);
+                                String c = Character.toString(c1);;
+                               int pro = Integer.parseInt(c);
+                               tab[i]=pro;
+                            }
+                            numDeSScourant.setNum(tab);
                         }
                         if (parser.getLocalName().equals("specialite")) {
                             specialiteCourante = donneesCourantes;
