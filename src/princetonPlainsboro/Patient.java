@@ -14,9 +14,11 @@ class Patient {
         this.adresse=adresse;
         this.dateDeNaissance=dateDeNaissance;
         }
-    
+    public String nomPrenom(){
+        return this.nom + " "+this.prenom;
+    }
     public String toString() {
-        String s="Patient : \n";
+        String s="";
         s+="Nom : "+this.nom+"\n";
         s+="Prénom : "+this.prenom+"\n";
         s+="Numéro de sécurité sociale : "+this.numDeSS+"\n";

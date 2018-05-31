@@ -77,9 +77,9 @@ public class LectureXML {
                     case XMLStreamConstants.END_ELEMENT:
                         if (parser.getLocalName().equals("dp")){
                             dpcourant.setPatient(patientCourant);
-                            dpcourant.setLfds(ldfscourant);
+                            //dpcourant.setLfds(ldfscourant);
                             dossierCourant.ajouterDp(dpcourant);
-                            System.out.println(dpcourant.toString());
+                            //System.out.println(dpcourant);
                             
                         }
                         if (parser.getLocalName().equals("acte")) {
@@ -120,7 +120,7 @@ public class LectureXML {
                             // effacer tous les actes de la liste
                             actes.clear();
                             
-                            
+                            //System.out.println(f.toString());
                             // ajouter la fiche de soin au dossiers
                             dpcourant.ajouterFiche(f);
                         }

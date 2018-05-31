@@ -7,6 +7,8 @@ class DateH extends Date implements Comparable{
     
     public DateH(int jour, int mois, int annee,int heure,int minutes) {
        super(jour,mois,annee);
+       this.heure=heure;
+       this.minutes=minutes;
     }
     public String toString() {
         return this.heure+":"+this.minutes+" "+this.jour + "/" + this.mois + "/" + this.annee;

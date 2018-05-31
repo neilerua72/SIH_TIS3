@@ -43,7 +43,8 @@ public class DossierPatient {
     }
 
     public String toString() {
-        String s="";
+        String s="\n **************************** \n";
+        s+="Dossier Patient : ";
         s+=this.getPatient().toString();
         for (Iterator<FicheDeSoins> it = this.lfds.iterator(); it.hasNext(); /*	rien	*/) {
             FicheDeSoins fds = it.next();	//	renvoie	l'élément	courant	et	passe	au	suivant

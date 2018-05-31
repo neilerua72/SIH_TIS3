@@ -33,7 +33,7 @@ class FicheDeSoins {
         String s="";
         s+="Fiche de soins du " + this.date.toString() +"\n";
         s+="- medecin : " + this.medecin.toString()+"\n";
-        s+="- patient : " + this.patient.toString()+"\n";
+        s+="- patient : " + this.patient.nomPrenom()+"\n";
         s+="- actes medicaux :"+"\n";
         for (int i=0; i<this.actes.size(); i++) {
             Acte a = this.actes.get(i);
