@@ -111,7 +111,7 @@ public class ConsulterFicheDeSoin_Dans_DP extends javax.swing.JFrame {
         jTree2.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane2.setViewportView(jTree2);
 
-        jButton4.setText("Fiche de Soin");
+        jButton4.setText("Fiches de Soins");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

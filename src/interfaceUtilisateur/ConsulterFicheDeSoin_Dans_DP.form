@@ -129,7 +129,7 @@
         </Container>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Fiche de Soin"/>
+            <Property name="text" type="java.lang.String" value="Fiches de Soins"/>
           </Properties>
         </Component>
       </SubComponents>
