@@ -1,11 +1,29 @@
 package princetonPlainsboro;
 
+import java.util.Scanner;
+
 class Test {
 
     public static void main(String[] args) {
+        Connexion con = new Connexion("donneesperso.xml");
+        Identification id1 = new Identification("123","123");
+        Identification id2 = new Identification("123","1243");
+        System.out.println(id1.equals(id2));
+        Scanner sc = new Scanner(System.in);
+        
+System.out.println("Id :");
+
+String id = sc.nextLine();
+        System.out.println(id);
+System.out.println("Mdp :");
+
+String mdp = sc.nextLine();
+        System.out.println(mdp);
+
+        if(con.VerificationConnexion(new Identification(id,mdp))){
         LectureXML test = new LectureXML("dossiers.xml");
         SIH dm = test.getDossier();
-        //dm.afficher();
+        dm.afficher();
 
         System.out.println("\n********\n");
 
@@ -20,7 +38,10 @@ class Test {
         //System.out.println(f);
         System.out.println("\n********\n");*/
 
-
-       
+        
+        }
+        else{
+            System.out.println("Erreur, mot de passe ou identifiant érroné");
+        }
     }
 }
