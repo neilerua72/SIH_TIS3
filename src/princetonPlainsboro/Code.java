@@ -57,4 +57,7 @@ enum Code {
     public double calculerCout(int coefficient) {
         return coefficient * cout;
         }
+    public String recupCode(){
+        return super.toString();
+    }
     }

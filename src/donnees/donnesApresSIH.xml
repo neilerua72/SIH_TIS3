@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><dossiers><dp><patient><nom>Track</nom><prenom>Pat</prenom><adresse>
+            ZIZILAND
+        </adresse><numDeSS>
+            1254789654789
+        </numDeSS><date>1998-5-8</date></patient><ficheDeSoins><dateh>12:6;2006-1-6</dateh><medecin><nom>Bono</nom><prenom>Jean</prenom><specialite>ORL</specialite></medecin><patient><nom>Track</nom><prenom>Pat</prenom></patient><acte><code>CS</code><coed>0</coed></acte><acte><code>CS</code><coed>0</coed></acte><acte><code>CS</code><coed>0</coed></acte></ficheDeSoins></dp><dp><patient><nom>Bole</nom><prenom>Pat</prenom><adresse>
+            ZIZILAND
+        </adresse><numDeSS>
+            1254789654788
+        </numDeSS><date>1998-5-8</date></patient><ficheDeSoins><dateh>12:38;2005-10-23</dateh><medecin><nom>Deblouze</nom><prenom>Agathe</prenom><specialite>Cardiologue</specialite></medecin><patient><nom>Bole</nom><prenom>Pat</prenom></patient><acte><code>CS</code><coed>0</coed></acte><acte><code>CS</code><coed>0</coed></acte></ficheDeSoins></dp><dp><patient><nom>Bole</nom><prenom>Maggy</prenom><adresse>
+            ZIZILAND
+        </adresse><numDeSS>
+            1254789653789
+        </numDeSS><date>1998-5-8</date></patient><ficheDeSoins><dateh>13:56;2006-1-3</dateh><medecin><nom>Deblouze</nom><prenom>Agathe</prenom><specialite>Cardiologue</specialite></medecin><patient><nom>Bole</nom><prenom>Maggy</prenom></patient><acte><code>CS</code><coed>0</coed></acte></ficheDeSoins></dp><dp><patient><nom>Bole</nom><prenom>Maggy</prenom><adresse>
+            ZIZILAND
+        </adresse><numDeSS>
+            1254789653789
+        </numDeSS><date>1998-5-8</date></patient><ficheDeSoins><dateh>14:25;2005-11-13</dateh><medecin><nom>Heget</nom><prenom>Yves</prenom><specialite>Gynecologie</specialite></medecin><patient><nom>Bole</nom><prenom>Maggy</prenom></patient><acte><code>CS</code><coed>0</coed></acte></ficheDeSoins></dp><dp><patient><nom>Epi</nom><prenom>Fanie</prenom><adresse>
+            ZIZILAND
+        </adresse><numDeSS>
+            1254689654789
+        </numDeSS><date>1998-5-8</date></patient><ficheDeSoins><dateh>16:52;2005-8-31</dateh><medecin><nom>Covert</nom><prenom>Harry</prenom><specialite>ORL</specialite></medecin><patient><nom>Epi</nom><prenom>Fanie</prenom></patient><acte><code>CS</code><coed>0</coed></acte><acte><code>CS</code><coed>0</coed></acte></ficheDeSoins></dp><dp><patient><nom>Henfayitte</nom><prenom>Melusine</prenom><adresse>
+            ZIZILAND
+        </adresse><numDeSS>
+            1254789684789
+        </numDeSS><date>1998-5-8</date></patient><ficheDeSoins><dateh>9:41;2005-8-31</dateh><medecin><nom>Foupasune</nom><prenom>Jean</prenom><specialite>ORL</specialite></medecin><patient><nom>Henfayitte</nom><prenom>Melusine</prenom></patient><acte><code>CS</code><coed>0</coed></acte><acte><code>CS</code><coed>0</coed></acte><acte><code>CS</code><coed>0</coed></acte><acte><code>CS</code><coed>0</coed></acte><acte><code>CS</code><coed>0</coed></acte><acte><code>CS</code><coed>0</coed></acte></ficheDeSoins></dp></dossiers>

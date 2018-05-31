@@ -78,5 +78,8 @@ class Date implements Comparable {
            return jour - d.jour;
         
     }
+    public String toStringS() {
+        return this.annee + "-" + this.mois + "-" + this.jour;
+        }
     
     }

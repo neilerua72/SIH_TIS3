@@ -1,6 +1,20 @@
 package princetonPlainsboro;
 
 class Medecin {
+
+    /**
+     * @return the nom
+     */
+    public String getNom() {
+        return nom;
+    }
+
+    /**
+     * @return the prenom
+     */
+    public String getPrenom() {
+        return prenom;
+    }
     private String nom;
     private String prenom;
     private String specialite;
@@ -14,13 +28,13 @@ class Medecin {
     public String getSpecialite() { return specialite; }
     
     public String toString() {
-        return "Dr " + prenom + " " + nom + ", " + specialite;
+        return "Dr " + getPrenom() + " " + getNom() + ", " + specialite;
         }
     
     public boolean equals(Object o) {
         if (o instanceof Medecin) {
             Medecin p = (Medecin)o;
-            return nom.equals(p.nom) && prenom.equals(p.prenom);
+            return getNom().equals(p.getNom()) && getPrenom().equals(p.getPrenom());
             }
         else
             return false;

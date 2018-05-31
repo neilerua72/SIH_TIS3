@@ -1,6 +1,23 @@
 package princetonPlainsboro;
 
 class Acte {
+
+    /**
+     * @return the code
+     */
+    public Code getCode() {
+        return code;
+    }
+
+    /**
+     * @return the coef
+     */
+    public int getCoef() {
+        return coef;
+    }
+    public String getCoefS(){
+        return ""+coef;
+    }
     private Code code;
     private int coef;
     
@@ -10,11 +27,11 @@ class Acte {
         }
     
     public String toString() {
-        return code.toString() + ", coefficient : " + coef;
+        return getCode().toString() + ", coefficient : " + getCoef();
         }
     
     public double cout() {
-        return code.calculerCout(coef);
+        return getCode().calculerCout(getCoef());
         }
     
     //test 29

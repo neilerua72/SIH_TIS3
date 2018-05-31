@@ -38,5 +38,8 @@ class DateH extends Date implements Comparable{
             return heure -d.heure;
         return minutes-d.minutes;
     }
+    public String toStringS() {
+        return this.heure+":"+this.minutes+";"+this.annee + "-" + this.mois + "-" + this.jour;
+        }
     
     }

@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 class FicheDeSoins {
+
+    /**
+     * @return the actes
+     */
+    public ArrayList<Acte> getActes() {
+        return actes;
+    }
     private Patient patient;
     private Medecin medecin;
     private DateH date;
@@ -21,12 +28,12 @@ class FicheDeSoins {
     public Date    getDate()    { return date; }
     
     public void ajouterActe(Acte acte) {
-        actes.add(acte);
+        getActes().add(acte);
         }
     
     public void ajouterActe(Code code, int coefficient) {
         Acte acte = new Acte(code, coefficient);
-        actes.add(acte);
+        getActes().add(acte);
         }
     
     public String toString() {
@@ -35,8 +42,8 @@ class FicheDeSoins {
         s+="- medecin : " + this.medecin.toString()+"\n";
         s+="- patient : " + this.patient.nomPrenom()+"\n";
         s+="- actes medicaux :"+"\n";
-        for (int i=0; i<this.actes.size(); i++) {
-            Acte a = this.actes.get(i);
+        for (int i=0; i<this.getActes().size(); i++) {
+            Acte a = this.getActes().get(i);
             s+="    > " + a.toString()+"\n";
             }
         return s;
@@ -44,8 +51,8 @@ class FicheDeSoins {
     
     public double coutTotal() {
         double total = 0;
-        for (int i=0; i<actes.size(); i++) {
-            Acte a = actes.get(i);
+        for (int i=0; i<getActes().size(); i++) {
+            Acte a = getActes().get(i);
             total += a.cout();
             }
         return total;

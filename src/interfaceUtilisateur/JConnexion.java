@@ -16,6 +16,7 @@ public class JConnexion extends javax.swing.JFrame {
      */
     public JConnexion() {
         initComponents();
+        
     }
 
     /**
