@@ -32,11 +32,11 @@
         <coef>1</coef>
     </acte>
     <acte>
-        <code>ORT</code>
+        <code>CS</code>
         <coef>50</coef>
     </acte>
     <acte>
-        <code>PRO</code>
+        <code>CS</code>
         <coef>150</coef>
     </acte>
   </ficheDeSoins>
@@ -69,11 +69,11 @@
         <prenom>Pat</prenom>
     </patient>
     <acte>
-        <code>CSC</code>
+        <code>CS</code>
         <coef>1</coef>
     </acte>
     <acte>
-        <code>KC</code>
+        <code>CS</code>
         <coef>120</coef>
     </acte>
   </ficheDeSoins>
@@ -106,7 +106,7 @@
         <prenom>Maggy</prenom>
     </patient>
     <acte>
-        <code>CSC</code>
+        <code>CS</code>
         <coef>2</coef>
     </acte>
   </ficheDeSoins>
@@ -124,7 +124,7 @@
         <prenom>Maggy</prenom>
     </patient>
     <acte>
-        <code>KE</code>
+        <code>CS</code>
         <coef>1</coef>
     </acte>
   </ficheDeSoins>
@@ -161,7 +161,7 @@
         <coef>1</coef>
     </acte>
     <acte>
-        <code>KFA</code>
+        <code>CS</code>
         <coef>72</coef>
     </acte>
   </ficheDeSoins>
@@ -198,23 +198,23 @@
         <coef>1</coef>
     </acte>
     <acte>
-        <code>KFA</code>
+        <code>CS</code>
         <coef>72</coef>
     </acte>
     <acte>
-        <code>K</code>
+        <code>CS</code>
         <coef>1000</coef>
     </acte>
     <acte>
-        <code>KE</code>
+        <code>CS</code>
         <coef>60</coef>
     </acte>
     <acte>
-        <code>ORT</code>
+        <code>CS</code>
         <coef>85</coef>
     </acte>
     <acte>
-        <code>PRO</code>
+        <code>CS</code>
         <coef>850</coef>
     </acte>
   </ficheDeSoins>

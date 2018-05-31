@@ -18,9 +18,9 @@ class SIH {
     public void afficher() {
         System.out.println("Dossier medical informatise :");
         System.out.println("-----------------------------");
-        for (int i = 0; i < ldp.size(); i++) {
-            DossierPatient f = ldp.get(i);
-            f.toString();
+        for (int i = 0; i < getLdp().size(); i++) {
+            DossierPatient f = getLdp().get(i);
+            System.out.println(f.toString());
             // pour separer les fiches de soins :
             System.out.println("------------------*--------------------");
         }
@@ -29,12 +29,12 @@ class SIH {
    
     public double coutMedecin(Medecin m) {
         double cout = 0;
-        for (int i = 0; i < ldp.size(); i++) {
-            DossierPatient p = ldp.get(i);
+        for (int i = 0; i < this.ldp.size(); i++) {
+            DossierPatient p = this.ldp.get(i);
             ArrayList<FicheDeSoins> ldfs = new ArrayList<FicheDeSoins>();
             ldfs=p.getLfds();
             for(int j=0;j<ldfs.size();j++){
-                FicheDeSoins f= ldfs.get(i);
+                FicheDeSoins f= ldfs.get(j);
                 if (m.equals(f.getMedecin())) {
                 cout += f.coutTotal();
             }
@@ -46,12 +46,12 @@ class SIH {
 
     public double coutSpecialite(String specialite) {
         double cout = 0;
-        for (int i = 0; i < ldp.size(); i++) {
-            DossierPatient p = ldp.get(i);
+        for (int i = 0; i < getLdp().size(); i++) {
+            DossierPatient p = getLdp().get(i);
             ArrayList<FicheDeSoins> ldfs = new ArrayList<FicheDeSoins>();
             ldfs=p.getLfds();
             for(int j=0;j<ldfs.size();j++){
-                FicheDeSoins f= ldfs.get(i);
+                FicheDeSoins f= ldfs.get(j);
                 if (specialite.equals(f.getMedecin().getSpecialite())) {
                 cout += f.coutTotal();
             }
@@ -66,8 +66,8 @@ class SIH {
         ArrayList<DossierPatient> liste = new ArrayList<DossierPatient>();
         // 'liste' contient tous les patients deja affiches
         // --> ceci permet de ne pas reafficher un patient deja affiche
-        for (int i = 0; i < ldp.size(); i++) {
-            DossierPatient dp = ldp.get(i);
+        for (int i = 0; i < getLdp().size(); i++) {
+            DossierPatient dp = getLdp().get(i);
             ArrayList<FicheDeSoins> ldfs=dp.getLfds();
             for(int j=0;j<ldfs.size();j++){
                 FicheDeSoins f = ldfs.get(j);
@@ -84,8 +84,8 @@ class SIH {
 
     public int nombreFichesIntervalle(Date d1, Date d2) {
         int n = 0;
-        for (int i = 0; i < ldp.size(); i++) {
-            DossierPatient dp = ldp.get(i);
+        for (int i = 0; i < getLdp().size(); i++) {
+            DossierPatient dp = getLdp().get(i);
             ArrayList<FicheDeSoins> ldfs=dp.getLfds();
             for(int j=0;j<ldfs.size();j++){
                 
@@ -100,9 +100,9 @@ class SIH {
     }
     public void trierDates() {
         ArrayList<FicheDeSoins> fiches = new ArrayList<FicheDeSoins>();
-        for(int i=0;i<ldp.size();i++){
-            for(int j=0;j<ldp.get(i).getLfds().size();j++){
-                fiches.add(ldp.get(i).getLfds().get(j));
+        for(int i=0;i<getLdp().size();i++){
+            for(int j=0;j<getLdp().get(i).getLfds().size();j++){
+                fiches.add(getLdp().get(i).getLfds().get(j));
             }
         }
         ArrayList<FicheDeSoins> copieFiches = new ArrayList<FicheDeSoins>(fiches);
@@ -132,9 +132,9 @@ class SIH {
     // tri generique :
     public void trier(ComparaisonFiches c) {
         ArrayList<FicheDeSoins> fiches = new ArrayList<FicheDeSoins>();
-        for(int i=0;i<ldp.size();i++){
-            for(int j=0;j<ldp.get(i).getLfds().size();j++){
-                fiches.add(ldp.get(i).getLfds().get(j));
+        for(int i=0;i<getLdp().size();i++){
+            for(int j=0;j<getLdp().get(i).getLfds().size();j++){
+                fiches.add(getLdp().get(i).getLfds().get(j));
             }
         }
         ArrayList<FicheDeSoins> copieFiches = new ArrayList<FicheDeSoins>(fiches);
@@ -160,7 +160,14 @@ class SIH {
         }
     }
     public void ajouterDp(DossierPatient dp){
-        ldp.add(dp);
+        getLdp().add(dp);
+    }
+
+    /**
+     * @return the ldp
+     */
+    public ArrayList<DossierPatient> getLdp() {
+        return ldp;
     }
 }
 
