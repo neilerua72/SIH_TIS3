@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+  <perso>
+  <id>123</id>
+  <mdp>123</mdp>
+  </perso>
+  <perso>
+  <id>213</id>
+  <mdp>213</mdp>
+  </perso>
+  <perso>
+  <id>1gfdg</id>
+  <mdp>5620</mdp>
+  </perso>
+ </root>
