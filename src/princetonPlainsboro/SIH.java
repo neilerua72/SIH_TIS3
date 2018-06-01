@@ -11,6 +11,7 @@ class SIH {
 
     public SIH() {
         ldp = new ArrayList<DossierPatient>();  // liste vide
+       
     }
 
     
@@ -62,34 +63,32 @@ class SIH {
     }
 
     public ArrayList<DossierPatient> ListePatients(Medecin m) {
-        System.out.println("> liste des patients du " + m.toString() + " :");
+        ArrayList<FicheDeSoins> fiches = new ArrayList<FicheDeSoins>(this.getLdfs());
+         System.out.println("> liste des patients du " + m.toString() + " :");
         ArrayList<DossierPatient> liste = new ArrayList<DossierPatient>();
         // 'liste' contient tous les patients deja affiches
         // --> ceci permet de ne pas reafficher un patient deja affiche
-        for (int i = 0; i < this.ldp.size(); i++) {
-            DossierPatient dp = this.ldp.get(i);
-            ArrayList<FicheDeSoins> ldfs=new ArrayList<FicheDeSoins>(dp.getLfds());
-            for(int j=0;j<ldfs.size();j++){
-                FicheDeSoins f = ldfs.get(j);
+        for (int i = 0; i < fiches.size(); i++) {
+            FicheDeSoins f = fiches.get(i);
             if (m.equals(f.getMedecin())) {
-                if (!liste.contains(dp)) {
-                    
-                    liste.add(dp);
+                Patient p = f.getPatient();
+                if (!liste.contains(this.retrouverDossPat(p))) {
+                    //System.out.println(" - " + p.toString());
+                    liste.add(this.retrouverDossPat(p));
                 }
             }
         }
-        }
-        return liste;
+       return liste; 
     }
 
-    public int nombreFichesIntervalle(Date d1, Date d2) {
+    public int nombreFichesIntervalle(DateH d1, DateH d2) {
         int n = 0;
         for (int i = 0; i < getLdp().size(); i++) {
             DossierPatient dp = getLdp().get(i);
             ArrayList<FicheDeSoins> ldfs=dp.getLfds();
             for(int j=0;j<ldfs.size();j++){
                 
-            Date d = ldfs.get(i).getDate();
+            Date d = ldfs.get(j).getDate();
             if (d.compareTo(d1) >= 0 && d.compareTo(d2) <= 0) {
                 n++;
             }
@@ -98,70 +97,50 @@ class SIH {
     }
          return n;
     }
-    public ArrayList<FicheDeSoins> trierDates() {
-        ArrayList<FicheDeSoins> fiches = new ArrayList<FicheDeSoins>();
-        for(int i=0;i<getLdp().size();i++){
-            for(int j=0;j<getLdp().get(i).getLfds().size();j++){
-                fiches.add(getLdp().get(i).getLfds().get(j));
-            }
-        }
-        ArrayList<FicheDeSoins> copieFiches = new ArrayList<FicheDeSoins>(fiches);
-
-        
-
-        while (!copieFiches.isEmpty()) {
-            // on cherche la fiche de soins de date minimale :
-            int imin = 0;
-            FicheDeSoins f1 = copieFiches.get(imin);
-            for (int i = 1; i < copieFiches.size(); i++) {
-                FicheDeSoins f2 = copieFiches.get(i);
-                if (f2.getDate().compareTo(f1.getDate()) < 0) {
-                    imin = i;
-                    f1 = f2;
-                }
-            }
-            // on affiche la fiche de soins trouvee :
-            System.out.println(f1.toString());
-            System.out.println("------------------------");
-            //on la supprime de la liste :
-            copieFiches.remove(imin);
-        }
-        return copieFiches;
-    }
+   
     
 
     // tri generique :
-    public void trier(ComparaisonFiches c) {
-        ArrayList<FicheDeSoins> fiches = new ArrayList<FicheDeSoins>();
-        for(int i=0;i<getLdp().size();i++){
-            for(int j=0;j<getLdp().get(i).getLfds().size();j++){
-                fiches.add(getLdp().get(i).getLfds().get(j));
-            }
-        }
-        ArrayList<FicheDeSoins> copieFiches = new ArrayList<FicheDeSoins>(fiches);
-
-        
-
+    public ArrayList<FicheDeSoins> trier(ComparaisonFiches c) {
+        ArrayList <FicheDeSoins> fiches=new ArrayList<FicheDeSoins>(this.getLdfs());
+        ArrayList <FicheDeSoins> copieFiches = new ArrayList<FicheDeSoins>(fiches);
+        ArrayList <FicheDeSoins> fichestries = new ArrayList<FicheDeSoins>();
         while (!copieFiches.isEmpty()) {
             // on cherche la fiche de soins minimale :
             int imin = 0;
             FicheDeSoins f1 = copieFiches.get(imin);
             for (int i = 1; i < copieFiches.size(); i++) {
-               FicheDeSoins f2 = copieFiches.get(i);
+                FicheDeSoins f2 = copieFiches.get(i);
                 if (c.comparer(f2, f1) < 0) {
                     imin = i;
                     f1 = f2;
                 }
             }
             // on affiche la fiche de soins trouvee :
-            System.out.println(f1.toString());
+            System.out.println(f1);
+            fichestries.add(f1);
             System.out.println("------------------------");
             //on la supprime de la liste :
             copieFiches.remove(imin);
         }
+
+        return fichestries;
+        
     }
     public void ajouterDp(DossierPatient dp){
-        getLdp().add(dp);
+        this.ldp.add(dp);
+    }
+    public void ajouterFiche(FicheDeSoins fiche,Patient p) {
+            int i=0;
+            boolean rep =false;
+            while(i<this.ldp.size()&&rep==false){
+                if(ldp.get(i).equals(this.retrouverDossPat(p))){
+                    ldp.get(i).ajouterFiche(fiche);
+                    rep=true;
+                }
+                i++;
+    }
+
     }
 
     /**
@@ -169,6 +148,34 @@ class SIH {
      */
     public ArrayList<DossierPatient> getLdp() {
         return ldp;
+    }
+    
+
+    public ArrayList<FicheDeSoins> getLdfs(){
+        ArrayList<FicheDeSoins> ldfs = new ArrayList<FicheDeSoins>();
+        for(int i=0;i<this.ldp.size();i++){
+            DossierPatient dp=ldp.get(i);
+            for(int j=0;j<dp.getLfds().size();j++){
+                ldfs.add(dp.getLfds().get(j));
+                    }
+        }
+        return ldfs;
+    } 
+    
+    
+    public DossierPatient retrouverDossPat(Patient p){
+        int i =0;
+        DossierPatient dp=null;
+        boolean rep=false;
+        while(i<this.ldp.size()&&rep==false){
+            if(this.ldp.get(i).getPatient().equals(p)){
+                 dp= this.ldp.get(i);
+            rep =true;}
+            i++;
+         
+        }
+        return dp;
+        
     }
 }
 

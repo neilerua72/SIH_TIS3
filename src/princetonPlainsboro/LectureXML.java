@@ -172,6 +172,7 @@ public class LectureXML {
             System.out.println("Verifier le chemin.");
             System.out.println(ex.getMessage());
         }
+        
        
         return dossierCourant;
     }
