@@ -23,19 +23,19 @@ class Test {
         f.ajouterActe(new Acte(Code.CCP,5));
         f.ajouterActe(new Acte(Code.AMI,2));
         System.out.println(f.coutTotal());
-        dp.ajouterFiche(f);
+        dm.ajouterFiche(f,p1);
         System.out.println(dp.coutPatient());
        
-        dm.ajouterDp(dp);
-        System.out.println(dm.coutSpecialite("ORL"));
-        System.out.println(dm.coutMedecin(m));
-        ArrayList<DossierPatient> dp1=new ArrayList<DossierPatient>(dm.getLdp());
-        for(int i=0;i<dp1.size();i++){
-            System.out.println("1");
-            System.out.println(dp1.get(i));
-        }
-        System.out.println(dm.trierDates());
-     
+        
+        
+        //printArray(dm.trier(new ComparaisonFichesDates()));
+        printArray(dm.ListePatients(m));
+        //System.out.println(dm.retrouverDossPat(p1));
+       //System.out.println(dm.retrouverDossPat(p1));
+                
+                DateH dh1 = new DateH(12,6,2005,12,45);
+        DateH dh2 = new DateH(12,6,2005,12,44);
+        System.out.println(dh1.compareTo(dh2));
         /*Medecin m = new Medecin("Jacky","Michel","Zizi");
         FicheDeSoins f = new FicheDeSoins(p1,m,new DateH(1,14,2004,14,50));
         f.ajouterActe(Code.CS,5);
@@ -50,5 +50,10 @@ class Test {
         //else{
          //   System.out.println("Erreur, mot de passe ou identifiant érroné");
         //}
+    }
+    public static void printArray(ArrayList<DossierPatient> a){
+        for(int i=0; i<a.size();i++){
+            System.out.println(a.get(i).getPatient());
+        }
     }
 }

@@ -38,7 +38,7 @@ public class DossierPatient {
     }
 
     public void ajouterFiche(FicheDeSoins fiche) {
-        getLfds().add(fiche);
+        this.lfds.add(fiche);
 
     }
 

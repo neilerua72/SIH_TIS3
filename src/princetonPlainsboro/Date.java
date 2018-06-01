@@ -1,9 +1,30 @@
 package princetonPlainsboro;
 
 class Date implements Comparable {
-    protected int jour;
-    protected int mois;
-    protected int annee;
+
+    /**
+     * @return the jour
+     */
+    public int getJour() {
+        return jour;
+    }
+
+    /**
+     * @return the mois
+     */
+    public int getMois() {
+        return mois;
+    }
+
+    /**
+     * @return the annee
+     */
+    public int getAnnee() {
+        return annee;
+    }
+    private int jour;
+    private int mois;
+    private int annee;
     
     public Date(int jour, int mois, int annee) {
         if((annee%4==0&&annee%100!=0)||annee%400==0){
@@ -68,14 +89,14 @@ class Date implements Comparable {
     // precondition : 'o' est une instance de 'Date' :
     public int compareTo(Object o) {
         Date d = (Date)o;
-        if (annee != d.annee)
-            return annee - d.annee;
+        if (this.annee != d.getAnnee())
+            return this.annee - d.getAnnee();
         // ici on a forcement annee == d.annee :
-        if (mois != d.mois)
-            return mois  - d.mois;
+        if (this.mois != d.getMois())
+            return this.mois  - d.getMois();
         // ici on a forcement annee == d.annee et mois == d.mois :
        
-           return jour - d.jour;
+           return this.jour - d.getJour();
         
     }
     public String toStringS() {

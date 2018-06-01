@@ -11,13 +11,13 @@ class DateH extends Date implements Comparable{
        this.minutes=minutes;
     }
     public String toString() {
-        return this.heure+":"+this.minutes+" "+this.jour + "/" + this.mois + "/" + this.annee;
+        return this.heure+":"+this.minutes+" "+this.getJour() + "/" + this.getMois() + "/" + this.getAnnee();
         }
     
     public boolean equals(Object o) {
         if (o instanceof DateH) {
             DateH d = (DateH)o;
-            return (annee == d.annee) && (mois == d.mois) && (jour == d.jour) &&(minutes==d.minutes)&&(heure==d.heure);
+            return (getAnnee() == d.getAnnee()) && (getMois() == d.getMois()) && (getJour() == d.getJour()) &&(minutes==d.minutes)&&(heure==d.heure);
             }
         else
             return false;
@@ -26,20 +26,35 @@ class DateH extends Date implements Comparable{
     // precondition : 'o' est une instance de 'Date' :
     public int compareTo(Object o) {
         DateH d = (DateH)o;
-        if (annee != d.annee)
-            return annee - d.annee;
+        if (this.getAnnee() != d.getAnnee()){
+            
+            return this.getAnnee() - d.getAnnee();}
         // ici on a forcement annee == d.annee :
-        if (mois != d.mois)
-            return mois  - d.mois;
+        if (getMois() != d.getMois())
+            return getMois()  - d.getMois();
         // ici on a forcement annee == d.annee et mois == d.mois :
-        if (jour != d.jour)
-           return jour - d.jour;
-        if (heure != d.heure)
-            return heure -d.heure;
-        return minutes-d.minutes;
+        if (getJour() != d.getJour())
+           return getJour() - d.getJour();
+        if (heure != d.getHeure())
+            return heure -d.getHeure();
+        return minutes-d.getMinutes();
     }
     public String toStringS() {
-        return this.heure+":"+this.minutes+";"+this.annee + "-" + this.mois + "-" + this.jour;
+        return this.heure+":"+this.minutes+";"+this.getAnnee() + "-" + this.getMois() + "-" + this.getJour();
         }
+
+    /**
+     * @return the heure
+     */
+    public int getHeure() {
+        return heure;
+    }
+
+    /**
+     * @return the minutes
+     */
+    public int getMinutes() {
+        return minutes;
+    }
     
     }
