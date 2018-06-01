@@ -66,9 +66,9 @@ class SIH {
         ArrayList<DossierPatient> liste = new ArrayList<DossierPatient>();
         // 'liste' contient tous les patients deja affiches
         // --> ceci permet de ne pas reafficher un patient deja affiche
-        for (int i = 0; i < getLdp().size(); i++) {
-            DossierPatient dp = getLdp().get(i);
-            ArrayList<FicheDeSoins> ldfs=dp.getLfds();
+        for (int i = 0; i < this.ldp.size(); i++) {
+            DossierPatient dp = this.ldp.get(i);
+            ArrayList<FicheDeSoins> ldfs=new ArrayList<FicheDeSoins>(dp.getLfds());
             for(int j=0;j<ldfs.size();j++){
                 FicheDeSoins f = ldfs.get(j);
             if (m.equals(f.getMedecin())) {
@@ -98,7 +98,7 @@ class SIH {
     }
          return n;
     }
-    public void trierDates() {
+    public ArrayList<FicheDeSoins> trierDates() {
         ArrayList<FicheDeSoins> fiches = new ArrayList<FicheDeSoins>();
         for(int i=0;i<getLdp().size();i++){
             for(int j=0;j<getLdp().get(i).getLfds().size();j++){
@@ -126,6 +126,7 @@ class SIH {
             //on la supprime de la liste :
             copieFiches.remove(imin);
         }
+        return copieFiches;
     }
     
 

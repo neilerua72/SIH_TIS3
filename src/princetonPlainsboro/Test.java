@@ -29,6 +29,13 @@ class Test {
         dm.ajouterDp(dp);
         System.out.println(dm.coutSpecialite("ORL"));
         System.out.println(dm.coutMedecin(m));
+        ArrayList<DossierPatient> dp1=new ArrayList<DossierPatient>(dm.getLdp());
+        for(int i=0;i<dp1.size();i++){
+            System.out.println("1");
+            System.out.println(dp1.get(i));
+        }
+        System.out.println(dm.trierDates());
+     
         /*Medecin m = new Medecin("Jacky","Michel","Zizi");
         FicheDeSoins f = new FicheDeSoins(p1,m,new DateH(1,14,2004,14,50));
         f.ajouterActe(Code.CS,5);
