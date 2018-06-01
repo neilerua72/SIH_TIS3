@@ -5,6 +5,10 @@
  */
 package interfaceUtilisateur;
 
+import javax.swing.JOptionPane;
+import princetonPlainsboro.Connexion;
+import princetonPlainsboro.Identification;
+
 /**
  *
  * @author Manon
@@ -141,8 +145,18 @@ public class JConnexion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      new Menu().setVisible (true);
-      this.dispose();
+      String id =  jTextField1.getText();
+      String mdp =  jPasswordField1.getText();
+      Identification identif = new Identification(id,mdp);
+      Connexion con = new Connexion("donneesperso.xml"); 
+      if(con.VerificationConnexion(identif)){
+           new Menu().setVisible (true);
+            this.dispose();
+      }
+      else{
+          JOptionPane.showMessageDialog(null,"Identifiant ou mdp incorrect");
+      }
+       
        
                
     }//GEN-LAST:event_jButton1ActionPerformed
