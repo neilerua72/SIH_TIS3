@@ -33,6 +33,8 @@ public class JConsulterDP_dans_le_dossier_medical extends javax.swing.JPanel {
         jTree2 = new javax.swing.JTree();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTree3 = new javax.swing.JTree();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
@@ -68,13 +70,24 @@ public class JConsulterDP_dans_le_dossier_medical extends javax.swing.JPanel {
         jScrollPane2.setViewportView(jTree2);
 
         jTree1.setBackground(new java.awt.Color(204, 204, 204));
+        treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Coûts");
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Patients");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Médecins");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Spécialités");
+        treeNode1.add(treeNode2);
+        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(jTree1);
+
+        jTree3.setBackground(new java.awt.Color(204, 204, 204));
         treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Dossier Patient");
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Consulter");
         treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Créer");
         treeNode1.add(treeNode2);
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(jTree1);
+        jTree3.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane3.setViewportView(jTree3);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -86,19 +99,22 @@ public class JConsulterDP_dans_le_dossier_medical extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton4))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4)
-                .addGap(0, 143, Short.MAX_VALUE))
+                .addGap(72, 72, 72))
         );
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
@@ -163,7 +179,7 @@ public class JConsulterDP_dans_le_dossier_medical extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Nouvelle fiche de soins");
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/plus.jpg"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/plus-ConvertImage (1).jpg"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -295,7 +311,9 @@ public class JConsulterDP_dans_le_dossier_medical extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTree jTree1;
     private javax.swing.JTree jTree2;
+    private javax.swing.JTree jTree3;
     // End of variables declaration//GEN-END:variables
 }
