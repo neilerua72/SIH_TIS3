@@ -5,6 +5,7 @@
  */
 package interfaceUtilisateur;
 
+import javax.swing.JMenu;
 import javax.swing.JOptionPane;
 import princetonPlainsboro.Connexion;
 import princetonPlainsboro.Identification;
@@ -38,7 +39,7 @@ public class JConnexion extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -89,7 +90,7 @@ public class JConnexion extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/SIH.PNG"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/SIH.PNG"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,9 +113,8 @@ public class JConnexion extends javax.swing.JFrame {
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(42, 42, 42))
+                .addGap(32, 32, 32)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,11 +130,11 @@ public class JConnexion extends javax.swing.JFrame {
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 89, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(jLabel5)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -143,26 +143,49 @@ public class JConnexion extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+    JMenu menu = new JMenu();
+// enum State {
+//        MED, ADMIN, NONCO
+//    };
+//    State state;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      String id =  jTextField1.getText();
-      String mdp =  jPasswordField1.getText();
-      Identification identif = new Identification(id,mdp);
-      Connexion con = new Connexion("donneesperso.xml"); 
-      if(con.VerificationConnexion(identif)){
-           new Menu().setVisible (true);
-            this.dispose();
-      }
-      else{
-          JOptionPane.showMessageDialog(null,"Identifiant ou mdp incorrect");
-      }
-       
-       
-               
+        String id = jTextField1.getText();
+        String mdp = jPasswordField1.getText();
+        Identification identif = new Identification(id, mdp);
+        Connexion con = new Connexion("donneesperso.xml");
+
+        if (con.VerificationConnexion(identif)) {
+            if (con.VerificationConnexion(identif) && identif.Type() == 1) {
+//                state = State.MED;
+
+                this.add(menu);
+
+                menu.setVisible(true);
+//                 this.repaint();
+////                this.revalidate();
+                this.dispose();
+
+            } else if (con.VerificationConnexion(identif) && identif.Type() == 2) {
+//                state =State.ADMIN;
+                this.add(menu);
+                menu.setVisible(true);
+                this.dispose();
+//                 menu.setVisible(true);
+//                 this.repaint();
+////                this.revalidate();
+////                this.setVisible(false);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Identifiant ou mdp incorrect");
+            }
+
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
@@ -197,8 +220,7 @@ public class JConnexion extends javax.swing.JFrame {
             public void run() {
                 new JConnexion().setVisible(true);
             }
-        
-            
+
         });
     }
 
@@ -207,7 +229,7 @@ public class JConnexion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
