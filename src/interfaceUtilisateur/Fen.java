@@ -32,7 +32,7 @@ public class Fen extends javax.swing.JFrame {
      JCoutPatient jcp = new JCoutPatient();
     JListeDeMedecins lm = new JListeDeMedecins();
      JCoutMedecin jcm = new JCoutMedecin();
-     JCoutSpecialite jcs = new JCoutSpecialite();
+     JCoutSpecialite1 jcs = new JCoutSpecialite1();
      Accueil a = new Accueil();
      Jmenu jm = new Jmenu();
      JFrame frame=this;
@@ -55,7 +55,7 @@ public class Fen extends javax.swing.JFrame {
     public Fen() {
         state=State.NONCO;
         add(c);
-        this.setSize(600,400);
+        this.setSize(950,600);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         valider.addActionListener(new BoutonListenerValider(jm,c,a,b,this));
       

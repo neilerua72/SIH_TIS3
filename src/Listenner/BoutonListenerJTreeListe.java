@@ -12,7 +12,7 @@ import interfaceUtilisateur.Accueil;
 import interfaceUtilisateur.JConsulterFDS_dans_ongletFDS;
 import interfaceUtilisateur.JCoutMedecin;
 import interfaceUtilisateur.JCoutPatient;
-import interfaceUtilisateur.JCoutSpecialite;
+import interfaceUtilisateur.JCoutSpecialite1;
 import interfaceUtilisateur.JCreerDP;
 import interfaceUtilisateur.Jmenu;
 import interfaceUtilisateur.State;
@@ -33,7 +33,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener{
      JCoutPatient jcp;
     JListeDeMedecins lm;
      JCoutMedecin jcm;
-     JCoutSpecialite jcs;
+     JCoutSpecialite1 jcs;
      Accueil a;
      Jmenu jm;
      JFrame frame;
@@ -41,7 +41,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener{
 
     
 
-    public BoutonListenerJTreeListe(JListeDePatients lp, JCreerDP jcdp, JCoutPatient jcp, JListeDeMedecins lm, JCoutMedecin jcm, JCoutSpecialite jcs, Accueil a, Jmenu jm, JFrame frame, JConsulterFDS_dans_ongletFDS jcfdsdofds) {
+    public BoutonListenerJTreeListe(JListeDePatients lp, JCreerDP jcdp, JCoutPatient jcp, JListeDeMedecins lm, JCoutMedecin jcm, JCoutSpecialite1 jcs, Accueil a, Jmenu jm, JFrame frame, JConsulterFDS_dans_ongletFDS jcfdsdofds) {
         this.lp = lp;
         this.jcdp = jcdp;
         this.jcp = jcp;
