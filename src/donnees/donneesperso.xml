@@ -2,14 +2,20 @@
 <root>
   <perso>
   <id>123</id>
+  <type>Dr Jacques</type>
+  <photo>w.png</photo>
   <mdp>123</mdp>
   </perso>
   <perso>
   <id>213</id>
+  <photo>j.png</photo>
+  <type>2</type>
   <mdp>213</mdp>
   </perso>
   <perso>
   <id>1gfdg</id>
+  <photo>j.png</photo>
+  <type>1</type>
   <mdp>5620</mdp>
   </perso>
  </root>

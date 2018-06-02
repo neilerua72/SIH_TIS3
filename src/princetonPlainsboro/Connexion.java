@@ -39,9 +39,12 @@ public class Connexion {
        
         String idCourant = "";
         String mdpCourant = "";
+        String type ="";
+        String photo="";
         String donneesCourantes="";
+        Identification identifCourant= new Identification("","");
         ArrayList<Identification> identif=new ArrayList<Identification>();
-        
+        int i =0;
         
         // analyser le fichier par StAX
         try {
@@ -49,9 +52,10 @@ public class Connexion {
             InputStream in = new FileInputStream(repBase + nomFichier);
             XMLInputFactory factory = XMLInputFactory.newInstance();
             XMLStreamReader parser = factory.createXMLStreamReader(in);
-
+            int event = parser.next(); 
             // lecture des evenements
-            for (int event = parser.next(); event != XMLStreamConstants.END_DOCUMENT; event = parser.next()) {
+            
+            while(event != XMLStreamConstants.END_DOCUMENT&&!(identifCourant.equals(id))) {
                 // traitement selon l'evenement
                 switch (event) {
                     case XMLStreamConstants.START_ELEMENT:
@@ -63,12 +67,19 @@ public class Connexion {
                                             
                         if (parser.getLocalName().equals("perso")) {
                            identif.add(new Identification(idCourant,mdpCourant));
-                           
+                           identifCourant=new Identification(idCourant,mdpCourant);
                         }                        
                         
                         
                         if (parser.getLocalName().equals("id")) {
                             idCourant=donneesCourantes;
+                            // ajout des actes
+                           
+                            // ajouter la fiche de soin au dossiers
+                            
+                        }
+                        if (parser.getLocalName().equals("type")) {
+                            type=donneesCourantes;
                             // ajout des actes
                            
                             // ajouter la fiche de soin au dossiers
@@ -80,12 +91,21 @@ public class Connexion {
                             mdpCourant=mdpCourant.replaceAll(" ","");
                             mdpCourant=mdpCourant.replaceAll("\n","");
                         }
-                       
+                       if (parser.getLocalName().equals("photo")) {
+                            photo=donneesCourantes;
+                            
+                            // ajout des actes
+                           
+                            // ajouter la fiche de soin au dossiers
+                            
+                        }
                         break;
                     case XMLStreamConstants.CHARACTERS:
                         donneesCourantes = parser.getText();
                         break;
                 } // end switch
+                i++;
+                 event = parser.next();
             } // end while
             parser.close();
         } catch (XMLStreamException ex) {
@@ -97,18 +117,20 @@ public class Connexion {
             System.out.println("Verifier le chemin.");
             System.out.println(ex.getMessage());
         }
-        int i =0;
-        while(i<identif.size()&&!(identif.get(i).equals(id))){
+        
+        /*while(i<identif.size()&&){
             System.out.println(identif.get(i).getId());
             System.out.println(identif.get(i).equals(id));
             System.out.println(i);
         i++;
-    }
+    }*/
         if(i==identif.size()){
             rep=false;
         }
         else{
             rep=true;
+            id.setType(type);
+            id.setPhoto(photo);
         }
         
        

@@ -94,4 +94,11 @@ public class Barre extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the jLabel1
+     */
+    public javax.swing.JLabel getjLabel2() {
+        return jLabel1;
+    }
 }

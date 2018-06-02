@@ -12,9 +12,18 @@ package princetonPlainsboro;
 public class Identification {
     private String id;
     private String mdp;
+    private String type;
+    private String photo;
     public Identification(String id, String mdp){
         this.id=id;
         this.mdp=mdp;
+    }
+
+    public Identification(String id, String mdp, String type,String photo) {
+        this.id = id;
+        this.mdp = mdp;
+        this.type = type;
+        this.photo="/donnees/img/"+photo;
     }
 
     /**
@@ -50,6 +59,31 @@ public class Identification {
             return 2;
         else
             return 0;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * @return the type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * @param photo the photo to set
+     */
+    public void setPhoto(String photo) {
+        this.photo ="/donnees/img/"+photo;
+    }
+
+    /**
+     * @return the photo
+     */
+    public String getPhoto() {
+        return photo;
     }
     
 }

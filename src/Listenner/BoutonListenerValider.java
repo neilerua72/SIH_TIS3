@@ -52,6 +52,8 @@ public class BoutonListenerValider implements ActionListener {
                 jframe.setState(State.MED);
                 jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 jframe.setLayout(new BorderLayout());
+                b.getjLabel2().setText(identif.getType());
+                b.getjLabel2().setIcon(new javax.swing.ImageIcon(getClass().getResource(identif.getPhoto())));
                 jframe.add(m,BorderLayout.WEST);
                 jframe.add(jp,BorderLayout.CENTER);
                 jframe.add(b,BorderLayout.NORTH);
