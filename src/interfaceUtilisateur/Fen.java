@@ -5,11 +5,16 @@
  */
 package interfaceUtilisateur;
 
+import Listenner.BoutonListenerGen;
+import Listenner.BoutonListenerJTreeListe;
+import Listenner.BoutonListenerValider;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JTree;
+import javax.swing.event.TreeSelectionListener;
 
 /**
  *
@@ -17,22 +22,45 @@ import javax.swing.JFrame;
  */
 public class Fen extends javax.swing.JFrame {
 
+    
+  
+    //Declaration Panel
     ConnexionInterface c = new ConnexionInterface();
-    Jmenu m = new Jmenu();
+
+    JListeDePatients lp = new JListeDePatients();
+     JCreerDP jcdp = new JCreerDP();
+     JCoutPatient jcp = new JCoutPatient();
+    JListeDeMedecins lm = new JListeDeMedecins();
+     JCoutMedecin jcm = new JCoutMedecin();
+     JCoutSpecialite jcs = new JCoutSpecialite();
+     Accueil a = new Accueil();
+     Jmenu jm = new Jmenu();
+     JFrame frame=this;
+      JConsulterFDS_dans_ongletFDS jfdsdofds = new JConsulterFDS_dans_ongletFDS();
+     Barre b = new Barre();
+     
+     
+     //Declaration bouton
     private JButton valider = c.getjButton1();
-    
-    
+   
+    private State state;
+    private JTree jtreeliste = jm.getjTree2();
+   
 //    /**
 //     * Creates new form Fen
 //     */JFrame frame = this;
 
+    
+        //Declaration JTren
     public Fen() {
-        add(m);
-       
-        
-        m.setVisible(false);
+        state=State.NONCO;
         add(c);
-        valider.addActionListener(new BoutonListenerValider());
+        this.setSize(600,400);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        valider.addActionListener(new BoutonListenerValider(jm,c,a,b,this));
+      
+        
+        jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp,jcdp,jcp,lm,jcm,jcs,a,jm,frame,jfdsdofds));
         
         
        
@@ -76,21 +104,24 @@ public class Fen extends javax.swing.JFrame {
             }
         });
     }
-    
-    
-    
-    
-    
-    public class BoutonListenerValider implements ActionListener{
-    
-    public void actionPerformed (ActionEvent e){
-        
-        setContentPane(m);
-        m.setVisible(true);
-    c.setVisible(false);
-    repaint();
+
+    /**
+     * @param state the state to set
+     */
+    public void setState(State state) {
+        this.state = state;
     }
-}
+
+    /**
+     * @param state the state to set
+     */
+    
+    
+    
+    
+    
+    
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
