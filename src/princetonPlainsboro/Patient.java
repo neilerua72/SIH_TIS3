@@ -1,6 +1,6 @@
 package princetonPlainsboro;
 //Test 
-class Patient {
+public class Patient {
 
     /**
      * @return the numDeSS

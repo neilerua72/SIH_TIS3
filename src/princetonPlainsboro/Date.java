@@ -1,6 +1,6 @@
 package princetonPlainsboro;
 
-class Date implements Comparable {
+public class Date implements Comparable {
 
     /**
      * @return the jour

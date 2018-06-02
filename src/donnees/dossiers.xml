@@ -3,10 +3,10 @@
 <dp>
     <patient>
         <nom>
-            Track
+            Desrue
         </nom>
         <prenom>
-            Pat
+            Aurélien
         </prenom>
         <adresse>
             ZIZILAND
@@ -19,13 +19,37 @@
   <ficheDeSoins>
     <dateh>12:06;2006-01-06</dateh>
     <medecin>
+        <nom>AH</nom>
+        <prenom>OUI</prenom>
+        <specialite>ORL</specialite>
+    </medecin>
+    <patient>
+        <nom>Desrue</nom>
+        <prenom>Aurélien</prenom>
+    </patient>
+    <acte>
+        <code>CS</code>
+        <coef>1</coef>
+    </acte>
+    <acte>
+        <code>CS</code>
+        <coef>50</coef>
+    </acte>
+    <acte>
+        <code>CS</code>
+        <coef>150</coef>
+    </acte>
+  </ficheDeSoins>
+  <ficheDeSoins>
+    <dateh>12:06;2006-01-06</dateh>
+    <medecin>
         <nom>Bono</nom>
         <prenom>Jean</prenom>
         <specialite>ORL</specialite>
     </medecin>
     <patient>
-        <nom>Track</nom>
-        <prenom>Pat</prenom>
+        <nom>Desrue</nom>
+        <prenom>Aurélien</prenom>
     </patient>
     <acte>
         <code>CS</code>
@@ -44,10 +68,10 @@
 <dp>
     <patient>
         <nom>
-            Bole
+            Caulier
         </nom>
         <prenom>
-            Pat
+           Manon
         </prenom>
         <adresse>
             ZIZILAND
@@ -65,8 +89,8 @@
         <specialite>Cardiologue</specialite>
     </medecin>
     <patient>
-        <nom>Bole</nom>
-        <prenom>Pat</prenom>
+        <nom>Caulier</nom>
+        <prenom>Manon</prenom>
     </patient>
     <acte>
         <code>CS</code>
@@ -78,40 +102,23 @@
     </acte>
   </ficheDeSoins>
 </dp>
+
 <dp>
     <patient>
         <nom>
-            Bole
+            Teulière
         </nom>
         <prenom>
-            Maggy
+           Annelise
         </prenom>
         <adresse>
             ZIZILAND
         </adresse>
         <numDeSS>
-            1254789653789
+            1254789654788
         </numDeSS>
         <date>1998-05-08</date>
     </patient>
-  <ficheDeSoins>
-    <dateh>13:56;2006-01-03</dateh>
-    <medecin>
-        <nom>Deblouze</nom>
-        <prenom>Agathe</prenom>
-        <specialite>Cardiologue</specialite>
-    </medecin>
-    <patient>
-        <nom>Bole</nom>
-        <prenom>Maggy</prenom>
-    </patient>
-    <acte>
-        <code>CS</code>
-        <coef>2</coef>
-    </acte>
-  </ficheDeSoins>
-</dp>
-<dp>
   <ficheDeSoins>
     <dateh>14:25;2005-11-13</dateh>
     <medecin>
@@ -120,8 +127,8 @@
         <specialite>Gynecologie</specialite>
     </medecin>
     <patient>
-        <nom>Bole</nom>
-        <prenom>Maggy</prenom>
+        <nom>Teulière</nom>
+        <prenom>Annelise</prenom>
     </patient>
     <acte>
         <code>CS</code>

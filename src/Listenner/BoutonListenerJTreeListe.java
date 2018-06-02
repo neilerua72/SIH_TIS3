@@ -22,6 +22,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
+import javax.swing.table.DefaultTableModel;
+import princetonPlainsboro.DossierPatient;
+import princetonPlainsboro.Patient;
+import princetonPlainsboro.SIH;
 
 /**
  *
@@ -38,10 +42,11 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener{
      Jmenu jm;
      JFrame frame;
      JConsulterFDS_dans_ongletFDS jcfdsdofds;
+     SIH sih ;
 
     
 
-    public BoutonListenerJTreeListe(JListeDePatients lp, JCreerDP jcdp, JCoutPatient jcp, JListeDeMedecins lm, JCoutMedecin jcm, JCoutSpecialite1 jcs, Accueil a, Jmenu jm, JFrame frame, JConsulterFDS_dans_ongletFDS jcfdsdofds) {
+    public BoutonListenerJTreeListe(JListeDePatients lp, JCreerDP jcdp, JCoutPatient jcp, JListeDeMedecins lm, JCoutMedecin jcm, JCoutSpecialite1 jcs, Accueil a, Jmenu jm, JFrame frame, JConsulterFDS_dans_ongletFDS jcfdsdofds,SIH sih) {
         this.lp = lp;
         this.jcdp = jcdp;
         this.jcp = jcp;
@@ -52,6 +57,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener{
         this.jm=jm;
         this.frame = frame;
         this.jcfdsdofds=jcfdsdofds;
+        this.sih=sih;
     }
      
    
@@ -76,7 +82,22 @@ public void valueChanged(TreeSelectionEvent e) {
                 this.a.setVisible(false);
                 this.jcfdsdofds.setVisible(false);
               
-               
+               String[][] tab;
+                tab = new String[sih.getLdp().size()][3];
+                for(int i=0;i<sih.getLdp().size();i++){
+                     DossierPatient dp = sih.getLdp().get(i);
+                     Patient p = dp.getPatient();
+                     tab[i][0]=p.getNom();
+                    tab[i][1]=p.getPrenom();
+                     tab[i][2]=p.getDateDeNaissance().toString();
+                 }
+                DefaultTableModel model = new DefaultTableModel(
+                tab,
+    new String [] {
+        "Nom", "Prénom", "Date de naissance"
+    });
+                lp.getjTable1().setModel(model);
+                lp.getjScrollPane4().setViewportView(lp.getjTable1());
                 
                 lp.setVisible(true); 
                 frame.repaint();

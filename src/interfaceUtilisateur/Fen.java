@@ -15,6 +15,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTree;
 import javax.swing.event.TreeSelectionListener;
+import princetonPlainsboro.LectureXML;
+import princetonPlainsboro.SIH;
 
 /**
  *
@@ -38,7 +40,7 @@ public class Fen extends javax.swing.JFrame {
      JFrame frame=this;
       JConsulterFDS_dans_ongletFDS jfdsdofds = new JConsulterFDS_dans_ongletFDS();
      Barre b = new Barre();
-     
+     SIH sih;
      
      //Declaration bouton
     private JButton valider = c.getjButton1();
@@ -58,9 +60,10 @@ public class Fen extends javax.swing.JFrame {
         this.setSize(950,600);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         valider.addActionListener(new BoutonListenerValider(jm,c,a,b,this));
-      
+        LectureXML lecture = new LectureXML("dossiers.xml");
+        sih=lecture.getDossier();
         
-        jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp,jcdp,jcp,lm,jcm,jcs,a,jm,frame,jfdsdofds));
+        jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp,jcdp,jcp,lm,jcm,jcs,a,jm,frame,jfdsdofds,sih));
         
         
        
