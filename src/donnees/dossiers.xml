@@ -86,7 +86,7 @@
     <medecin>
         <nom>Deblouze</nom>
         <prenom>Agathe</prenom>
-        <specialite>Cardiologue</specialite>
+        <specialite>CAR</specialite>
     </medecin>
     <patient>
         <nom>Caulier</nom>
@@ -124,7 +124,7 @@
     <medecin>
         <nom>Heget</nom>
         <prenom>Yves</prenom>
-        <specialite>Gynecologie</specialite>
+        <specialite>GYN</specialite>
     </medecin>
     <patient>
         <nom>Teulière</nom>

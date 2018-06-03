@@ -65,7 +65,7 @@ public class InscriptionFichierXML {
                                     xsw.writeCharacters(f.getMedecin().getPrenom());
                                 xsw.writeEndElement();
                                 xsw.writeStartElement("specialite");
-                                    xsw.writeCharacters(f.getMedecin().getSpecialite());
+                                    xsw.writeCharacters(f.getMedecin().getSpecialite().reucpSpe());
                                 xsw.writeEndElement();
                             xsw.writeEndElement();
                             xsw.writeStartElement("patient");
@@ -82,7 +82,7 @@ public class InscriptionFichierXML {
                                 xsw.writeStartElement("code");
                                     xsw.writeCharacters(a.getCode().recupCode());
                                 xsw.writeEndElement();
-                                xsw.writeStartElement("coed");
+                                xsw.writeStartElement("coef");
                                     xsw.writeCharacters(a.getCoefS());
                                 xsw.writeEndElement();    
                             xsw.writeEndElement();

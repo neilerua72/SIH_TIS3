@@ -17,15 +17,15 @@ public class Medecin {
     }
     private String nom;
     private String prenom;
-    private String specialite;
+    private Spe specialite;
     
-    public Medecin(String nom, String prenom, String specialite) {
+    public Medecin(String nom, String prenom, Spe specialite) {
         this.nom = nom;
         this.prenom = prenom;
         this.specialite = specialite;
         }
     
-    public String getSpecialite() { return specialite; }
+    public Spe getSpecialite() { return specialite; }
     
     public String toString() {
         return "Dr " + getPrenom() + " " + getNom() + ", " + specialite;

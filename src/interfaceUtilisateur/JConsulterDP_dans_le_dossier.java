@@ -12,6 +12,34 @@ package interfaceUtilisateur;
 public class JConsulterDP_dans_le_dossier extends javax.swing.JPanel {
 
     /**
+     * @return the adresse
+     */
+    public javax.swing.JLabel getAdresse() {
+        return adresse;
+    }
+
+    /**
+     * @return the NomPrenom
+     */
+    public javax.swing.JLabel getNomPrenom() {
+        return NomPrenom;
+    }
+
+    /**
+     * @return the date
+     */
+    public javax.swing.JLabel getDate() {
+        return date;
+    }
+
+    /**
+     * @return the numDeSS
+     */
+    public javax.swing.JLabel getNumDeSS() {
+        return numDeSS;
+    }
+
+    /**
      * Creates new form JConsulterDP_dans_le_dossier
      */
     public JConsulterDP_dans_le_dossier() {
@@ -35,11 +63,10 @@ public class JConsulterDP_dans_le_dossier extends javax.swing.JPanel {
         jPanel4 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        NomPrenom = new javax.swing.JLabel();
+        date = new javax.swing.JLabel();
+        numDeSS = new javax.swing.JLabel();
+        adresse = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
@@ -69,20 +96,17 @@ public class JConsulterDP_dans_le_dossier extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Imprimer");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Bole Maggie");
+        NomPrenom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        NomPrenom.setText("Bole Maggie");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel4.setText("JJ/MM/AAAA");
+        date.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        date.setText("JJ/MM/AAAA");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel5.setText("2 97 11 62 474 349");
+        numDeSS.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        numDeSS.setText("2 97 11 62 474 349");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel6.setText("4 rue de la liberté");
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel7.setText("38000 GRENOBLE");
+        adresse.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        adresse.setText("4 rue de la liberté");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setText("adresse@mail.com");
@@ -98,6 +122,10 @@ public class JConsulterDP_dans_le_dossier extends javax.swing.JPanel {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(90, 90, 90))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -108,23 +136,17 @@ public class JConsulterDP_dans_le_dossier extends javax.swing.JPanel {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(118, 118, 118)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
+                            .addComponent(adresse)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addComponent(date)
+                                .addGap(30, 30, 30)
+                                .addComponent(NomPrenom))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(78, 78, 78)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(30, 30, 30)
-                                        .addComponent(jLabel3))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(107, 107, 107)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel7)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel9)))))
-                            .addComponent(jLabel8)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(203, 203, 203)
-                        .addComponent(jButton3)))
+                                    .addComponent(numDeSS)
+                                    .addComponent(jLabel9))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -136,22 +158,20 @@ public class JConsulterDP_dans_le_dossier extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jLabel2)))
                 .addGap(3, 3, 3)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NomPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(date)
+                    .addComponent(numDeSS))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
+                .addComponent(adresse)
+                .addGap(44, 44, 44)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9))
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(jButton3)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addGap(50, 50, 50))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -180,17 +200,16 @@ public class JConsulterDP_dans_le_dossier extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel NomPrenom;
+    private javax.swing.JLabel adresse;
+    private javax.swing.JLabel date;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel numDeSS;
     // End of variables declaration//GEN-END:variables
 }

@@ -43,11 +43,11 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
     JCoutSpecialite1 jcs;
     Accueil a;
     Jmenu jm;
-    JFrame frame;
+    Fen frame;
     JConsulterFDS_dans_ongletFDS jcfdsdofds;
     SIH sih;
 
-    public BoutonListenerJTreeListe(JListeDePatients lp, JCreerDP jcdp, JCoutPatient jcp, JListeDeMedecins lm, JCoutMedecin jcm, JCoutSpecialite1 jcs, Accueil a, Jmenu jm, JFrame frame, JConsulterFDS_dans_ongletFDS jcfdsdofds, SIH sih) {
+    public BoutonListenerJTreeListe(JListeDePatients lp, JCreerDP jcdp, JCoutPatient jcp, JListeDeMedecins lm, JCoutMedecin jcm, JCoutSpecialite1 jcs, Accueil a, Jmenu jm, Fen frame, JConsulterFDS_dans_ongletFDS jcfdsdofds, SIH sih) {
         this.lp = lp;
         this.jcdp = jcdp;
         this.jcp = jcp;
@@ -68,14 +68,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             frame.add(lp);
 
             //Met Tout a false        
-            this.lp.setVisible(false);
-            this.jcdp.setVisible(false);
-            this.jcp.setVisible(false);
-            this.lm.setVisible(false);
-            this.jcm.setVisible(false);
-            this.jcs.setVisible(false);
-            this.a.setVisible(false);
-            this.jcfdsdofds.setVisible(false);
+            frame.toutFalse();
 
             String[][] tab;
             tab = new String[sih.getLdp().size()][3];
@@ -123,14 +116,24 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             frame.add(jcp);
 
             //Met Tout a false        
-            this.lp.setVisible(false);
-            this.jcdp.setVisible(false);
-            this.jcp.setVisible(false);
-            this.lm.setVisible(false);
-            this.jcm.setVisible(false);
-            this.jcs.setVisible(false);
-            this.a.setVisible(false);
-            this.jcfdsdofds.setVisible(false);
+           frame.toutFalse();
+           String[][] tab;
+            tab = new String[sih.getLdp().size()][3];
+            for (int i = 0; i < sih.getLdp().size(); i++) {
+                DossierPatient dp = sih.getLdp().get(i);
+                Patient p = dp.getPatient();
+                tab[i][0] = p.getNom();
+                tab[i][1] = p.getPrenom();
+                tab[i][2] = ""+dp.coutPatient();
+            }
+            DefaultTableModel model = new DefaultTableModel(
+                    tab,
+                    new String[]{
+                        "Nom", "Prénom", "Coût"
+                    });
+            jcp.getjTable1().setModel(model);
+            jcp.getjScrollPane4().setViewportView(jcp.getjTable1());
+
 
             jcp.setVisible(true);
 
@@ -142,14 +145,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             frame.add(lm);
 
             //Met Tout a false        
-            this.lp.setVisible(false);
-            this.jcdp.setVisible(false);
-            this.jcp.setVisible(false);
-            this.lm.setVisible(false);
-            this.jcm.setVisible(false);
-            this.jcs.setVisible(false);
-            this.a.setVisible(false);
-            this.jcfdsdofds.setVisible(false);
+            frame.toutFalse();
             String[][] tab;
             tab = new String[sih.getLm().size()][3];
             for (int i = 0; i < sih.getLm().size(); i++) {
@@ -157,7 +153,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
                 System.out.println("test");
                 tab[i][0] = m.getNom();
                 tab[i][1] = m.getPrenom();
-                tab[i][2] = m.getSpecialite();
+                tab[i][2] = m.getSpecialite().toString();
             }
             DefaultTableModel model2 = new DefaultTableModel(
                     tab,
@@ -178,15 +174,26 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             frame.add(jcm);
 
             //Met Tout a false        
-            this.lp.setVisible(false);
-            this.jcdp.setVisible(false);
-            this.jcp.setVisible(false);
-            this.lm.setVisible(false);
-            this.jcm.setVisible(false);
-            this.jcs.setVisible(false);
-            this.a.setVisible(false);
-            this.jcfdsdofds.setVisible(false);
+            frame.toutFalse();
+            
+            String[][] tab;
+            tab = new String[sih.getLdp().size()][3];
+            for (int i = 0; i < sih.getLm().size(); i++) {
+                Medecin dp = sih.getLm().get(i);
+                System.out.println("test");
+                tab[i][0] = dp.getNom();
+                tab[i][1] = dp.getPrenom();
+                tab[i][2] = ""+sih.coutMedecin(dp);
+            }
+            DefaultTableModel model = new DefaultTableModel(
+                    tab,
+                    new String[]{
+                        "Nom", "Prénom", "Date de naissance"
+                    });
+            jcm.getjTable1().setModel(model);
+            jcm.getjScrollPane4().setViewportView(jcm.getjTable1());
 
+            
             jcm.setVisible(true);
 
             frame.repaint();
@@ -198,15 +205,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             frame.add(jcs);
 
             //Met Tout a false        
-            this.lp.setVisible(false);
-            this.jcdp.setVisible(false);
-            this.jcp.setVisible(false);
-            this.lm.setVisible(false);
-            this.jcm.setVisible(false);
-            this.jcs.setVisible(false);
-            this.a.setVisible(false);
-            this.jcfdsdofds.setVisible(false);
-
+            frame.toutFalse();
             jcs.setVisible(true);
 
             frame.repaint();
@@ -218,14 +217,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             frame.add(a);
 
             //Met Tout a false        
-            this.lp.setVisible(false);
-            this.jcdp.setVisible(false);
-            this.jcp.setVisible(false);
-            this.lm.setVisible(false);
-            this.jcm.setVisible(false);
-            this.jcs.setVisible(false);
-            this.a.setVisible(false);
-            this.jcfdsdofds.setVisible(false);
+            frame.toutFalse();
 
             a.setVisible(true);
 
@@ -238,14 +230,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             frame.add(jcfdsdofds);
 
             //Met Tout a false        
-            this.lp.setVisible(false);
-            this.jcdp.setVisible(false);
-            this.jcp.setVisible(false);
-            this.lm.setVisible(false);
-            this.jcm.setVisible(false);
-            this.jcs.setVisible(false);
-            this.a.setVisible(false);
-            this.jcfdsdofds.setVisible(false);
+            frame.toutFalse();
 
             jcfdsdofds.setVisible(true);
             System.out.println("test");

@@ -16,15 +16,15 @@ class Test1 {
         System.out.println("\n********\n");
         
         //dm.afficher();
-        Medecin m=new Medecin("Foupasune","Jean","ORL");
+        //Medecin m=new Medecin("Foupasune","Jean","ORL");
         //dm.coutMedecin(m);
         Patient p1 = new Patient("Bole", "Pat",new NumDeSS("2549875634587"),"Wesh alors",new Date(6,5,1997));
         DossierPatient dp = new DossierPatient(p1);
-        FicheDeSoins f = new FicheDeSoins(p1,m,new DateH(12,2,2012,12,54));
-        f.ajouterActe(new Acte(Code.CCP,5));
-        f.ajouterActe(new Acte(Code.AMI,2));
-        System.out.println(f.coutTotal());
-        dm.ajouterFiche(f,p1);
+        //FicheDeSoins f = new FicheDeSoins(p1,m,new DateH(12,2,2012,12,54));
+        //f.ajouterActe(new Acte(Code.CCP,5));
+        //f.ajouterActe(new Acte(Code.AMI,2));
+       // System.out.println(f.coutTotal());
+        //dm.ajouterFiche(f,p1);
         System.out.println(dp.coutPatient());
        
         

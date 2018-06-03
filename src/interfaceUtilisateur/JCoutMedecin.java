@@ -12,6 +12,20 @@ package interfaceUtilisateur;
 public class JCoutMedecin extends javax.swing.JPanel {
 
     /**
+     * @return the jScrollPane4
+     */
+    public javax.swing.JScrollPane getjScrollPane4() {
+        return jScrollPane4;
+    }
+
+    /**
+     * @return the jTable1
+     */
+    public javax.swing.JTable getjTable1() {
+        return jTable1;
+    }
+
+    /**
      * Creates new form JCoutMedecin
      */
     public JCoutMedecin() {

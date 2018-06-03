@@ -40,6 +40,9 @@ public class NumDeSS {
     public String toString(){
         return num;
     }
+    public String toStringBo(){
+        return num.charAt(0)+" "+num.substring(1,3)+" "+num.substring(3,5)+" "+ num.substring(5,8)+" "+num.substring(8,11)+" "+num.substring(11,13);
+    }
     public boolean equals(NumDeSS n){
         return n.equals(num);
     }

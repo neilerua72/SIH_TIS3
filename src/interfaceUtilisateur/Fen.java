@@ -33,79 +33,70 @@ import princetonPlainsboro.SIH;
  */
 public class Fen extends javax.swing.JFrame {
 
-    
-  
     //Declaration Panel
     ConnexionInterface c = new ConnexionInterface();
-
     JListeDePatients lp = new JListeDePatients();
-     JCreerDP jcdp = new JCreerDP();
-     JCoutPatient jcp = new JCoutPatient();
+    JCreerDP jcdp = new JCreerDP();
+    JCoutPatient jcp = new JCoutPatient();
     JListeDeMedecins lm = new JListeDeMedecins();
-     JCoutMedecin jcm = new JCoutMedecin();
-     JCoutSpecialite1 jcs = new JCoutSpecialite1();
-     JConsulterDP_dans_le_dossier cdpdd = new JConsulterDP_dans_le_dossier();
-     Accueil a = new Accueil();
-     Jmenu jm = new Jmenu();
-     JFrame frame=this;
-      JConsulterFDS_dans_ongletFDS jfdsdofds = new JConsulterFDS_dans_ongletFDS();
-     Barre b = new Barre();
-     SIH sih;
-     JListeDePatients listePatient;
-     JConsulterDP_dans_le_dossier dossierPatient;
-     int ligne;
-     //Declaration bouton
+    JCoutMedecin jcm = new JCoutMedecin();
+    JCoutSpecialite1 jcs = new JCoutSpecialite1();
+    JConsulterDP_dans_le_dossier cdpdd = new JConsulterDP_dans_le_dossier();
+    Accueil a = new Accueil();
+    JConsulterFDS_dans_ongletFDS jfdsdofds = new JConsulterFDS_dans_ongletFDS();
+  
+  
+
+    //Variable importante : 
+    Jmenu jm = new Jmenu();
+    Fen frame = this;
+    Barre b = new Barre();
+
+    //Variables autres :
+    int ligne;
+    SIH sih;
+    //Declaration bouton
     private JButton valider = c.getjButton1();
     private JButton validerDP = jcdp.getValider();
     private State state;
     private JTable jlisteP = lp.getjTable1();
     private JTree jtreeliste = jm.getjTree2();
-    
-   
+
 //    /**
 //     * Creates new form Fen
 //     */JFrame frame = this;
-
-    
-        //Declaration JTren
+    //Declaration JTren
     public Fen() {
-        state=State.NONCO;
+        state = State.NONCO;
         add(c);
-        this.setSize(950,600);
-        
-        valider.addActionListener(new BoutonListenerConnexion(jm,c,a,b,this));
-        c.getjPasswordField1().addKeyListener(new ConnexionEntrerListener(jm,c,a,b,this));
+        this.setSize(950, 600);
+
+        valider.addActionListener(new BoutonListenerConnexion(jm, c, a, b, this));
+        c.getjPasswordField1().addKeyListener(new ConnexionEntrerListener(jm, c, a, b, this));
         LectureXML lecture = new LectureXML("donnesApresSIH.xml");
-        sih=lecture.getDossier();
-        validerDP.addActionListener(new BoutonListenerValiderDP(jcdp,this,sih));
-        jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp,jcdp,jcp,lm,jcm,jcs,a,jm,frame,jfdsdofds,sih));
-        jlisteP.addMouseListener(new tablesListener(lp,this,jlisteP,cdpdd,b,jm));
+        sih = lecture.getDossier();
+        validerDP.addActionListener(new BoutonListenerValiderDP(jcdp, this, sih));
+        jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp, jcdp, jcp, lm, jcm, jcs, a, jm, this, jfdsdofds, sih));
+        jlisteP.addMouseListener(new tablesListener(lp, this, jlisteP, cdpdd, b, jm,sih));
 //        jlisteP.addMouseListener(listePatient,this,jlisteP,dossierPatient);
 
+        //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
+        //Définition de l'écouteur à l'aide d'une classe interne anonyme
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                int reponse = JOptionPane.showConfirmDialog(frame,
+                        "Voulez-vous quitter l'application",
+                        "Confirmation",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE);
+                if (reponse == JOptionPane.YES_OPTION) {
+                    InscriptionFichierXML sauvegarde = new InscriptionFichierXML();
+                    sauvegarde.Xml(sih);
+                    frame.dispose();
+                }
+            }
+        });
 
-
-
-
-    //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
- 
-    //Définition de l'écouteur à l'aide d'une classe interne anonyme
-    frame.addWindowListener(new WindowAdapter(){
-             public void windowClosing(WindowEvent e){
-                   int reponse = JOptionPane.showConfirmDialog(frame,
-                                        "Voulez-vous quitter l'application",
-                                        "Confirmation",
-                                        JOptionPane.YES_NO_OPTION,
-                                        JOptionPane.QUESTION_MESSAGE);
-                   if (reponse==JOptionPane.YES_OPTION){
-                       InscriptionFichierXML sauvegarde = new InscriptionFichierXML();
-                       sauvegarde.Xml(sih);
-                           frame.dispose();
-                   }
-             }
-    });
-        
-       
-        
     }
 
     /**
@@ -137,11 +128,11 @@ public class Fen extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Fen().setVisible(true);
-                
+
             }
         });
     }
@@ -153,17 +144,26 @@ public class Fen extends javax.swing.JFrame {
         this.state = state;
     }
 
+    public void toutFalse() {
+        lp.setVisible(false);
+        jcdp.setVisible(false);
+        jcp.setVisible(false);
+        lm.setVisible(false);
+        jcm.setVisible(false);
+        jcs.setVisible(false);
+        cdpdd.setVisible(false);
+        a.setVisible(false);
+
+        jfdsdofds.setVisible(false);
+
+    
+       
+    }
+
     /**
      * @param state the state to set
      */
-    
-    
-    
-    
-    
-    
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
-

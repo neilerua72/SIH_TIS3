@@ -44,7 +44,7 @@ public class LectureXML {
         String donneesCourantes = "";
         String nomCourant = "";
         String prenomCourant = "";
-        String specialiteCourante = "";
+        Spe specialiteCourante =null;
         String adresseCourant="";
         String numDeSSstring="";
         int tab[] = new int[13];
@@ -154,7 +154,10 @@ public class LectureXML {
                             //numDeSScourant.setNum(tab);
                         }
                         if (parser.getLocalName().equals("specialite")) {
-                            specialiteCourante = donneesCourantes;
+                            specialiteCourante = getSpe(donneesCourantes);
+                          
+                            if (specialiteCourante==null) 
+                                throw new XMLStreamException("Impossible de trouver le code d'acte = "+donneesCourantes);
                         }
                         break;
                     case XMLStreamConstants.CHARACTERS:
@@ -234,6 +237,34 @@ public class LectureXML {
             return Code.AMO;
         if (code.equals("AMY"))
             return Code.AMY;
+        // probleme : code inconnu
+        return null;            
+    }
+     private static Spe getSpe(String code) {
+        if (code.equals("ANE"))
+            return Spe.ANE;
+        if (code.equals("CAR"))
+            return Spe.CAR;
+        if (code.equals("DER"))
+            return Spe.DER;
+        if (code.equals("GER"))
+            return Spe.GER;
+        if (code.equals("GYN"))
+            return Spe.GYN;
+        if (code.equals("HEM"))
+            return Spe.NEU;
+        if (code.equals("PED"))
+            return Spe.PED;
+        if (code.equals("RAD"))
+            return Spe.RAD;
+        if (code.equals("URO"))
+            return Spe.URO;
+        if (code.equals("ONC"))
+            return Spe.ONC;
+        if (code.equals("ORL"))
+            return Spe.ORL;
+        
+            
         // probleme : code inconnu
         return null;            
     }
