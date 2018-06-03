@@ -9,6 +9,7 @@ import Listenner.BoutonListenerGen;
 import Listenner.BoutonListenerJTreeListe;
 import Listenner.BoutonListenerConnexion;
 import Listenner.BoutonListenerValiderDP;
+import Listenner.ConnexionEntrerListener;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -65,6 +66,7 @@ public class Fen extends javax.swing.JFrame {
         this.setSize(950,600);
         
         valider.addActionListener(new BoutonListenerConnexion(jm,c,a,b,this));
+        c.getjPasswordField1().addKeyListener(new ConnexionEntrerListener(jm,c,a,b,this));
         LectureXML lecture = new LectureXML("donnesApresSIH.xml");
         sih=lecture.getDossier();
         validerDP.addActionListener(new BoutonListenerValiderDP(jcdp,this,sih));

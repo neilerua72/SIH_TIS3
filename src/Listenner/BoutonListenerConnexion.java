@@ -25,54 +25,16 @@ import princetonPlainsboro.Identification;
  *
  * @author Aurélien
  */
-public class BoutonListenerConnexion implements ActionListener {
+public class BoutonListenerConnexion extends ListenerConexion implements ActionListener {
 
-    Jmenu m;
-    ConnexionInterface c;
-    Fen jframe;
-    JPanel jp;
-    Barre b;
+    
 
     public BoutonListenerConnexion(Jmenu m, ConnexionInterface c, JPanel jp,Barre b,Fen jframe) {
-        this.m = m;
-        this.c = c;
-        this.jframe = jframe;
-        this.jp=jp;
-        this.b=b;
+        super(m,c,jp,b,jframe);
     }
 
     public void actionPerformed(ActionEvent e) {
-        String id = c.getjTextField1().getText();
-        String mdp = c.getjPasswordField1().getText();
-        Identification identif = new Identification(id, mdp);
-        Connexion con = new Connexion("donneesperso.xml");
-
-        
-            if (con.VerificationConnexion(identif) && identif.Type() == 1) {
-                jframe.setState(State.MED);
-                jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                jframe.setLayout(new BorderLayout());
-                b.getjLabel2().setText(identif.getType());
-                b.getjLabel2().setIcon(new javax.swing.ImageIcon(getClass().getResource(identif.getPhoto())));
-                jframe.add(m,BorderLayout.WEST);
-                jframe.add(jp,BorderLayout.CENTER);
-                jframe.add(b,BorderLayout.NORTH);
-                m.setVisible(true);
-                jp.setVisible(true);         
-                c.setVisible(false);
-                jframe.repaint();
-            } else if (con.VerificationConnexion(identif) && identif.Type() == 2) {
-               jframe.setState(State.ADMIN);
-                jframe.setContentPane(m);
-                m.setVisible(true);
-                c.setVisible(false);
-                jframe.repaint();
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Identifiant ou mdp incorrect");
-                System.out.println("test");
-            }
-
+       super.connexion();
         
     }
 }
