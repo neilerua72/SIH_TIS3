@@ -131,7 +131,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             this.jcs.setVisible(false);
             this.a.setVisible(false);
             this.jcfdsdofds.setVisible(false);
-            
+
             jcp.setVisible(true);
 
             frame.repaint();
@@ -163,8 +163,10 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
                     tab,
                     new String[]{
                         "Nom", "Prénom", "Spécialité"
-                    });
+                    }); 
+            
             lm.getjTable1().setModel(model2);
+
             lm.getjScrollPane4().setViewportView(lm.getjTable1());
             lm.setVisible(true);
 
@@ -251,7 +253,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             tab = new String[sih.getLdfs().size()][3];
             for (int i = 0; i < sih.getLdfs().size(); i++) {
                 FicheDeSoins f = sih.getLdfs().get(i);
-                System.out.println("test"+i);
+                System.out.println("test" + i);
                 Patient p = f.getPatient();
                 tab[i][0] = p.getNom();
                 tab[i][1] = p.getPrenom();

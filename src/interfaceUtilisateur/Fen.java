@@ -10,6 +10,7 @@ import Listenner.BoutonListenerJTreeListe;
 import Listenner.BoutonListenerConnexion;
 import Listenner.BoutonListenerValiderDP;
 import Listenner.ConnexionEntrerListener;
+import Listenner.ListeListenerPatient;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +19,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTree;
 import javax.swing.event.TreeSelectionListener;
 import princetonPlainsboro.InscriptionFichierXML;
@@ -52,6 +54,7 @@ public class Fen extends javax.swing.JFrame {
     private JButton valider = c.getjButton1();
     private JButton validerDP = jcdp.getValider();
     private State state;
+    private JTable jlisteP = lp.getjTable1();
     private JTree jtreeliste = jm.getjTree2();
    
 //    /**
@@ -71,7 +74,7 @@ public class Fen extends javax.swing.JFrame {
         sih=lecture.getDossier();
         validerDP.addActionListener(new BoutonListenerValiderDP(jcdp,this,sih));
         jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp,jcdp,jcp,lm,jcm,jcs,a,jm,frame,jfdsdofds,sih));
-        
+        jlisteP.addMouseListener(new ListeListenerPatient());
     //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
  
     //Définition de l'écouteur à l'aide d'une classe interne anonyme
