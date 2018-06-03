@@ -43,7 +43,8 @@ public class Jmenu extends javax.swing.JPanel {
 
         jTree2.setBackground(new java.awt.Color(176, 0, 0));
         jTree2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jTree2.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        jTree2.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        jTree2.setForeground(new java.awt.Color(255, 0, 0));
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Princeton Placeboro");
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Patients");
         javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("consulter dossier");
@@ -66,13 +67,16 @@ public class Jmenu extends javax.swing.JPanel {
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Fiches de soins");
         treeNode1.add(treeNode2);
         jTree2.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jTree2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane2.setViewportView(jTree2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

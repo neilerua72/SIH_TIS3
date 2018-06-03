@@ -49,13 +49,16 @@ public class Fen extends javax.swing.JFrame {
       JConsulterFDS_dans_ongletFDS jfdsdofds = new JConsulterFDS_dans_ongletFDS();
      Barre b = new Barre();
      SIH sih;
-     
+     JListeDePatients listePatient;
+     JConsulterDP_dans_le_dossier dossierPatient;
+     int ligne;
      //Declaration bouton
     private JButton valider = c.getjButton1();
     private JButton validerDP = jcdp.getValider();
     private State state;
     private JTable jlisteP = lp.getjTable1();
     private JTree jtreeliste = jm.getjTree2();
+    
    
 //    /**
 //     * Creates new form Fen
@@ -75,6 +78,12 @@ public class Fen extends javax.swing.JFrame {
         validerDP.addActionListener(new BoutonListenerValiderDP(jcdp,this,sih));
         jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp,jcdp,jcp,lm,jcm,jcs,a,jm,frame,jfdsdofds,sih));
         jlisteP.addMouseListener(new ListeListenerPatient());
+//        jlisteP.addMouseListener(listePatient,this,jlisteP,dossierPatient);
+
+
+
+
+
     //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
  
     //Définition de l'écouteur à l'aide d'une classe interne anonyme

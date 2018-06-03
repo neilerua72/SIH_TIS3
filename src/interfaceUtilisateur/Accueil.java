@@ -70,9 +70,9 @@ public class Accueil extends javax.swing.JPanel {
 
         setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/princeton_plainsboro_2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/princeton_plainsboro_4.png"))); // NOI18N
         add(jLabel1);
-        jLabel1.setBounds(-250, -20, 1460, 730);
+        jLabel1.setBounds(-120, 0, 1840, 730);
     }// </editor-fold>//GEN-END:initComponents
 
 
