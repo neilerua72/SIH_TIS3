@@ -25,7 +25,7 @@ import princetonPlainsboro.Identification;
  *
  * @author Aurélien
  */
-public class BoutonListenerValider implements ActionListener {
+public class BoutonListenerConnexion implements ActionListener {
 
     Jmenu m;
     ConnexionInterface c;
@@ -33,7 +33,7 @@ public class BoutonListenerValider implements ActionListener {
     JPanel jp;
     Barre b;
 
-    public BoutonListenerValider(Jmenu m, ConnexionInterface c, JPanel jp,Barre b,Fen jframe) {
+    public BoutonListenerConnexion(Jmenu m, ConnexionInterface c, JPanel jp,Barre b,Fen jframe) {
         this.m = m;
         this.c = c;
         this.jframe = jframe;

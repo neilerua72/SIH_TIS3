@@ -40,4 +40,21 @@ public class NumDeSS {
     public String toString(){
         return num;
     }
+    public boolean equals(NumDeSS n){
+        return n.equals(num);
+    }
+    public boolean verifNumS(Date d){
+        int ann = d.getAnnee()%100;
+        int mois = d.getMois();
+        boolean rep = false;
+        if(this.num.length()==13){
+            int sann=Integer.parseInt(this.num.substring(1,3));
+            int smois=Integer.parseInt(this.num.substring(3,5));
+            int depN=Integer.parseInt(this.num.substring(5,7));
+            if((num.charAt(0)=='1'||num.charAt(0)=='2')&&sann==ann&&mois==smois&&depN>0&&depN<99){
+                rep = true;
+            }
+        }
+        return rep;
+    }
 }

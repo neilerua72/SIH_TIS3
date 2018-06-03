@@ -7,7 +7,8 @@ package interfaceUtilisateur;
 
 import Listenner.BoutonListenerGen;
 import Listenner.BoutonListenerJTreeListe;
-import Listenner.BoutonListenerValider;
+import Listenner.BoutonListenerConnexion;
+import Listenner.BoutonListenerValiderDP;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -44,7 +45,7 @@ public class Fen extends javax.swing.JFrame {
      
      //Declaration bouton
     private JButton valider = c.getjButton1();
-   
+    private JButton validerDP = jcdp.getValider();
     private State state;
     private JTree jtreeliste = jm.getjTree2();
    
@@ -59,10 +60,10 @@ public class Fen extends javax.swing.JFrame {
         add(c);
         this.setSize(950,600);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        valider.addActionListener(new BoutonListenerValider(jm,c,a,b,this));
+        valider.addActionListener(new BoutonListenerConnexion(jm,c,a,b,this));
         LectureXML lecture = new LectureXML("dossiers.xml");
         sih=lecture.getDossier();
-        
+        validerDP.addActionListener(new BoutonListenerValiderDP(jcdp,this,sih));
         jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp,jcdp,jcp,lm,jcm,jcs,a,jm,frame,jfdsdofds,sih));
         
         

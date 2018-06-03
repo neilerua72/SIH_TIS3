@@ -27,51 +27,9 @@ public class Date implements Comparable {
     private int annee;
     
     public Date(int jour, int mois, int annee) {
-        if((annee%4==0&&annee%100!=0)||annee%400==0){
-            if(mois==1||mois==3||mois==5||mois==7||mois==8||mois==10||mois==12){
-                if(jour>0&&jour<32){
-                    this.jour=jour;
-                    this.mois=mois;
-                    this.annee=annee;
-                }
-            }
-            else if (mois==2){
-                if(jour>0&&jour<30)
-                    this.jour=jour;
-                this.mois=mois;
-                this.annee=annee;
-            }
-            else{
-                if(jour>0&&jour<31){
-                    this.jour=jour;
-                    this.mois=mois;
-                    this.annee=annee;
-                }
-            }
-        }
-        else{
-            if(mois==1||mois==3||mois==5||mois==7||mois==8||mois==10||mois==12){
-                if(jour>0&&jour<32){
-                    this.jour=jour;
-                    this.mois=mois;
-                    this.annee=annee;
-                }
-            }
-            else if (mois==2){
-                if(jour>0&&jour<29)
-                    this.jour=jour;
-                this.mois=mois;
-                this.annee=annee;
-            }
-            else{
-                if(jour>0&&jour<31){
-                    this.jour=jour;
-                    this.mois=mois;
-                    this.annee=annee;
-                }
-            }
-            
-        }
+        this.jour=jour;
+        this.mois=mois;
+        this.annee=annee;
     }
     public String toString() {
         return this.jour + "/" + this.mois + "/" + this.annee;
@@ -102,5 +60,43 @@ public class Date implements Comparable {
     public String toStringS() {
         return this.annee + "-" + this.mois + "-" + this.jour;
         }
+    public boolean dateCorrect(){
+        boolean rep=false;
+        if((annee%4==0&&annee%100!=0)||annee%400==0){
+            if(mois==1||mois==3||mois==5||mois==7||mois==8||mois==10||mois==12){
+                if(jour>0&&jour<32){
+                    rep=true;
+                }
+            }
+            else if (mois==2){
+                if(jour>0&&jour<30)
+                  rep=true;
+            }
+            else{
+                if(jour>0&&jour<31){
+                   rep=true;
+                }
+            }
+        }
+        else{
+            if(mois==1||mois==3||mois==5||mois==7||mois==8||mois==10||mois==12){
+                if(jour>0&&jour<32){
+                   rep=true;
+                }
+            }
+            else if (mois==2){
+                if(jour>0&&jour<29)
+                    rep=true;
+            }
+            else{
+                if(jour>0&&jour<31){
+                    rep=true;
+                }
+            }
+            
+        }
+        
+        return rep;
+    }
     
     }

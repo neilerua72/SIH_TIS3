@@ -40,15 +40,21 @@ public class Patient {
     private String prenom;
     private NumDeSS numDeSS;
     private String adresse;
+
+    public Patient(NumDeSS numDeSS) {
+        this.numDeSS=numDeSS;
+    }
+    
     private Date dateDeNaissance;
     
-    public Patient(String nom, String prenom, String numDeSS, String adresse, Date dateDeNaissance) {
+    public Patient(String nom, String prenom, NumDeSS numDeSS, String adresse, Date dateDeNaissance) {
         this.nom = nom;
         this.prenom = prenom;
-        this.numDeSS=new NumDeSS(numDeSS);
+        this.numDeSS=numDeSS;
         this.adresse=adresse;
         this.dateDeNaissance=dateDeNaissance;
         }
+    
     public String nomPrenom(){
         return this.getNom() + " "+this.getPrenom();
     }
@@ -65,7 +71,7 @@ public class Patient {
     public boolean equals(Object o) {
         if (o instanceof Patient) {
             Patient p = (Patient)o;
-            return getNom().equals(p.getNom()) && getPrenom().equals(p.getPrenom());
+            return this.numDeSS.equals(p.getNumDeSS());
             }
         else
             return false;

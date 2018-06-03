@@ -1,6 +1,7 @@
 package princetonPlainsboro;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Scanner;
 
 class Test1 {
@@ -17,7 +18,7 @@ class Test1 {
         //dm.afficher();
         Medecin m=new Medecin("Foupasune","Jean","ORL");
         //dm.coutMedecin(m);
-        Patient p1 = new Patient("Bole", "Pat","2549875634587","Wesh alors",new Date(6,5,1997));
+        Patient p1 = new Patient("Bole", "Pat",new NumDeSS("2549875634587"),"Wesh alors",new Date(6,5,1997));
         DossierPatient dp = new DossierPatient(p1);
         FicheDeSoins f = new FicheDeSoins(p1,m,new DateH(12,2,2012,12,54));
         f.ajouterActe(new Acte(Code.CCP,5));
@@ -27,9 +28,14 @@ class Test1 {
         System.out.println(dp.coutPatient());
        
         
+        Date d = new Date(16,12,1997);
+        System.out.println(d.dateCorrect());
+        Calendar rN = Calendar.getInstance();
+         Date dd=new Date(rN.DATE,rN.MONTH,rN.YEAR);
+         System.out.println(dd);
         
         //printArray(dm.trier(new ComparaisonFichesDates()));
-        printArray(dm.ListePatients(m));
+        
         //System.out.println(dm.retrouverDossPat(p1));
        //System.out.println(dm.retrouverDossPat(p1));
                 

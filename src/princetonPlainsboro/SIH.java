@@ -177,5 +177,25 @@ public class SIH {
         return dp;
         
     }
+    public boolean verifExistP(Patient p){
+        int i =0;
+        DossierPatient dp=null;
+        boolean rep=false;
+        while(i<this.ldp.size()&&rep==false){
+            if(this.ldp.get(i).getPatient().equals(p)){
+                 dp= this.ldp.get(i);
+            rep =true;}
+            i++;
+         
+        }
+        if(i==this.ldp.size()){
+            rep=false;
+        }
+        else{
+            rep =true;
+        }
+        return rep;
+        
+    }
 }
 

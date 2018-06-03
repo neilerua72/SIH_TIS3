@@ -131,7 +131,7 @@ public class LectureXML {
                             nomCourant = donneesCourantes;
                         }
                         if (parser.getLocalName().equals("patient")) {
-                            patientCourant = new Patient(nomCourant, prenomCourant,numDeSSstring,adresseCourant,date);
+                            patientCourant = new Patient(nomCourant, prenomCourant,new NumDeSS(numDeSSstring),adresseCourant,date);
                         }
                         if (parser.getLocalName().equals("prenom")) {
                             prenomCourant = donneesCourantes;

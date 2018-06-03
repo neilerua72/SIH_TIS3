@@ -12,6 +12,43 @@ package interfaceUtilisateur;
 public class JCreerDP extends javax.swing.JPanel {
 
     /**
+     * @return the valider
+     */
+    public javax.swing.JButton getValider() {
+        return valider;
+    }
+
+    /**
+     * @return the NumSS
+     */
+    public javax.swing.JTextField getNumSS() {
+        return NumSS;
+    }
+
+    /**
+     * @return the adresse
+     */
+    public javax.swing.JTextField getAdresse() {
+        return adresse;
+    }
+
+  
+
+    /**
+     * @return the nom
+     */
+    public javax.swing.JTextField getNom() {
+        return nom;
+    }
+
+    /**
+     * @return the prenom
+     */
+    public javax.swing.JTextField getPrenom() {
+        return prenom;
+    }
+
+    /**
      * Creates new form JCreerDP
      */
     public JCreerDP() {
@@ -31,14 +68,18 @@ public class JCreerDP extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        nom = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        prenom = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jour = new javax.swing.JTextField();
+        mois = new javax.swing.JTextField();
+        annee = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        adresse = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
@@ -47,13 +88,13 @@ public class JCreerDP extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        NumSS = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        annuler = new javax.swing.JButton();
+        valider = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -65,9 +106,9 @@ public class JCreerDP extends javax.swing.JPanel {
 
         jLabel1.setText("Nom :");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nomActionPerformed(evt);
             }
         });
 
@@ -77,37 +118,65 @@ public class JCreerDP extends javax.swing.JPanel {
 
         jLabel3.setText("Date de Naissance:");
 
+        jLabel12.setText("/");
+
+        annee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                anneeActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setText("/");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3))
+                        .addComponent(jour, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mois, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(annee, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12)
+                    .addComponent(mois, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13)
+                    .addComponent(annee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jLabel4.setText("Adresse :");
+
+        adresse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adresseActionPerformed(evt);
+            }
+        });
 
         jPanel6.setBackground(java.awt.Color.lightGray);
 
@@ -165,11 +234,11 @@ public class JCreerDP extends javax.swing.JPanel {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(adresse, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -181,7 +250,7 @@ public class JCreerDP extends javax.swing.JPanel {
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField8))
+                                .addComponent(NumSS))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -199,13 +268,13 @@ public class JCreerDP extends javax.swing.JPanel {
                 .addContainerGap(31, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(adresse, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -214,7 +283,7 @@ public class JCreerDP extends javax.swing.JPanel {
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NumSS, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(23, 23, 23)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -228,14 +297,14 @@ public class JCreerDP extends javax.swing.JPanel {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/princeton_plainsboro_by_nadesiko-ConvertImage.jpg"))); // NOI18N
 
-        jButton3.setText("Annuler");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        annuler.setText("Annuler");
+        annuler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                annulerActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Valider");
+        valider.setText("Valider");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -248,9 +317,9 @@ public class JCreerDP extends javax.swing.JPanel {
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(196, 196, 196))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(annuler)
                         .addGap(35, 35, 35)
-                        .addComponent(jButton2)
+                        .addComponent(valider)
                         .addGap(253, 253, 253))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -269,8 +338,8 @@ public class JCreerDP extends javax.swing.JPanel {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(valider)
+                    .addComponent(annuler))
                 .addContainerGap())
         );
 
@@ -286,31 +355,43 @@ public class JCreerDP extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addGap(0, 67, Short.MAX_VALUE))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nomActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void annulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_annulerActionPerformed
+
+    private void anneeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anneeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_anneeActionPerformed
+
+    private void adresseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adresseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adresseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JTextField NumSS;
+    private javax.swing.JTextField adresse;
+    private javax.swing.JTextField annee;
+    private javax.swing.JButton annuler;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -324,14 +405,35 @@ public class JCreerDP extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jour;
+    private javax.swing.JTextField mois;
+    private javax.swing.JTextField nom;
+    private javax.swing.JTextField prenom;
+    private javax.swing.JButton valider;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the annee
+     */
+    public javax.swing.JTextField getAnnee() {
+        return annee;
+    }
+
+    /**
+     * @return the jour
+     */
+    public javax.swing.JTextField getJour() {
+        return jour;
+    }
+
+    /**
+     * @return the mois
+     */
+    public javax.swing.JTextField getMois() {
+        return mois;
+    }
 }
