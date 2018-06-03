@@ -177,7 +177,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             frame.toutFalse();
             
             String[][] tab;
-            tab = new String[sih.getLdp().size()][3];
+            tab = new String[sih.getLm().size()][3];
             for (int i = 0; i < sih.getLm().size(); i++) {
                 Medecin dp = sih.getLm().get(i);
                 System.out.println("test");

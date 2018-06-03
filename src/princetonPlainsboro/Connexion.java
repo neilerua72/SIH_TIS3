@@ -1,10 +1,3 @@
-/*
- * LectureXML.java
- *
- * Created on 5 janvier 2006, 18:26
- *
- * Lecture d'un document XML et transformation en instances Java
- */
 
 package princetonPlainsboro;
 
@@ -20,9 +13,9 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 /**
- * Lecture d'un document XML et transformation en instances Java.
+ * Lecture d'un document XML et verification d'identification.
  *
- * @author promayon
+ * @author Aurélien, AnneLise, Manon
  */
 public class Connexion {
     /// nom du document XML a analyser
@@ -33,7 +26,12 @@ public class Connexion {
     public Connexion(String nomFichier) {
         this.nomFichier = nomFichier;
     }
-    
+    /**Méthode qui verifie si une Identification est dans un fichier XML
+     * 
+     * @param id 
+     *      Identification qui est à verifiée
+     * @return un boolean en fonction de la réponse
+     */
     public boolean VerificationConnexion(Identification id) {
         boolean rep = false;
        

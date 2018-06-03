@@ -143,7 +143,7 @@ public class Fen extends javax.swing.JFrame {
     public void setState(State state) {
         this.state = state;
     }
-
+    
     public void toutFalse() {
         lp.setVisible(false);
         jcdp.setVisible(false);

@@ -1,11 +1,12 @@
 package princetonPlainsboro;
 
-// Cette enumeration fait intervenir des valeurs qui possedent des
-// attributs ('libelle' et 'cout') qui sont initialises par un appel du
-// constructeur (arguments entre parentheses apres le nom de chaque valeur).
-// Par exemple, la valeur Code.FP a un attribut 'libelle' contenant la chaine
-// de caracteres "forfait pediatrique" et un attribut 'cout' ayant la valeur 5.0
-
+/**Cette enumeration fait intervenir des valeurs qui possedent des
+*attributs ('libelle' et 'cout') qui sont initialises par un appel du
+*constructeur (arguments entre parentheses apres le nom de chaque valeur).
+*Par exemple, la valeur Code.FP a un attribut 'libelle' contenant la chaine
+*de caracteres "forfait pediatrique" et un attribut 'cout' ayant la valeur 5.0
+* @author Aurélien, AnneLise, Manon
+*/
 enum Code {
     // valeurs de l'ï¿½num :
     C("Consultation au cabinet par le médecin généraliste, le chirurgien-dentiste omnipraticien ou la sage-femme",23.0),
@@ -48,15 +49,28 @@ enum Code {
         this.cout = cout;
         }
     
-    // mï¿½thodes :
+    /**Méthode qui renvoit le code sous forme de chaîne de caractère
+     * 
+     * @return le code sous forme de chaîne de caractère
+     */
     public String toString() {
         return super.toString() + " : " + libelle + ", cout=" + cout + " euros";
         }
     
-    // calcule le prix pour un coefficient donne :
+    /**
+     * 
+     * @param coefficient
+     *              coefficient propre au médecin
+     * @return le cout du code pour un coefficient donnée
+     */
     public double calculerCout(int coefficient) {
         return coefficient * cout;
         }
+    
+    /**Méthode qui retourne le code du Code, utilisé pour @see IncsriptionFichierXML#Xml(sih)
+     * 
+     * @return le code du Code
+     */
     public String recupCode(){
         return super.toString();
     }
