@@ -11,6 +11,7 @@ import Listenner.BoutonListenerConnexion;
 import Listenner.BoutonListenerValiderDP;
 import Listenner.ConnexionEntrerListener;
 import Listenner.ListeListenerPatient;
+import Listenner.tablesListener;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,6 +44,7 @@ public class Fen extends javax.swing.JFrame {
     JListeDeMedecins lm = new JListeDeMedecins();
      JCoutMedecin jcm = new JCoutMedecin();
      JCoutSpecialite1 jcs = new JCoutSpecialite1();
+     JConsulterDP_dans_le_dossier cdpdd = new JConsulterDP_dans_le_dossier();
      Accueil a = new Accueil();
      Jmenu jm = new Jmenu();
      JFrame frame=this;
@@ -77,7 +79,7 @@ public class Fen extends javax.swing.JFrame {
         sih=lecture.getDossier();
         validerDP.addActionListener(new BoutonListenerValiderDP(jcdp,this,sih));
         jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp,jcdp,jcp,lm,jcm,jcs,a,jm,frame,jfdsdofds,sih));
-        jlisteP.addMouseListener(new ListeListenerPatient());
+        jlisteP.addMouseListener(new tablesListener(lp,this,jlisteP,cdpdd,b,jm));
 //        jlisteP.addMouseListener(listePatient,this,jlisteP,dossierPatient);
 
 

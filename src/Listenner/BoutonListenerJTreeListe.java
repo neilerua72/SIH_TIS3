@@ -270,7 +270,9 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             frame.revalidate();
 
         }
-
+        
+         if (obj.toString().equals("Patients")) {
+         }
     }
 
 }

@@ -5,12 +5,17 @@
  */
 package Listenner;
 
+
+import interfaceUtilisateur.Barre;
 import interfaceUtilisateur.Fen;
 import interfaceUtilisateur.JConsulterDP_dans_le_dossier;
 import interfaceUtilisateur.JListeDePatients;
+import interfaceUtilisateur.Jmenu;
 import interfaceUtilisateur.State;
+import java.awt.BorderLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.event.TreeSelectionListener;
@@ -22,32 +27,26 @@ import javax.swing.event.TreeSelectionListener;
 public class tablesListener implements MouseListener{
    JListeDePatients listePatient;
      JConsulterDP_dans_le_dossier dossierPatient;
-     Fen jframe;
+    JFrame jframe;
      JTable table;
+     Jmenu jmenu;
+     Barre barre;
 
-    public tablesListener(JListeDePatients listePatient, Fen jframe, JTable table,JConsulterDP_dans_le_dossier dossierPatient) {
+    public tablesListener(JListeDePatients listePatient, JFrame jframe, JTable table,JConsulterDP_dans_le_dossier dossierPatient,Barre bar, Jmenu jmenu) {
         this.listePatient = listePatient;
         this.jframe = jframe;
         this.table=table;
+        this.dossierPatient=dossierPatient;
+        this.barre = barre;
+        this.jmenu=jmenu;
     }
     
     
     private void tableauMouseClicked(java.awt.event.MouseEvent evt) {
     // gestion du simple clic
-    int NumLigne;
-    NumLigne = table.getSelectedRow();
     
     
-    if ( NumLigne == listePatient.getjTable1().getSelectedRow()) {
 
-       jframe.setContentPane(dossierPatient);
-        dossierPatient.setVisible(true);
-    listePatient.setVisible(false);
-    jframe.repaint();
-    jframe.setState(State.NONCO);
-    
-}
-    
     
 
 
@@ -75,7 +74,11 @@ public class tablesListener implements MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent me) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+       int NumLigne;
+    NumLigne = table.getSelectedRow();
+        System.out.println(NumLigne);
+            
+           
+    
 
-}
+}}
