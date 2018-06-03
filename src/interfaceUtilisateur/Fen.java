@@ -12,10 +12,14 @@ import Listenner.BoutonListenerValiderDP;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTree;
 import javax.swing.event.TreeSelectionListener;
+import princetonPlainsboro.InscriptionFichierXML;
 import princetonPlainsboro.LectureXML;
 import princetonPlainsboro.SIH;
 
@@ -59,13 +63,30 @@ public class Fen extends javax.swing.JFrame {
         state=State.NONCO;
         add(c);
         this.setSize(950,600);
-        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        
         valider.addActionListener(new BoutonListenerConnexion(jm,c,a,b,this));
-        LectureXML lecture = new LectureXML("dossiers.xml");
+        LectureXML lecture = new LectureXML("donnesApresSIH.xml");
         sih=lecture.getDossier();
         validerDP.addActionListener(new BoutonListenerValiderDP(jcdp,this,sih));
         jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp,jcdp,jcp,lm,jcm,jcs,a,jm,frame,jfdsdofds,sih));
         
+    //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
+ 
+    //Définition de l'écouteur à l'aide d'une classe interne anonyme
+    frame.addWindowListener(new WindowAdapter(){
+             public void windowClosing(WindowEvent e){
+                   int reponse = JOptionPane.showConfirmDialog(frame,
+                                        "Voulez-vous quitter l'application",
+                                        "Confirmation",
+                                        JOptionPane.YES_NO_OPTION,
+                                        JOptionPane.QUESTION_MESSAGE);
+                   if (reponse==JOptionPane.YES_OPTION){
+                       InscriptionFichierXML sauvegarde = new InscriptionFichierXML();
+                       sauvegarde.Xml(sih);
+                           frame.dispose();
+                   }
+             }
+    });
         
        
         
