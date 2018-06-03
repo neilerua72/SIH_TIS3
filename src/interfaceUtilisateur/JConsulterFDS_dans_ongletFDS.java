@@ -12,6 +12,20 @@ package interfaceUtilisateur;
 public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
 
     /**
+     * @return the jScrollPane3
+     */
+    public javax.swing.JScrollPane getjScrollPane3() {
+        return jScrollPane3;
+    }
+
+    /**
+     * @return the jTable1
+     */
+    public javax.swing.JTable getjTable1() {
+        return jTable1;
+    }
+
+    /**
      * Creates new form JConsulterFDS_dans_ongletFDS
      */
     public JConsulterFDS_dans_ongletFDS() {

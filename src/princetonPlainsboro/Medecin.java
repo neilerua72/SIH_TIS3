@@ -1,6 +1,6 @@
 package princetonPlainsboro;
 
-class Medecin {
+public class Medecin {
 
     /**
      * @return the nom

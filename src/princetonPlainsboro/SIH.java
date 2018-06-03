@@ -197,5 +197,19 @@ public class SIH {
         return rep;
         
     }
+     public ArrayList<Medecin> getLm() {
+        ArrayList<FicheDeSoins> fiches = new ArrayList<FicheDeSoins>(this.getLdfs());
+        ArrayList<Medecin> liste = new ArrayList<Medecin>();
+        for (int i = 0; i < fiches.size(); i++) {
+            FicheDeSoins f = fiches.get(i);
+            Medecin m = f.getMedecin(); 
+                if (!liste.contains(m)) {
+                    liste.add(m);
+                }
+        }
+       return liste; 
+    }
+
+    
 }
 

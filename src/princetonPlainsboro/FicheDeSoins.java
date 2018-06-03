@@ -3,7 +3,7 @@ package princetonPlainsboro;
 import java.util.ArrayList;
 import java.util.Vector;
 
-class FicheDeSoins {
+public class FicheDeSoins {
 
     /**
      * @return the actes
