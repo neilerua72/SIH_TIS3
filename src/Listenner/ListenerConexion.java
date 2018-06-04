@@ -57,6 +57,7 @@ public abstract class ListenerConexion {
                 jp.setVisible(true);         
                 c.setVisible(false);
                 jframe.repaint();
+                
             } else if (con.VerificationConnexion(identif) && identif.Type() == 2) {
                jframe.setState(State.ADMIN);
                 jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -78,3 +79,4 @@ public abstract class ListenerConexion {
 
     }
 }
+

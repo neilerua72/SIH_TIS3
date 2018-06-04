@@ -121,10 +121,10 @@ public class Identification {
      * @return le type sous entier
      */
     public int Type(){
-        if(this.type.charAt(0)=='1'){
+        if(this.id.charAt(0)=='1'){
             return 1;
         }
-        else if(this.type.charAt(0)=='2') {
+        else if(this.id.charAt(0)=='2') {
             return 2;
         }
         else{
