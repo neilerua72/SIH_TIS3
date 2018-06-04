@@ -29,12 +29,12 @@ public class JConsulterDP_liste_patients extends javax.swing.JPanel {
 
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        barreR = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
+        buttonR = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -42,14 +42,12 @@ public class JConsulterDP_liste_patients extends javax.swing.JPanel {
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
 
-        jTextField1.setText("Rechercher par le nom");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        barreR.setText("Rechercher par le nom");
+        barreR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                barreRActionPerformed(evt);
             }
         });
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/loupe.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Rechercher un dossier patient");
@@ -74,6 +72,9 @@ public class JConsulterDP_liste_patients extends javax.swing.JPanel {
             }
         });
 
+        buttonR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/loupe.png"))); // NOI18N
+        buttonR.setText("Rechercher");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -87,13 +88,13 @@ public class JConsulterDP_liste_patients extends javax.swing.JPanel {
                         .addComponent(jLabel5))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(110, 110, 110)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(barreR, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3))
+                        .addComponent(buttonR))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,10 +104,10 @@ public class JConsulterDP_liste_patients extends javax.swing.JPanel {
                     .addComponent(jLabel5)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(27, 27, 27)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(barreR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonR))
+                .addGap(22, 22, 22)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -134,19 +135,19 @@ public class JConsulterDP_liste_patients extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void barreRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barreRActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_barreRActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField barreR;
+    private javax.swing.JButton buttonR;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
