@@ -14,6 +14,7 @@ import Listenner.BoutonListenerRDP;
 import Listenner.BoutonListenerValiderDP;
 import Listenner.ConnexionEntrerListener;
 import Listenner.ListeListenerPatient;
+import Listenner.RechercheEntrerListener;
 import Listenner.tablesListener;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -24,6 +25,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.JTree;
 import javax.swing.event.TreeSelectionListener;
 import princetonPlainsboro.InscriptionFichierXML;
@@ -70,6 +72,7 @@ public class Fen extends javax.swing.JFrame {
     private JButton ficheDeSoin = cdpdd.getjButton3();
 private JButton facture = jfdsmm.getjButton3();
 private JButton rechercheDP = lp.getButtonR();
+private JTextField rechercheDPtext = lp.getRecherche();
 //    /**
 //     * Creates new form Fen
 //     */JFrame frame = this;
@@ -89,6 +92,7 @@ private JButton rechercheDP = lp.getButtonR();
         rechercheDP.addActionListener(new BoutonListenerRDP(lp,this,sih));
         ficheDeSoin.addActionListener(new BoutonListenerFicheDeSoins(cdpdd,jfdsmm,this));
         facture.addActionListener(new BoutonListenerFacture(this,jcDPf,jfdsmm));
+        rechercheDPtext.addKeyListener(new RechercheEntrerListener(lp,this,sih));
         //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
         //Définition de l'écouteur à l'aide d'une classe interne anonyme
         frame.addWindowListener(new WindowAdapter() {
