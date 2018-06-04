@@ -7,7 +7,7 @@ package princetonPlainsboro;
 *de caracteres "forfait pediatrique" et un attribut 'cout' ayant la valeur 5.0
 * @author Aurélien, AnneLise, Manon
 */
-enum Code {
+public enum Code {
     // valeurs de l'ï¿½num :
     C("Consultation au cabinet par le médecin généraliste, le chirurgien-dentiste omnipraticien ou la sage-femme",23.0),
     CS("Consultation au cabinet par le médecin spécialiste qualifié, le médecin spécialiste qualifié en médecine générale ou le chirurgien-dentiste spécialiste qualifié",26.0),
@@ -48,6 +48,10 @@ enum Code {
         this.libelle = libelle;
         this.cout = cout;
         }
+
+    public String getLibelle() {
+        return libelle;
+    }
     
     /**Méthode qui renvoit le code sous forme de chaîne de caractère
      * 

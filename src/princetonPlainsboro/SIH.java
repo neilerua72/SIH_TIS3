@@ -170,6 +170,7 @@ public class SIH {
         while(i<this.ldp.size()&&rep==false){
             if(this.ldp.get(i).getPatient().equals(p)){
                  dp= this.ldp.get(i);
+                 System.out.println("TESTTESTTEST");
             rep =true;}
             i++;
          

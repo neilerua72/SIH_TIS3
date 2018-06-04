@@ -141,6 +141,8 @@ public class LectureXML {
                         }
                          if (parser.getLocalName().equals("numDeSS")) {
                              numDeSSstring=donneesCourantes;
+                             numDeSSstring =numDeSSstring.trim();
+                             System.out.println(numDeSSstring);
 //                            for(int i=0;i<tab.length;i++ ){
 //                                char c1 = numDeSSstring.charAt(i);
 //                                String c = Character.toString(c1);;
@@ -150,7 +152,8 @@ public class LectureXML {
 //                           }
                                
                             numDeSScourant=new NumDeSS(numDeSSstring);
-                            System.out.println(numDeSScourant);
+                           
+                            //System.out.println(numDeSScourant);
                             //numDeSScourant.setNum(tab);
                         }
                         if (parser.getLocalName().equals("specialite")) {

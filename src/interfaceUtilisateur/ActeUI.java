@@ -10,10 +10,38 @@ package interfaceUtilisateur;
  *
  * @author Aurélien
  */
-public class Acte extends javax.swing.JPanel {
+public class ActeUI extends javax.swing.JPanel {
+
+    /**
+     * @return the Code
+     */
+    public javax.swing.JLabel getCode() {
+        return Code;
+    }
+
+    /**
+     * @return the Coef
+     */
+    public javax.swing.JLabel getCoef() {
+        return Coef;
+    }
+
+    /**
+     * @return the Nom
+     */
+    public javax.swing.JLabel getNom() {
+        return Nom;
+    }
+
+    /**
+     * @return the type
+     */
+    public javax.swing.JLabel getType() {
+        return type;
+    }
 
     /** Creates new form Acte */
-    public Acte() {
+    public ActeUI() {
         initComponents();
     }
 
@@ -26,26 +54,22 @@ public class Acte extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        Nom = new javax.swing.JLabel();
+        type = new javax.swing.JLabel();
+        Code = new javax.swing.JLabel();
+        Coef = new javax.swing.JLabel();
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
-        jLabel9.setText("Consultation au cabinet :");
+        Nom.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
+        Nom.setText("Consultation au cabinet :");
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel10.setText("Médecin : Bono Jean");
+        type.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        type.setText("Type : Diagnostique");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel12.setText("Type : Diagnostique");
+        Code.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Code.setText("Code : CS");
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel13.setText("Code : CS");
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel14.setText("Coefficient : 1");
+        Coef.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Coef.setText("Coefficient : 1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -55,40 +79,36 @@ public class Acte extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel9))
+                        .addComponent(Nom))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel14))))
-                .addContainerGap(109, Short.MAX_VALUE))
+                            .addComponent(type)
+                            .addComponent(Code)
+                            .addComponent(Coef))))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel10)
+                .addComponent(Nom)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel12)
+                .addComponent(type)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel13)
+                .addComponent(Code)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel14)
-                .addGap(10, 10, 10))
+                .addComponent(Coef)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel Code;
+    private javax.swing.JLabel Coef;
+    private javax.swing.JLabel Nom;
+    private javax.swing.JLabel type;
     // End of variables declaration//GEN-END:variables
 
 }

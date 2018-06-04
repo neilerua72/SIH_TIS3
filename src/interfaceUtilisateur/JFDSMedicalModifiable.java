@@ -5,6 +5,7 @@
  */
 package interfaceUtilisateur;
 
+import java.awt.FlowLayout;
 import javax.swing.JButton;
 
 /**
@@ -12,6 +13,20 @@ import javax.swing.JButton;
  * @author Manon
  */
 public class JFDSMedicalModifiable extends javax.swing.JPanel {
+
+    /**
+     * @return the PanActes
+     */
+    public javax.swing.JPanel getPanActes() {
+        return PanActes;
+    }
+
+    /**
+     * @return the PanelActes
+     */
+    public javax.swing.JScrollPane getPanelActes() {
+        return PanelActes;
+    }
 
     /**
      * Creates new form JFDSMedicalModifiable
@@ -59,7 +74,8 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
         jLabel27 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        PanelActes = new javax.swing.JScrollPane();
+        PanActes = new javax.swing.JPanel();
 
         jPanel2.setBackground(java.awt.Color.lightGray);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -272,7 +288,22 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
 
         jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/princeton_plainsboro_by_nadesiko-ConvertImage.jpg"))); // NOI18N
         jPanel2.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, -10, -1, 180));
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 760, 550));
+
+        javax.swing.GroupLayout PanActesLayout = new javax.swing.GroupLayout(PanActes);
+        PanActes.setLayout(PanActesLayout);
+        PanActesLayout.setHorizontalGroup(
+            PanActesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 756, Short.MAX_VALUE)
+        );
+        PanActesLayout.setVerticalGroup(
+            PanActesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 546, Short.MAX_VALUE)
+        );
+
+        PanelActes.setViewportView(PanActes);
+        PanActes.setLayout(new FlowLayout());
+
+        jPanel2.add(PanelActes, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 760, 550));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -314,6 +345,8 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PanActes;
+    private javax.swing.JScrollPane PanelActes;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -344,6 +377,5 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

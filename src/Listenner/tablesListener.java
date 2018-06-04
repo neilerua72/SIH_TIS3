@@ -19,7 +19,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.event.TreeSelectionListener;
+import javax.swing.table.DefaultTableModel;
 import princetonPlainsboro.DossierPatient;
+import princetonPlainsboro.FicheDeSoins;
+import princetonPlainsboro.Medecin;
+import princetonPlainsboro.Patient;
 import princetonPlainsboro.SIH;
 
 /**
@@ -88,7 +92,34 @@ public class tablesListener implements MouseListener{
             dossierPatient.getNumDeSS().setText(dp.getPatient().getNumDeSS().toString());
             dossierPatient.getDate().setText(dp.getPatient().getDateDeNaissance().toString());
             dossierPatient.getAdresse().setText(dp.getPatient().getAdresse());
+            
+            String[][] tab;
+            tab = new String[dp.getLfds().size()][4];
+            for (int i = 0; i < dp.getLfds().size(); i++) {
+                Medecin m = dp.getLfds().get(i).getMedecin();
+                FicheDeSoins f = dp.getLfds().get(i);
+                tab[i][0] = m.getNom();
+                tab[i][1] = m.getPrenom();
+                tab[i][2] = f.getDate().toString();
+                tab[i][3]=""+f.coutTotal();
+            }
+            DefaultTableModel model = new DefaultTableModel(
+                    tab,
+                    new String[]{
+                        "Nom", "Prénom", "Date","Coût"
+                    });
+            dossierPatient.getjTable1().setModel(model);
+            dossierPatient.getjScrollPane3().setViewportView(dossierPatient.getjTable1());
+            
+            
+            
+            
+            
             dossierPatient.setVisible(true);
+            
+            
+            
+            
             jframe.repaint();
             jframe.revalidate();
            

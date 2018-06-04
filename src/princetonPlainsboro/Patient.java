@@ -68,13 +68,9 @@ public class Patient {
         return s;
         }
     
-    public boolean equals(Object o) {
-        if (o instanceof Patient) {
-            Patient p = (Patient)o;
+    public boolean equals(Patient p) {
+        
             return this.numDeSS.equals(p.getNumDeSS());
-            }
-        else
-            return false;
-        }    
+         
     }
-
+}

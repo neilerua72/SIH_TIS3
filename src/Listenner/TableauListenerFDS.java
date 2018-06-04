@@ -5,6 +5,7 @@
  */
 package Listenner;
 
+import interfaceUtilisateur.ActeUI;
 import interfaceUtilisateur.Barre;
 import interfaceUtilisateur.Fen;
 import interfaceUtilisateur.JConsulterDP_dans_le_dossier;
@@ -13,7 +14,10 @@ import interfaceUtilisateur.JListeDePatients;
 import interfaceUtilisateur.Jmenu;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import princetonPlainsboro.Acte;
 import princetonPlainsboro.DossierPatient;
 import princetonPlainsboro.FicheDeSoins;
 import princetonPlainsboro.NumDeSS;
@@ -50,16 +54,29 @@ public class TableauListenerFDS implements MouseListener{
             jframe.toutFalse();
             jframe.add(jfdsmm);
             
-           // NumDeSS numDeSS = new NumDeSS(jcdpsld.getNumDeSS().getText());
-           // Patient p = new Patient(numDeSS);
-           // DossierPatient dp = sih.retrouverDossPat(p);
+           NumDeSS numDeSS = new NumDeSS(jcdpsld.getNumDeSS().getText());
+           
+           Patient p = new Patient(numDeSS);
+           DossierPatient dp = sih.retrouverDossPat(p);
             
+            JScrollPane jsp = new JScrollPane();
+            jsp=this.jfdsmm.getPanelActes();
             
-//            FicheDeSoins fds = dp.getLfds().get(NumLigne);
-//            dossierPatient.getNomPrenom().setText(dp.getPatient().getNom()+ " "+ dp.getPatient().getPrenom());
-//            dossierPatient.getNumDeSS().setText(dp.getPatient().getNumDeSS().toString());
-//            dossierPatient.getDate().setText(dp.getPatient().getDateDeNaissance().toString());
-//            dossierPatient.getAdresse().setText(dp.getPatient().getAdresse());
+           FicheDeSoins fds = dp.getLfds().get(0);
+          
+           ArrayList<Acte> la = new ArrayList<Acte>(fds.getActes());
+           
+          
+           for(int i=0;i<la.size();i++){
+               ActeUI aui= new ActeUI();
+               System.out.println(la.size());
+               Acte a = la.get(i);
+               aui.getCode().setText("Code : "+a.getCode().recupCode());
+               aui.getCoef().setText("Coefficient : "+ a.getCoefS());
+               aui.getNom().setText(a.getCode().getLibelle());
+               this.jfdsmm.getPanActes().add(aui);
+               aui.setVisible(true);
+           }
      jfdsmm.setVisible(true);
             jframe.repaint();
             jframe.revalidate();

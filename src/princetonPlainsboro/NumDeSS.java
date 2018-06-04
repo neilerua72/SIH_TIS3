@@ -29,6 +29,10 @@ public class NumDeSS {
         //}
         
     }
+
+    public String getNum() {
+        return num;
+    }
     
 
     /**
@@ -44,7 +48,7 @@ public class NumDeSS {
         return num.charAt(0)+" "+num.substring(1,3)+" "+num.substring(3,5)+" "+ num.substring(5,8)+" "+num.substring(8,11)+" "+num.substring(11,13);
     }
     public boolean equals(NumDeSS n){
-        return n.equals(num);
+        return n.getNum().equals(this.num);
     }
     public boolean verifNumS(Date d){
         int ann = d.getAnnee()%100;
@@ -60,4 +64,5 @@ public class NumDeSS {
         }
         return rep;
     }
+  
 }

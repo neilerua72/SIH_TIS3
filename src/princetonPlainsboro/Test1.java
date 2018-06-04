@@ -9,10 +9,22 @@ class Test1 {
     public static void main(String[] args) {
         Connexion con = new Connexion("donneesperso.xml"); 
        // if(con.VerificationConnexion(new Identification(id,mdp))){
-        LectureXML test = new LectureXML("dossiers.xml");
+        LectureXML test = new LectureXML("donnesApresSIH.xml");
         SIH dm = test.getDossier();
         System.out.println("RECHERCHE");
         printArray(dm.rechercheDP("Des"));
+        Patient p1=dm.rechercheDP("Des").get(0).getPatient();
+        Patient p = new Patient(new NumDeSS("1254789654789"));
+        Patient p2 = new Patient(new NumDeSS("1254789654789"));
+        System.out.println(p.getNumDeSS());
+        System.out.println(p1.getNumDeSS());
+        NumDeSS ns = new NumDeSS("      214");
+        System.out.println(ns);
+        System.out.println(p1.equals(p));
+        System.out.println("RETROUVER DP");
+        System.out.println(dm.retrouverDossPat(p));
+        String s = "       56565dfsgd";
+      
      
     }
     public static void printArray(ArrayList<DossierPatient> a){
@@ -20,4 +32,5 @@ class Test1 {
             System.out.println(a.get(i).getPatient());
         }
     }
+    
 }
