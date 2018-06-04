@@ -247,6 +247,10 @@ public class JConsulterDP_dans_le_dossier extends javax.swing.JPanel {
         return jButton3;
     }
 
+    public JButton getjButton5() {
+        return jButton5;
+    }
+
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed

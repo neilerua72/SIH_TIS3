@@ -534,6 +534,10 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
         return jButton3;
     }
 
+    public JButton getjButton4() {
+        return jButton4;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;

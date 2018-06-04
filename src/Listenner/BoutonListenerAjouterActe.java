@@ -6,6 +6,7 @@
 package Listenner;
 
 import interfaceUtilisateur.Fen;
+import interfaceUtilisateur.JAjouterActe;
 import interfaceUtilisateur.JConsulterDP_dans_le_dossier;
 import interfaceUtilisateur.JCreerFDS;
 import interfaceUtilisateur.JFDSMedicalModifiable;
@@ -16,26 +17,26 @@ import java.awt.event.ActionListener;
  *
  * @author annelise
  */
-public class BoutonListenerNouvelleFDS implements ActionListener {
-JConsulterDP_dans_le_dossier jcdpdld = new JConsulterDP_dans_le_dossier ();
-    JCreerFDS jcFDS= new JCreerFDS ();
+public class BoutonListenerAjouterActe implements ActionListener{
+    JFDSMedicalModifiable jfdsmm = new JFDSMedicalModifiable ();
+    JAjouterActe jaa= new   JAjouterActe ();
+Fen jframe;
 
-    public BoutonListenerNouvelleFDS(Fen jframe,JConsulterDP_dans_le_dossier jcdpdld,JCreerFDS jcFDS) {
+    public BoutonListenerAjouterActe(Fen jframe,JFDSMedicalModifiable jfdsmm, JAjouterActe jaa) {
         this.jframe = jframe;
-        this.jcFDS = jcFDS;
-        this.jcdpdld= jcdpdld;
-        
+        this.jaa=  jaa;
+        this.jfdsmm = jfdsmm;
     }
-     Fen jframe;
+  
      
      
      
     @Override
     public void actionPerformed(ActionEvent ae) {
          jframe.toutFalse();
-        jframe.add(jcFDS);
+        jframe.add(jaa);
         
-        jcFDS.setVisible(true);
+        jaa.setVisible(true);
    jframe.revalidate();
     jframe.repaint();
         

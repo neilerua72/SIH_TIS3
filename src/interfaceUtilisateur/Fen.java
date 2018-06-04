@@ -5,11 +5,13 @@
  */
 package interfaceUtilisateur;
 
+import Listenner.BoutonListenerAjouterActe;
 import Listenner.BoutonListenerGen;
 import Listenner.BoutonListenerJTreeListe;
 import Listenner.BoutonListenerConnexion;
 import Listenner.BoutonListenerFacture;
 import Listenner.BoutonListenerFicheDeSoins;
+import Listenner.BoutonListenerNouvelleFDS;
 import Listenner.BoutonListenerRDP;
 import Listenner.BoutonListenerValiderDP;
 import Listenner.ConnexionEntrerListener;
@@ -51,8 +53,8 @@ public class Fen extends javax.swing.JFrame {
     JConsulterFDS_dans_ongletFDS jfdsdofds = new JConsulterFDS_dans_ongletFDS();
     JFDSMedicalModifiable jfdsmm = new JFDSMedicalModifiable();
     JConsulterDP_facture jcDPf = new JConsulterDP_facture ();
-    
-    
+    JCreerFDS jcFDS= new JCreerFDS ();
+      JAjouterActe jaa= new JAjouterActe ();
   
 
     //Variable importante : 
@@ -73,6 +75,9 @@ public class Fen extends javax.swing.JFrame {
 private JButton facture = jfdsmm.getjButton3();
 private JButton rechercheDP = lp.getButtonR();
 private JTextField rechercheDPtext = lp.getRecherche();
+private JButton creerFDS = cdpdd.getjButton5();
+  private JButton ajouteracte =jfdsmm.getjButton4();
+
 //    /**
 //     * Creates new form Fen
 //     */JFrame frame = this;
@@ -93,6 +98,8 @@ private JTextField rechercheDPtext = lp.getRecherche();
         ficheDeSoin.addActionListener(new BoutonListenerFicheDeSoins(cdpdd,jfdsmm,this));
         facture.addActionListener(new BoutonListenerFacture(this,jcDPf,jfdsmm));
         rechercheDPtext.addKeyListener(new RechercheEntrerListener(lp,this,sih));
+        creerFDS.addActionListener(new BoutonListenerNouvelleFDS(this,cdpdd,jcFDS));
+        ajouteracte.addActionListener(new BoutonListenerAjouterActe(this,jfdsmm,jaa));
         //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
         //Définition de l'écouteur à l'aide d'une classe interne anonyme
         frame.addWindowListener(new WindowAdapter() {
@@ -170,8 +177,8 @@ private JTextField rechercheDPtext = lp.getRecherche();
         jfdsdofds.setVisible(false);
         jfdsmm.setVisible(false);
         jcDPf.setVisible(false);
-   
-       
+   jcFDS.setVisible(false);
+       jaa.setVisible(false);
     }
 
     /**

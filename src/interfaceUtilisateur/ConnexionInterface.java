@@ -49,7 +49,7 @@ public class ConnexionInterface extends javax.swing.JPanel {
         setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        jLabel1.setText("Nom d'utilisateur :");
+        jLabel1.setText("Identifiant :");
         add(jLabel1);
         jLabel1.setBounds(20, 210, 220, 40);
 
