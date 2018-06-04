@@ -41,6 +41,8 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        cd = new javax.swing.ButtonGroup();
+        Tri = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -49,23 +51,37 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jTextField1 = new javax.swing.JTextField();
-        jCheckBox4 = new javax.swing.JCheckBox();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jFormattedTextField4 = new javax.swing.JFormattedTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jFormattedTextField5 = new javax.swing.JFormattedTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jFormattedTextField6 = new javax.swing.JFormattedTextField();
+        jFormattedTextField7 = new javax.swing.JFormattedTextField();
+        jFormattedTextField8 = new javax.swing.JFormattedTextField();
+        jFormattedTextField9 = new javax.swing.JFormattedTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setLayout(new java.awt.BorderLayout());
@@ -77,7 +93,7 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(471, Short.MAX_VALUE)
+                .addContainerGap(550, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addGap(619, 619, 619))
         );
@@ -108,50 +124,11 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
 
         jPanel3.setBackground(java.awt.Color.lightGray);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("Coût :");
-
-        jCheckBox1.setBackground(java.awt.Color.lightGray);
-        jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jCheckBox1.setText("croissant");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox2.setBackground(java.awt.Color.lightGray);
-        jCheckBox2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jCheckBox2.setText("décroissant");
-
-        jCheckBox3.setBackground(java.awt.Color.lightGray);
-        jCheckBox3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jCheckBox3.setText("Date");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
-            }
-        });
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox4.setBackground(java.awt.Color.lightGray);
-        jCheckBox4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jCheckBox4.setText("Intervalle de temps");
-
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Entre le:");
 
-        jTextField2.setText("jj/mm/aaaa");
-
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Et le:");
-
-        jTextField3.setText("jj/mm/aaaa");
 
         jButton5.setText("Valider");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -160,59 +137,208 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
             }
         });
 
+        jRadioButton1.setBackground(java.awt.Color.lightGray);
+        Tri.add(jRadioButton1);
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jRadioButton1.setText("Date");
+
+        jRadioButton3.setBackground(java.awt.Color.lightGray);
+        cd.add(jRadioButton3);
+        jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButton3.setText("Décroissant");
+
+        jRadioButton2.setBackground(java.awt.Color.lightGray);
+        cd.add(jRadioButton2);
+        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButton2.setText("Croissant");
+
+        jRadioButton4.setBackground(java.awt.Color.lightGray);
+        Tri.add(jRadioButton4);
+        jRadioButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jRadioButton4.setText("Coût");
+
+        jLabel4.setText("Le :");
+
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("/");
+
+        jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jFormattedTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField2ActionPerformed(evt);
+            }
+        });
+
+        jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jFormattedTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField3ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("/");
+
+        jRadioButton5.setBackground(java.awt.Color.lightGray);
+        Tri.add(jRadioButton5);
+        jRadioButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jRadioButton5.setText("Intervalle de temps");
+
+        jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jFormattedTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField4ActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setText("/");
+
+        jFormattedTextField5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jFormattedTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField5ActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setText("/");
+
+        jFormattedTextField6.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jFormattedTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField6ActionPerformed(evt);
+            }
+        });
+
+        jFormattedTextField7.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jFormattedTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField7ActionPerformed(evt);
+            }
+        });
+
+        jFormattedTextField8.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jFormattedTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField8ActionPerformed(evt);
+            }
+        });
+
+        jFormattedTextField9.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jFormattedTextField9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField9ActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("/");
+
+        jLabel15.setText("/");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox1)))
-                    .addComponent(jCheckBox3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox4)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 94, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addGap(29, 29, 29))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jFormattedTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jFormattedTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jFormattedTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(168, 168, 168))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jFormattedTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jFormattedTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton5)
+                    .addComponent(jRadioButton1)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jFormattedTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jRadioButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton2)
+                            .addComponent(jRadioButton3))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jCheckBox1))
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton4))
+                .addGap(3, 3, 3)
+                .addComponent(jRadioButton3)
+                .addGap(4, 4, 4)
+                .addComponent(jRadioButton1)
+                .addGap(4, 4, 4)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(jFormattedTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jRadioButton5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                    .addComponent(jFormattedTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jButton5))
         );
 
@@ -244,6 +370,9 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setText("Trier par :");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setText("Coût :");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -258,20 +387,26 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(100, 100, 100)
                         .addComponent(jLabel9)
-                        .addGap(0, 139, Short.MAX_VALUE)))
+                        .addGap(0, 117, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)
+                        .addGap(381, 381, 381)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel2))))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel2))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,11 +416,11 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addGap(0, 50, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(0, 0, 0)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,6 +436,11 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(324, 324, 324))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jPanel2.add(jPanel5, java.awt.BorderLayout.PAGE_START);
@@ -316,21 +456,13 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1067, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
@@ -340,22 +472,68 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
+
+    private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField2ActionPerformed
+
+    private void jFormattedTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField3ActionPerformed
+
+    private void jFormattedTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField4ActionPerformed
+
+    private void jFormattedTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField5ActionPerformed
+
+    private void jFormattedTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField6ActionPerformed
+
+    private void jFormattedTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField7ActionPerformed
+
+    private void jFormattedTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField8ActionPerformed
+
+    private void jFormattedTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField9ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup Tri;
+    private javax.swing.ButtonGroup cd;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField jFormattedTextField2;
+    private javax.swing.JFormattedTextField jFormattedTextField3;
+    private javax.swing.JFormattedTextField jFormattedTextField4;
+    private javax.swing.JFormattedTextField jFormattedTextField5;
+    private javax.swing.JFormattedTextField jFormattedTextField6;
+    private javax.swing.JFormattedTextField jFormattedTextField7;
+    private javax.swing.JFormattedTextField jFormattedTextField8;
+    private javax.swing.JFormattedTextField jFormattedTextField9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -365,11 +543,13 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

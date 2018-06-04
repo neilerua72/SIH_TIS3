@@ -79,7 +79,8 @@ public class tablesListener implements MouseListener{
     public void mouseClicked(MouseEvent me) {
        int NumLigne;
     NumLigne = table.getSelectedRow();
-        System.out.println(NumLigne);
+       
+    
             jframe.toutFalse();
             jframe.add(dossierPatient);
             DossierPatient dp = sih.getLdp().get(NumLigne);

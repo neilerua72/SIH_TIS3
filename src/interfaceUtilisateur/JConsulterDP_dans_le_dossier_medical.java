@@ -42,7 +42,7 @@ public class JConsulterDP_dans_le_dossier_medical extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(java.awt.Color.lightGray);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -55,7 +55,7 @@ public class JConsulterDP_dans_le_dossier_medical extends javax.swing.JPanel {
             .addGap(0, 29, Short.MAX_VALUE)
         );
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setBackground(java.awt.Color.lightGray);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/print-small.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +134,7 @@ public class JConsulterDP_dans_le_dossier_medical extends javax.swing.JPanel {
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
