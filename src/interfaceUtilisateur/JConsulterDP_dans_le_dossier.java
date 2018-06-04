@@ -113,7 +113,7 @@ public class JConsulterDP_dans_le_dossier extends javax.swing.JPanel {
         });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel11.setText("Ajouter un Acte ");
+        jLabel11.setText("Nouvelle Fiche de soin");
 
         jPanel1.setBackground(java.awt.Color.lightGray);
 
@@ -144,21 +144,18 @@ public class JConsulterDP_dans_le_dossier extends javax.swing.JPanel {
                 .addComponent(NomPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 100, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
+                .addComponent(date)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(numDeSS)
+                .addGap(139, 139, 139))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adresse)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(date)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(numDeSS)
-                        .addGap(139, 139, 139))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(adresse)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(133, 133, 133)
-                                .addComponent(jLabel9)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(jLabel8)
+                        .addGap(133, 133, 133)
+                        .addComponent(jLabel9)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
