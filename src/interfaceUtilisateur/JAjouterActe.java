@@ -5,6 +5,8 @@
  */
 package interfaceUtilisateur;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Manon
@@ -195,6 +197,14 @@ public class JAjouterActe extends javax.swing.JPanel {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

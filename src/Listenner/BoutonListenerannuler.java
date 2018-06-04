@@ -5,17 +5,10 @@
  */
 package interfaceUtilisateur;
 
-import java.awt.event.ActionEvent;
-
 /**
  *
- * @author Aurélien
+ * @author teuliera
  */
-public class BoutonListener {
+public class BoutonListenerannuler {
     
-public void actionPerformed (ActionEvent e){
-
 }
-}
-
-

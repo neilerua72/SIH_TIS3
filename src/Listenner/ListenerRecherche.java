@@ -8,7 +8,7 @@ package Listenner;
 import interfaceUtilisateur.Barre;
 import interfaceUtilisateur.ConnexionInterface;
 import interfaceUtilisateur.Fen;
-import interfaceUtilisateur.JConsulterDP_liste_patients;
+
 import interfaceUtilisateur.JListeDePatients;
 import interfaceUtilisateur.Jmenu;
 import interfaceUtilisateur.State;
