@@ -5,6 +5,8 @@
  */
 package interfaceUtilisateur;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Manon
@@ -279,6 +281,10 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    public JButton getjButton3() {
+        return jButton3;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

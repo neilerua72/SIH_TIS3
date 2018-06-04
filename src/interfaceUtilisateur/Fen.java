@@ -8,6 +8,7 @@ package interfaceUtilisateur;
 import Listenner.BoutonListenerGen;
 import Listenner.BoutonListenerJTreeListe;
 import Listenner.BoutonListenerConnexion;
+import Listenner.BoutonListenerFacture;
 import Listenner.BoutonListenerFicheDeSoins;
 import Listenner.BoutonListenerValiderDP;
 import Listenner.ConnexionEntrerListener;
@@ -46,6 +47,7 @@ public class Fen extends javax.swing.JFrame {
     Accueil a = new Accueil();
     JConsulterFDS_dans_ongletFDS jfdsdofds = new JConsulterFDS_dans_ongletFDS();
     JFDSMedicalModifiable jfdsmm = new JFDSMedicalModifiable();
+    JConsulterDP_facture jcDPf = new JConsulterDP_facture ();
     
     
   
@@ -65,7 +67,7 @@ public class Fen extends javax.swing.JFrame {
     private JTable jlisteP = lp.getjTable1();
     private JTree jtreeliste = jm.getjTree2();
     private JButton ficheDeSoin = cdpdd.getjButton3();
-
+private JButton facture = jfdsmm.getjButton3();
 //    /**
 //     * Creates new form Fen
 //     */JFrame frame = this;
@@ -82,8 +84,9 @@ public class Fen extends javax.swing.JFrame {
         validerDP.addActionListener(new BoutonListenerValiderDP(jcdp, this, sih));
         jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp, jcdp, jcp, lm, jcm, jcs, a, jm, this, jfdsdofds, sih));
         jlisteP.addMouseListener(new tablesListener(lp, this, jlisteP, cdpdd, b, jm,sih));
-//        jlisteP.addMouseListener(listePatient,this,jlisteP,dossierPatient);
+
         ficheDeSoin.addActionListener(new BoutonListenerFicheDeSoins(cdpdd,jfdsmm,this));
+        facture.addActionListener(new BoutonListenerFacture(this,jcDPf,jfdsmm));
         //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
         //Définition de l'écouteur à l'aide d'une classe interne anonyme
         frame.addWindowListener(new WindowAdapter() {
@@ -160,6 +163,7 @@ public class Fen extends javax.swing.JFrame {
 
         jfdsdofds.setVisible(false);
         jfdsmm.setVisible(false);
+        jcDPf.setVisible(false);
    
        
     }
