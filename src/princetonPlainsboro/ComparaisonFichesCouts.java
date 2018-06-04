@@ -4,7 +4,7 @@ package princetonPlainsboro;
  * @author Aurélien, AnneLise, Manon
  */
 
-class ComparaisonFichesCouts implements ComparaisonFiches {
+public class ComparaisonFichesCouts implements ComparaisonFiches {
     
     
     /**Méthode qui compare 2 fiches en fonction du coût

@@ -224,7 +224,26 @@ public class SIH {
              
          
      }  return result;
-}}
+     
+     
+     
+}
+
+public ArrayList<FicheDeSoins> lfdsDate(Date d){
+         ArrayList<FicheDeSoins> result= new ArrayList<FicheDeSoins>();
+         for(int i=0;i<ldp.size();i++){
+             DossierPatient dp=ldp.get(i);
+            for(int j=0;j<dp.getLfds().size();j++){
+                if(dp.getLfds().get(j).getDate().equals(d))
+                      result.add(dp.getLfds().get(j));
+                    }
+         }
+return result;  
+
+
+
+}
+}
     
 
 

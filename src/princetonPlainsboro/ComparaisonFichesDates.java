@@ -3,7 +3,7 @@ package princetonPlainsboro;
  * Classe qui compare 2 fiches de soins en fonction de la date
  * @author Aurélien, AnneLise, Manon
  */
-class ComparaisonFichesDates implements ComparaisonFiches {
+public class ComparaisonFichesDates implements ComparaisonFiches {
      /**Méthode qui compare 2 fiches en fonction de la date
      * 
      * @param fiche1
