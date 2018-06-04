@@ -1,33 +1,49 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package princetonPlainsboro;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- *
- * @author Aurélien
+ * Méthode qui modélise un dossier Patient
+ * @author Aurélien, AnneLise, Manon
  */
 public class DossierPatient {
 
     private Patient patient;
     private ArrayList<FicheDeSoins> lfds;
+    /**
+     * Constructeur du DossierPatient 
+     * @param patient 
+     *                  Un objet de type Patient
+     * @param ldfs 
+     *                  Une liste de fiche de soin
+     */
     public DossierPatient(Patient patient, ArrayList<FicheDeSoins> ldfs) {
         this.patient = patient;
         lfds = new ArrayList<FicheDeSoins>(ldfs);
     }
+    /**Constructeur du DossierPatient
+     * 
+     * @param patient 
+     *             Un objet de type Patient
+     */
     public DossierPatient(Patient patient) {
         this.patient = patient;
         lfds = new ArrayList<FicheDeSoins>();
     }
+    /**
+     * Constructeur du DossierPatient
+     */
     public DossierPatient(){
         lfds = new ArrayList<FicheDeSoins>();
     }
 
+    
+    /**
+     * Méthode qui calcule le coût du patient
+     * @return coût du patient
+     */
     public double coutPatient() {
         double cout = 0;
         for (Iterator<FicheDeSoins> it = this.lfds.iterator(); it.hasNext(); /*	rien	*/) {
@@ -36,12 +52,21 @@ public class DossierPatient {
         }
         return cout;
     }
-
+    
+    /**
+     * Méthode qui ajoute une fiche de soins au dossier patient 
+     * @param fiche de soins 
+     */
     public void ajouterFiche(FicheDeSoins fiche) {
         this.lfds.add(fiche);
 
     }
-
+    
+    
+    /**
+     * Méthode qui renvoie le dossier patient sous forme de chaîne de caractère
+     * @return une chaîne de caractère
+     */
     public String toString() {
         String s="\n **************************** \n";
         s+="Dossier Patient : ";
@@ -58,29 +83,29 @@ public class DossierPatient {
 
     }
 
-    /**
-     * @return the lfds
+    /** Méthode qui retourne la liste de fiche de soins du patient
+     * @return liste de fiche de soins
      */
     public ArrayList<FicheDeSoins> getLfds() {
         return lfds;
     }
 
-    /**
-     * @return the patient
+    /**Méthode qui retourne un patient
+     * @return le patient
      */
     public Patient getPatient() {
         return patient;
     }
 
-    /**
-     * @param patient the patient to set
+    /**Méthode qui défini le patient
+     * @param le patient à finir
      */
     public void setPatient(Patient patient) {
         this.patient = patient;
     }
 
-    /**
-     * @param lfds the lfds to set
+    /**Méthode qui défini la liste de fiches de soins 
+     * @param la liste de fiches de soins à définir
      */
     public void setLfds(ArrayList<FicheDeSoins> lfds) {
         this.lfds = lfds;

@@ -1,23 +1,28 @@
 package princetonPlainsboro;
+/**
+ * Méthode qui modélise une date 
+ * @author Aurélien, AnneLise, Manon
+ */
 
 public class Date implements Comparable {
 
-    /**
-     * @return the jour
+    /**Méthode qui retourne le jour de la date
+     * 
+     * @return le jour
      */
     public int getJour() {
         return jour;
     }
 
-    /**
-     * @return the mois
+    /**Méthode qui retourne le mois de la date
+     * @return le mois
      */
     public int getMois() {
         return mois;
     }
 
-    /**
-     * @return the annee
+    /**Méthode qui retourne l'année de la date
+     * @return l'annee
      */
     public int getAnnee() {
         return annee;
@@ -31,10 +36,19 @@ public class Date implements Comparable {
         this.mois=mois;
         this.annee=annee;
     }
+    
+    /**Méthode qui retourne la date sous forme de chaîne de caractère
+     * 
+     * @return la date sous chaîne de caractère 
+     */
     public String toString() {
         return this.jour + "/" + this.mois + "/" + this.annee;
         }
-    
+    /**Méthode qui verifie que l'objet est égale à cette instance
+     * 
+     * @param o un objet 
+     * @return un boolean en fonction de l'égalité 
+     */
     public boolean equals(Object o) {
         if (o instanceof Date) {
             Date d = (Date)o;
@@ -45,6 +59,12 @@ public class Date implements Comparable {
         }
     
     // precondition : 'o' est une instance de 'Date' :
+    
+    /** Méthode qui retourne la différence entre 2 dates
+     * 
+     * @param o un Objet de type date 
+     * @return la différence entre les 2 dates
+     */
     public int compareTo(Object o) {
         Date d = (Date)o;
         if (this.annee != d.getAnnee())
@@ -57,9 +77,20 @@ public class Date implements Comparable {
            return this.jour - d.getJour();
         
     }
+    
+    /**Méthode qui retourne la date de manière à l'inscrire grâce a InscriptionXML et pouvoir la relire avec LectureXML
+     * 
+     * @return une chaîne de caractère pour l'écriture XML 
+     */
     public String toStringS() {
         return this.annee + "-" + this.mois + "-" + this.jour;
         }
+    
+    
+    /**Méthode qui vérifie que la date est correct
+     * 
+     * @return un boolean en fonction de si la date est correct
+     */
     public boolean dateCorrect(){
         boolean rep=false;
         if((annee%4==0&&annee%100!=0)||annee%400==0){

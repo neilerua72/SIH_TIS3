@@ -59,8 +59,15 @@ public abstract class ListenerConexion {
                 jframe.repaint();
             } else if (con.VerificationConnexion(identif) && identif.Type() == 2) {
                jframe.setState(State.ADMIN);
-                jframe.setContentPane(m);
+                jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                jframe.setLayout(new BorderLayout());
+                b.getjLabel2().setText(identif.getType());
+                b.getjLabel2().setIcon(new javax.swing.ImageIcon(getClass().getResource(identif.getPhoto())));
+                jframe.add(m,BorderLayout.WEST);
+                jframe.add(jp,BorderLayout.CENTER);
+                jframe.add(b,BorderLayout.NORTH);
                 m.setVisible(true);
+                jp.setVisible(true);         
                 c.setVisible(false);
                 jframe.repaint();
 
