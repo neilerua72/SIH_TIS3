@@ -213,14 +213,18 @@ public class SIH {
      
      public ArrayList<DossierPatient> rechercheDP(String r){
          ArrayList<DossierPatient> result = new ArrayList<DossierPatient>();
+         
          for(int i=0;i<this.ldp.size();i++){
              DossierPatient dp = this.ldp.get(i);
-             if(r.equals(dp.getPatient().getNom().substring(0, r.length()))){
+             if(r.length()<=dp.getPatient().getNom().toString().length()&&r.equals(dp.getPatient().getNom().substring(0, r.length()))){
                  result.add(dp);
              }
-         }
-         return result;
-     }
+          
+     
+             
+         
+     }  return result;
+}}
     
-}
+
 

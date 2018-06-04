@@ -153,6 +153,11 @@ public class JListeDePatients extends javax.swing.JPanel {
         );
 
         recherche.setText("Rechercher par nom");
+        recherche.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rechercheMouseClicked(evt);
+            }
+        });
         recherche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rechercheActionPerformed(evt);
@@ -241,6 +246,11 @@ public class JListeDePatients extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void rechercheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rechercheMouseClicked
+        if(this.recherche.getText().equals("Rechercher par nom"))
+        this.recherche.setText("");
+    }//GEN-LAST:event_rechercheMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
