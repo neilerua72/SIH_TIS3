@@ -35,7 +35,7 @@ public abstract class ListenerRecherche {
     public ListenerRecherche(JListeDePatients lp,Fen jframe, SIH sih) {
        this.lp=lp;
        this.frame=frame;
-       sih=sih;
+       this.sih=sih;
     }
 
     

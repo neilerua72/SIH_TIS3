@@ -10,6 +10,7 @@ import Listenner.BoutonListenerJTreeListe;
 import Listenner.BoutonListenerConnexion;
 import Listenner.BoutonListenerFacture;
 import Listenner.BoutonListenerFicheDeSoins;
+import Listenner.BoutonListenerRDP;
 import Listenner.BoutonListenerValiderDP;
 import Listenner.ConnexionEntrerListener;
 import Listenner.ListeListenerPatient;
@@ -68,6 +69,7 @@ public class Fen extends javax.swing.JFrame {
     private JTree jtreeliste = jm.getjTree2();
     private JButton ficheDeSoin = cdpdd.getjButton3();
 private JButton facture = jfdsmm.getjButton3();
+private JButton rechercheDP = lp.getButtonR();
 //    /**
 //     * Creates new form Fen
 //     */JFrame frame = this;
@@ -84,7 +86,7 @@ private JButton facture = jfdsmm.getjButton3();
         validerDP.addActionListener(new BoutonListenerValiderDP(jcdp, this, sih));
         jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp, jcdp, jcp, lm, jcm, jcs, a, jm, this, jfdsdofds, sih));
         jlisteP.addMouseListener(new tablesListener(lp, this, jlisteP, cdpdd, b, jm,sih));
-
+        rechercheDP.addActionListener(new BoutonListenerRDP(lp,this,sih));
         ficheDeSoin.addActionListener(new BoutonListenerFicheDeSoins(cdpdd,jfdsmm,this));
         facture.addActionListener(new BoutonListenerFacture(this,jcDPf,jfdsmm));
         //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
