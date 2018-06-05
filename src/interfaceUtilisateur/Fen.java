@@ -15,6 +15,7 @@ import Listenner.BoutonListenerFacture;
 import Listenner.BoutonListenerNouvelleFDS;
 import Listenner.BoutonListenerRCoutPatient;
 import Listenner.BoutonListenerRDP;
+import Listenner.BoutonListenerRetourDpVersLP;
 import Listenner.BoutonListenerRetourFacture;
 import Listenner.BoutonListenerValiderDP;
 import Listenner.BoutonListenerValiderTri;
@@ -96,7 +97,7 @@ public class Fen extends javax.swing.JFrame {
       private JTable jlistemedecin = lm.getjTable1();
 private JTable jlistedppm =  jldppm.getjTable1();
       private JButton Boutonretour = jcDPf.getjButton1();
-
+       private JButton Boutonretourdpverslp = cdpdd.getjButton1();
 //    /**
 //     * Creates new form Fen
 //     */JFrame frame = this;
@@ -126,6 +127,7 @@ private JTable jlistedppm =  jldppm.getjTable1();
         validerTri.addActionListener(new BoutonListenerValiderTri(jfdsdofds,this,sih));
         jlistefiche.addMouseListener(new TableauListenerFDS( cdpdd, this, jlistefiche ,jfdsmm,b, jm, sih));
         rechercheDPtextJCP.addActionListener(new BoutonListenerRCoutPatient(lp,this,sih,jcp));
+        Boutonretourdpverslp.addActionListener(new BoutonListenerRetourDpVersLP(this,lp,cdpdd));
         //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
         //Définition de l'écouteur à l'aide d'une classe interne anonyme
         frame.addWindowListener(new WindowAdapter() {

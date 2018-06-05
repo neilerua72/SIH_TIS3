@@ -35,7 +35,7 @@ public class BoutonListenerValiderAjouterActe implements ActionListener {
      
     public void actionPerformed (ActionEvent e){
         
-        String medecin = aa.getjTextField2().getText();
+        
        
         String coefficiant = aa.getjTextField1().getText().toString();
          int scoefficiant  = Integer.parseInt(coefficiant);
@@ -46,7 +46,7 @@ public class BoutonListenerValiderAjouterActe implements ActionListener {
         Code code = Code.AMO;
          
         // Verification données : 
-         if(medecin.equals("")||coefficiant.equals("")){
+         if(coefficiant.equals("")){
              JOptionPane.showMessageDialog(null, "Une case n'est pas remplit");
          }else{
       
