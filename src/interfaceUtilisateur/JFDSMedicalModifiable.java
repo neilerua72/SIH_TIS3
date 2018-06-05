@@ -87,6 +87,7 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
         jButton5 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
@@ -107,7 +108,7 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
 
         NomPrenom.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
         NomPrenom.setText("Bole Maggie");
-        jPanel2.add(NomPrenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, -1, 29));
+        jPanel2.add(NomPrenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, 29));
 
         DateNais.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         DateNais.setText("JJ/MM/AAAA");
@@ -153,12 +154,15 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel11.setText("Ajouter un Acte ");
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/flcheretour-ConvertImage.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(129, 129, 129)
+                .addComponent(jButton1)
+                .addGap(69, 69, 69)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
@@ -174,7 +178,7 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,7 +193,8 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5)))
+                            .addComponent(jButton5)
+                            .addComponent(jButton1)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(jLabel11))
@@ -360,6 +365,7 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
     private javax.swing.JPanel PanActes;
     private javax.swing.JScrollPane PanelActes;
     private javax.swing.JLabel dateFiche;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

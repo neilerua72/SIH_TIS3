@@ -100,6 +100,7 @@ public class JListeDePatients extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        jTable1.setBackground(java.awt.Color.lightGray);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},

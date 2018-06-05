@@ -66,39 +66,31 @@ public class Accueil extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setLayout(null);
-
-        jPanel1.setBackground(java.awt.Color.lightGray);
-
-        jLabel2.setBackground(java.awt.Color.lightGray);
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 90)); // NOI18N
-        jLabel2.setText("Bienvenue :");
-        jPanel1.add(jLabel2);
-
-        add(jPanel1);
-        jPanel1.setBounds(0, 0, 1930, 160);
         add(jPanel2);
-        jPanel2.setBounds(-20, 160, 100, 100);
+        jPanel2.setBounds(-20, 160, 10, 10);
 
         jPanel3.setBackground(java.awt.Color.lightGray);
         jPanel3.setLayout(new java.awt.BorderLayout());
+        add(jPanel3);
+        jPanel3.setBounds(0, 640, 1940, 870);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceUtilisateur/princeton_plainsboro_by_nadesiko.jpg"))); // NOI18N
-        jPanel3.add(jLabel3, java.awt.BorderLayout.PAGE_START);
+        add(jLabel3);
+        jLabel3.setBounds(0, 0, 648, 648);
 
-        add(jPanel3);
-        jPanel3.setBounds(-10, 150, 1940, 870);
+        jPanel1.setBackground(java.awt.Color.lightGray);
+        add(jPanel1);
+        jPanel1.setBounds(640, 0, 1940, 870);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
