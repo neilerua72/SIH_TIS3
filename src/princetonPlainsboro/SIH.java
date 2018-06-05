@@ -227,7 +227,7 @@ public class SIH {
          
          for(int i=0;i<this.ldp.size();i++){
              DossierPatient dp = this.ldp.get(i);
-             if(r.length()<=dp.getPatient().getNom().toString().length()&&r.equals(dp.getPatient().getNom().substring(0, r.length()))){
+             if(r.length()<=dp.getPatient().getNom().toString().length()&&r.toLowerCase().equals(dp.getPatient().getNom().substring(0, r.length()).toLowerCase())){
                  result.add(dp);
              }
           
