@@ -66,7 +66,7 @@ public class TableauListenerFDS implements MouseListener{
           
            ArrayList<Acte> la = new ArrayList<Acte>(fds.getActes());
            
-          
+          this.jfdsmm.getPanActes().removeAll();
            for(int i=0;i<la.size();i++){
                ActeUI aui= new ActeUI();
                System.out.println(la.size());
@@ -77,6 +77,9 @@ public class TableauListenerFDS implements MouseListener{
                this.jfdsmm.getPanActes().add(aui);
                aui.setVisible(true);
            }
+           jfdsmm.getNomPrenom().setText(jcdpsld.getNomPrenom().getText());
+            jfdsmm.getDateNais().setText(jcdpsld.getDate().getText());
+            jfdsmm.getNumDeSS().setText(jcdpsld.getNumDeSS().getText());
      jfdsmm.setVisible(true);
             jframe.repaint();
             jframe.revalidate();

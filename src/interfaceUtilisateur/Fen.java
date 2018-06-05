@@ -15,8 +15,11 @@ import Listenner.BoutonListenerFacture;
 import Listenner.BoutonListenerNouvelleFDS;
 import Listenner.BoutonListenerRDP;
 import Listenner.BoutonListenerValiderDP;
+import Listenner.BoutonListenerValiderTri;
+import Listenner.BoutonValiderNouvFDS;
 import Listenner.ConnexionEntrerListener;
-import Listenner.ListeListenerPatient;
+import Listenner.ListenerValiderTri;
+
 import Listenner.RechercheEntrerListener;
 import Listenner.TableauListenerFDS;
 import Listenner.tablesListener;
@@ -76,14 +79,14 @@ public class Fen extends javax.swing.JFrame {
     private State state;
     private JTable jlisteP = lp.getjTable1();
     private JTree jtreeliste = jm.getjTree2();
-   
+   private JButton jcreerFDSButton = jcFDS.getValider();
     private JButton facture = jfdsmm.getjButton3();
     private JButton rechercheDP = lp.getButtonR();
     private JTextField rechercheDPtext = lp.getRecherche();
     private JButton creerFDS = cdpdd.getjButton5();
     private JButton ajouteracte =jfdsmm.getjButton4();
     private JButton annuleracte = jaa.getjButton1();
-    
+    private JButton validerTri = jfdsdofds.getButtonValider();
       private JTable jlistefiche = cdpdd.getjTable1();
 
 //    /**
@@ -103,12 +106,13 @@ public class Fen extends javax.swing.JFrame {
         jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp, jcdp, jcp, lm, jcm, jcs, a, jm, this, jfdsdofds, sih));
         jlisteP.addMouseListener(new tablesListener(lp, this, jlisteP, cdpdd, b, jm,sih));
         rechercheDP.addActionListener(new BoutonListenerRDP(lp,this,sih));
-      
+        jcreerFDSButton.addActionListener(new BoutonValiderNouvFDS(jcFDS, jfdsmm, this, sih));
         facture.addActionListener(new BoutonListenerFacture(this,jcDPf,jfdsmm));
         rechercheDPtext.addKeyListener(new RechercheEntrerListener(lp,this,sih));
         creerFDS.addActionListener(new BoutonListenerNouvelleFDS(this,cdpdd,jcFDS));
         ajouteracte.addActionListener(new BoutonListenerAjouterActe(this,jfdsmm,jaa));
         annuleracte.addActionListener(new BoutonListenerAnnulerActe(this,jaa,jfdsmm));
+        validerTri.addActionListener(new BoutonListenerValiderTri(jfdsdofds,this,sih));
         jlistefiche.addMouseListener(new TableauListenerFDS( cdpdd, this, jlistefiche ,jfdsmm,b, jm, sih));
         //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
         //Définition de l'écouteur à l'aide d'une classe interne anonyme

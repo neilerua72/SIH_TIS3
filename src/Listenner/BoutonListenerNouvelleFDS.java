@@ -34,7 +34,9 @@ JConsulterDP_dans_le_dossier jcdpdld = new JConsulterDP_dans_le_dossier ();
     public void actionPerformed(ActionEvent ae) {
          jframe.toutFalse();
         jframe.add(jcFDS);
-        
+        jcFDS.getNomPrenom().setText(jcdpdld.getNomPrenom().getText());
+        jcFDS.getDate().setText(jcdpdld.getDate().getText());
+        jcFDS.getNum().setText(jcdpdld.getNumDeSS().getText());
         jcFDS.setVisible(true);
    jframe.revalidate();
     jframe.repaint();

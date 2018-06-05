@@ -243,7 +243,7 @@ public class LectureXML {
         // probleme : code inconnu
         return null;            
     }
-     private static Spe getSpe(String code) {
+     private Spe getSpe(String code) {
         if (code.equals("ANE"))
             return Spe.ANE;
         if (code.equals("CAR"))

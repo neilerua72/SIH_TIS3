@@ -202,7 +202,6 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -299,9 +298,6 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setText("Trier par :");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setText("Coût :");
-
         jPanel3.setBackground(java.awt.Color.lightGray);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -330,11 +326,13 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         CroissantD.setBackground(java.awt.Color.lightGray);
         date.add(CroissantD);
         CroissantD.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        CroissantD.setSelected(true);
         CroissantD.setText("Croissant");
 
         Cout.setBackground(java.awt.Color.lightGray);
         Tri.add(Cout);
         Cout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Cout.setSelected(true);
         Cout.setText("Coût");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -423,6 +421,7 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         CroissantC.setBackground(java.awt.Color.lightGray);
         cd.add(CroissantC);
         CroissantC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        CroissantC.setSelected(true);
         CroissantC.setText("Croissant");
 
         DecroissantD.setBackground(java.awt.Color.lightGray);
@@ -581,11 +580,6 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
                         .addComponent(jLabel2))
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel5)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -614,11 +608,6 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
                 .addGap(27, 27, 27)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(297, 297, 297))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel5)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jPanel2.add(jPanel5, java.awt.BorderLayout.PAGE_START);
@@ -711,7 +700,6 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

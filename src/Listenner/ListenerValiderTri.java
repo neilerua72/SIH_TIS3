@@ -50,17 +50,17 @@ public abstract class ListenerValiderTri {
         String[][] tab;
         if (lp.getCout().isSelected()) {
             if (lp.getCroissantC().isSelected()) {
-                 lfds= sih.trier(new ComparaisonFichesCouts());
+                 lfds= sih.trier(new ComparaisonFichesCouts(1));
             } else {
-                    lfds= sih.trier(new ComparaisonFichesCouts());
+                    lfds= sih.trier(new ComparaisonFichesCouts(2));
             }
 
         } else if (lp.getDate().isSelected()) {
             if (lp.getCroissantC().isSelected()) {
                 
-                lfds= sih.trier(new ComparaisonFichesDates());
+                lfds= sih.trier(new ComparaisonFichesDates(1));
             } else {
-                lfds= sih.trier(new ComparaisonFichesDates());
+                lfds= sih.trier(new ComparaisonFichesDates(2));
 
             }
         } else if (lp.getLe().isSelected()) {
@@ -86,7 +86,7 @@ public abstract class ListenerValiderTri {
                     //DateIntervale
         }
 
-        ArrayList<FicheDeSoins> requete = new ArrayList();
+        ArrayList<FicheDeSoins> requete = new ArrayList(lfds);
         tab = new String[requete.size()][4];
         for (int i = 0; i < requete.size(); i++) {
             FicheDeSoins f= requete.get(i);

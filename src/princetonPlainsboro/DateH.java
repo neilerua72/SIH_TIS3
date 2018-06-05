@@ -3,7 +3,7 @@ package princetonPlainsboro;
  * 
  * @author Aurélien, AnneLise, Manon
  */
-class DateH extends Date implements Comparable{
+public class DateH extends Date implements Comparable{
 
     private int heure;
     private int minutes;
@@ -79,6 +79,14 @@ class DateH extends Date implements Comparable{
      */
     public int getMinutes() {
         return minutes;
+    }
+    public boolean dateCorrect(){
+        
+        if(super.dateCorrect() && this.heure>=0 && this.minutes<60 && this.heure>=0 && this.heure<24){
+            return true;
+        }
+        else
+            return false;
     }
     
     }

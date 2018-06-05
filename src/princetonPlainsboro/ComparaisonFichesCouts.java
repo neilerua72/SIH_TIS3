@@ -6,6 +6,11 @@ package princetonPlainsboro;
 
 public class ComparaisonFichesCouts implements ComparaisonFiches {
     
+    int i =0;
+
+    public ComparaisonFichesCouts(int i) {
+        this.i =i;
+    }
     
     /**Méthode qui compare 2 fiches en fonction du coût
      * 
@@ -18,6 +23,9 @@ public class ComparaisonFichesCouts implements ComparaisonFiches {
     public int comparer(FicheDeSoins fiche1, FicheDeSoins fiche2) {
         Double c1 = new Double(fiche1.coutTotal());
         Double c2 = new Double(fiche2.coutTotal());
+        if(i==1)
         return c1.compareTo(c2);
+        else
+            return c2.compareTo(c1);
         }
     }

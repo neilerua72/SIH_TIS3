@@ -18,11 +18,13 @@ import interfaceUtilisateur.Jmenu;
 import interfaceUtilisateur.State;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import princetonPlainsboro.ComparaisonFichesCouts;
 import princetonPlainsboro.DossierPatient;
 import princetonPlainsboro.FicheDeSoins;
 import princetonPlainsboro.Medecin;
@@ -235,19 +237,22 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             jcfdsdofds.setVisible(true);
             System.out.println("test");
             String[][] tab;
-            tab = new String[sih.getLdfs().size()][3];
-            for (int i = 0; i < sih.getLdfs().size(); i++) {
-                FicheDeSoins f = sih.getLdfs().get(i);
+            tab = new String[sih.getLdfs().size()][4];
+            ArrayList<FicheDeSoins> a  = sih.getLdfs();
+            a=sih.trier(new ComparaisonFichesCouts(1));
+            for (int i = 0; i < a.size(); i++) {
+                FicheDeSoins f = a.get(i);
                 System.out.println("test" + i);
                 Patient p = f.getPatient();
                 tab[i][0] = p.getNom();
                 tab[i][1] = p.getPrenom();
                 tab[i][2] = f.getDate().toString();
+                tab[i][3]=""+f.coutTotal();
             }
             DefaultTableModel model = new DefaultTableModel(
                     tab,
                     new String[]{
-                        "Nom", "Prénom", "Date"
+                        "Nom", "Prénom", "Date","coût"
                     });
             jcfdsdofds.getjTable1().setModel(model);
             jcfdsdofds.getjScrollPane3().setViewportView(jcfdsdofds.getjTable1());

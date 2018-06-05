@@ -6,6 +6,7 @@
 package interfaceUtilisateur;
 
 import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 
 /**
@@ -13,6 +14,34 @@ import javax.swing.JButton;
  * @author Manon
  */
 public class JFDSMedicalModifiable extends javax.swing.JPanel {
+
+    /**
+     * @return the DateNais
+     */
+    public javax.swing.JLabel getDateNais() {
+        return DateNais;
+    }
+
+    /**
+     * @return the NomPrenom
+     */
+    public javax.swing.JLabel getNomPrenom() {
+        return NomPrenom;
+    }
+
+    /**
+     * @return the NumDeSS
+     */
+    public javax.swing.JLabel getNumDeSS() {
+        return NumDeSS;
+    }
+
+    /**
+     * @return the dateFiche
+     */
+    public javax.swing.JLabel getDateFiche() {
+        return dateFiche;
+    }
 
     /**
      * @return the PanActes
@@ -45,10 +74,10 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        NomPrenom = new javax.swing.JLabel();
+        DateNais = new javax.swing.JLabel();
+        NumDeSS = new javax.swing.JLabel();
+        dateFiche = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -59,10 +88,6 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
         jLabel24 = new javax.swing.JLabel();
@@ -80,21 +105,21 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
         jPanel2.setBackground(java.awt.Color.lightGray);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
-        jLabel4.setText("Bole Maggie");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, -1, 29));
+        NomPrenom.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        NomPrenom.setText("Bole Maggie");
+        jPanel2.add(NomPrenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, -1, 29));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel6.setText("JJ/MM/AAAA");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, -1, -1));
+        DateNais.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        DateNais.setText("JJ/MM/AAAA");
+        jPanel2.add(DateNais, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel7.setText("2 97 11 62 474 349");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, -1, -1));
+        NumDeSS.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        NumDeSS.setText("2 97 11 62 474 349");
+        jPanel2.add(NumDeSS, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setText("Fiche de soins du 22/06/2018 à 11h11 :");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, -1, 29));
+        dateFiche.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        dateFiche.setText("Fiche de soins du 22/06/2018 à 11h11 :");
+        jPanel2.add(dateFiche, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, -1, 29));
 
         jPanel3.setBackground(java.awt.Color.lightGray);
 
@@ -181,22 +206,6 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
 
         jPanel5.setBackground(java.awt.Color.lightGray);
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel20.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
-        jLabel20.setText("Bole Maggie");
-        jPanel5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, -1, 29));
-
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel21.setText("JJ/MM/AAAA");
-        jPanel5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, -1, -1));
-
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel22.setText("2 97 11 62 474 349");
-        jPanel5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, -1, -1));
-
-        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel23.setText("Fiche de soins du 22/06/2018 à 11h11 :");
-        jPanel5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, -1, 29));
 
         jPanel6.setBackground(java.awt.Color.lightGray);
 
@@ -301,9 +310,9 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
         );
 
         PanelActes.setViewportView(PanActes);
-        PanActes.setLayout(new FlowLayout());
+        PanActes.setLayout(new BoxLayout(PanActes, BoxLayout.Y_AXIS));
 
-        jPanel2.add(PanelActes, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 760, 550));
+        jPanel2.add(PanelActes, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 760, 440));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -345,8 +354,12 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel DateNais;
+    private javax.swing.JLabel NomPrenom;
+    private javax.swing.JLabel NumDeSS;
     private javax.swing.JPanel PanActes;
     private javax.swing.JScrollPane PanelActes;
+    private javax.swing.JLabel dateFiche;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -357,10 +370,6 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -368,11 +377,7 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;

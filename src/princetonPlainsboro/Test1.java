@@ -24,7 +24,8 @@ class Test1 {
         System.out.println("RETROUVER DP");
         System.out.println(dm.retrouverDossPat(p));
         String s = "       56565dfsgd";
-      
+        Calendar c = Calendar.getInstance ();
+        System.out.println(c.getTime().getYear());
      
     }
     public static void printArray(ArrayList<DossierPatient> a){
