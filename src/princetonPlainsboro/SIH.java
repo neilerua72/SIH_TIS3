@@ -235,7 +235,20 @@ public class SIH {
              
          
      }  return result;
+     }
+     public ArrayList<Medecin> rechercheMed(String r){
+         ArrayList<Medecin> result = new ArrayList<Medecin>();
+         
+         for(int i=0;i<this.getLm().size();i++){
+             Medecin dp = this.getLm().get(i);
+             if(r.length()<=dp.getNom().toString().length()&&r.toLowerCase().equals(dp.getNom().substring(0, r.length()).toLowerCase())){
+                 result.add(dp);
+             }
+          
      
+             
+         
+     }  return result;
      
      
 }

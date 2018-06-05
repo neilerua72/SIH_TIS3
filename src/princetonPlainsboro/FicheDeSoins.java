@@ -109,5 +109,16 @@ public class FicheDeSoins {
        s+="                             "+this.coutTotal();
        return s;
     }
+    
+    public String ficheDeSoinsPourListe(){
+        String s="";
+        for(int i=0;i<this.actes.size();i++){
+           s+="Nom : "+actes.get(i).toString()+"\n";
+           s+="         Type : Diagnostique"+"\n";
+           s+="         Code : "+actes.get(i).getCode()+"\n";
+           s+="         Coef : "+actes.get(i).getCoefS()+"\n";
+       }
+        return s;
+    }
     }
 

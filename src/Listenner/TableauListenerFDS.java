@@ -36,6 +36,7 @@ public class TableauListenerFDS implements MouseListener{
      SIH sih;
      Jmenu jmenu;
      Barre barre;
+     FicheDeSoins f;
 
     public TableauListenerFDS(JConsulterDP_dans_le_dossier jcdpsld, Fen jframe, JTable table,JFDSMedicalModifiable jfdsmm,Barre bar, Jmenu jmenu,SIH sih) {
         this.jcdpsld = jcdpsld;
@@ -62,8 +63,8 @@ public class TableauListenerFDS implements MouseListener{
             JScrollPane jsp = new JScrollPane();
             jsp=this.jfdsmm.getPanelActes();
             
-           FicheDeSoins fds = dp.getLfds().get(0);
-          
+           FicheDeSoins fds = dp.getLfds().get(NumLigne);
+           jframe.setF(fds);
            ArrayList<Acte> la = new ArrayList<Acte>(fds.getActes());
            
           this.jfdsmm.getPanActes().removeAll();
@@ -87,6 +88,10 @@ public class TableauListenerFDS implements MouseListener{
     
 
 }
+
+    public FicheDeSoins getF() {
+        return f;
+    }
 
     @Override
     public void mousePressed(MouseEvent e) {

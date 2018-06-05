@@ -43,6 +43,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JTree;
 import javax.swing.event.TreeSelectionListener;
+import princetonPlainsboro.FicheDeSoins;
 import princetonPlainsboro.InscriptionFichierXML;
 import princetonPlainsboro.LectureXML;
 import princetonPlainsboro.SIH;
@@ -71,6 +72,8 @@ public class Fen extends javax.swing.JFrame {
     JListedePatientParMedecins jldppm = new  JListedePatientParMedecins ();
     
     
+    
+    private FicheDeSoins f = null;
   
 
     //Variable importante : 
@@ -221,6 +224,20 @@ private JTable jlistedppm =  jldppm.getjTable1();
 
     public State getStates() {
         return state;
+    }
+
+    /**
+     * @return the f
+     */
+    public FicheDeSoins getF() {
+        return f;
+    }
+
+    /**
+     * @param f the f to set
+     */
+    public void setF(FicheDeSoins f) {
+        this.f = f;
     }
 
     /**
