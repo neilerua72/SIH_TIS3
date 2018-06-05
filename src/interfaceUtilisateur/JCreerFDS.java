@@ -5,6 +5,8 @@
  */
 package interfaceUtilisateur;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Manon
@@ -23,6 +25,10 @@ public class JCreerFDS extends javax.swing.JPanel {
      */
     public javax.swing.JLabel getNomPrenom() {
         return NomPrenom;
+    }
+
+    public JButton getjButton1() {
+        return jButton1;
     }
 
     /**

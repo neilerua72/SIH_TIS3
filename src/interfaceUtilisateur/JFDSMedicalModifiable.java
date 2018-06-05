@@ -64,6 +64,10 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
         initComponents();
     }
 
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -15,10 +15,13 @@ import Listenner.BoutonListenerFacture;
 import Listenner.BoutonListenerNouvelleFDS;
 import Listenner.BoutonListenerRCoutPatient;
 import Listenner.BoutonListenerRDP;
+import Listenner.BoutonListenerRetoucreerFDDversDP;
 import Listenner.BoutonListenerRetourDpVersLP;
+import Listenner.BoutonListenerRetourFDSversDP;
 import Listenner.BoutonListenerRetourFacture;
 import Listenner.BoutonListenerValiderDP;
 import Listenner.BoutonListenerValiderTri;
+import Listenner.BoutonListenerretourLpmVersLm;
 import Listenner.BoutonValiderNouvFDS;
 import Listenner.ConnexionEntrerListener;
 import Listenner.ListenerTableauLPPM;
@@ -98,6 +101,9 @@ public class Fen extends javax.swing.JFrame {
 private JTable jlistedppm =  jldppm.getjTable1();
       private JButton Boutonretour = jcDPf.getjButton1();
        private JButton Boutonretourdpverslp = cdpdd.getjButton1();
+       private JButton retourfdsversdp = jfdsmm.getjButton1();
+       private JButton retourcreerfdsversdp = jcFDS.getjButton1();
+       private JButton retourjlmversjldppm = jldppm.getjButton1();
 //    /**
 //     * Creates new form Fen
 //     */JFrame frame = this;
@@ -128,6 +134,9 @@ private JTable jlistedppm =  jldppm.getjTable1();
         jlistefiche.addMouseListener(new TableauListenerFDS( cdpdd, this, jlistefiche ,jfdsmm,b, jm, sih));
         rechercheDPtextJCP.addActionListener(new BoutonListenerRCoutPatient(lp,this,sih,jcp));
         Boutonretourdpverslp.addActionListener(new BoutonListenerRetourDpVersLP(this,lp,cdpdd));
+        retourfdsversdp.addActionListener(new BoutonListenerRetourFDSversDP(this,jfdsmm, cdpdd));
+          retourcreerfdsversdp.addActionListener(new BoutonListenerRetoucreerFDDversDP(this,jcFDS,cdpdd));
+          retourjlmversjldppm.addActionListener(new BoutonListenerretourLpmVersLm(jldppm,lm,this));
         //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
         //Définition de l'écouteur à l'aide d'une classe interne anonyme
         frame.addWindowListener(new WindowAdapter() {
