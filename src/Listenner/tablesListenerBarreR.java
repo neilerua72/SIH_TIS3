@@ -15,10 +15,10 @@ import interfaceUtilisateur.State;
 import java.awt.BorderLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import princetonPlainsboro.DossierPatient;
@@ -31,23 +31,23 @@ import princetonPlainsboro.SIH;
  *
  * @author annelise
  */
-public class tablesListener implements MouseListener{
-JListeDePatients lp;
+public class tablesListenerBarreR implements MouseListener{
+ 
      JConsulterDP_dans_le_dossier dossierPatient;
     Fen jframe;
      JTable table;
      SIH sih;
-     Jmenu jmenu;
-     Barre barre;
+     JTable jtable;
      
-    public tablesListener( JListeDePatients lp, Fen jframe, JTable table,JConsulterDP_dans_le_dossier dossierPatient,SIH sih) {
-        this.lp=lp;
+     ArrayList<DossierPatient> ldp;
+    public tablesListenerBarreR(JTable jtable,Fen jframe,JConsulterDP_dans_le_dossier dossierPatient,SIH sih,ArrayList <DossierPatient> a) {
+        
         this.jframe = jframe;
-        this.table=table;
+        this.jtable=jtable;
         this.dossierPatient=dossierPatient;
-        this.barre = barre;
-        this.jmenu=jmenu;
-        this.sih=sih;    }
+       
+        this.sih=sih;
+ldp=new ArrayList<DossierPatient>(a);    }
     
     
     private void tableauMouseClicked(java.awt.event.MouseEvent evt) {
@@ -83,12 +83,12 @@ JListeDePatients lp;
     @Override
     public void mouseClicked(MouseEvent me) {
        int NumLigne;
-    NumLigne = table.getSelectedRow();
+    NumLigne = jtable.getSelectedRow();
        
-           
-            jframe.toutFalse();
-            jframe.add(dossierPatient);
-            DossierPatient dp = sih.getLdp().get(NumLigne);
+    
+            //jframe.toutFalse();
+            //jframe.add(dossierPatient);
+            DossierPatient dp = ldp.get(NumLigne);
             dossierPatient.getNomPrenom().setText(dp.getPatient().getNom()+ " "+ dp.getPatient().getPrenom());
             dossierPatient.getNumDeSS().setText(dp.getPatient().getNumDeSS().toString());
             dossierPatient.getDate().setText(dp.getPatient().getDateDeNaissance().toString());
@@ -121,8 +121,8 @@ JListeDePatients lp;
             
             
             
-            jframe.repaint();
-            jframe.revalidate();
+           // jframe.repaint();
+            //jframe.revalidate();
            
     
 

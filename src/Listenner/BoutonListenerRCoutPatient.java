@@ -6,6 +6,7 @@
 package Listenner;
 
 import interfaceUtilisateur.Fen;
+import interfaceUtilisateur.JConsulterDP_dans_le_dossier;
 import interfaceUtilisateur.JCoutPatient;
 import interfaceUtilisateur.JListeDePatients;
 import java.awt.event.ActionEvent;
@@ -22,8 +23,8 @@ public class BoutonListenerRCoutPatient extends ListenerRecherche implements Act
     JCoutPatient cp;
     JListeDePatients lp;
     
-    public BoutonListenerRCoutPatient(JListeDePatients lp,Fen jframe, SIH sih, JCoutPatient cp) {
-        super(lp,jframe,sih,cp);
+    public BoutonListenerRCoutPatient(JListeDePatients lp,Fen jframe, SIH sih, JCoutPatient cp,JConsulterDP_dans_le_dossier jpp) {
+        super(lp,jframe,sih,cp,jpp);
     }
     
     public void actionPerformed(ActionEvent e) {

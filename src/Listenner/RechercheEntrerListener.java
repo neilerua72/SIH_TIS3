@@ -8,6 +8,7 @@ package Listenner;
 import interfaceUtilisateur.Barre;
 import interfaceUtilisateur.ConnexionInterface;
 import interfaceUtilisateur.Fen;
+import interfaceUtilisateur.JConsulterDP_dans_le_dossier;
 import interfaceUtilisateur.JCoutPatient;
 import interfaceUtilisateur.JListeDePatients;
 import interfaceUtilisateur.Jmenu;
@@ -23,8 +24,8 @@ import princetonPlainsboro.SIH;
  */
 public class RechercheEntrerListener extends ListenerRecherche implements KeyListener{
 
-    public RechercheEntrerListener(JListeDePatients lp,Fen jframe, SIH sih, JCoutPatient cp) {
-        super(lp,jframe,sih,cp);
+    public RechercheEntrerListener(JListeDePatients lp,Fen jframe, SIH sih, JCoutPatient cp,JConsulterDP_dans_le_dossier jpp) {
+        super(lp,jframe,sih,cp,jpp);
     }
     
 

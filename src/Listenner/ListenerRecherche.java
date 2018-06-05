@@ -8,6 +8,7 @@ package Listenner;
 import interfaceUtilisateur.Barre;
 import interfaceUtilisateur.ConnexionInterface;
 import interfaceUtilisateur.Fen;
+import interfaceUtilisateur.JConsulterDP_dans_le_dossier;
 import interfaceUtilisateur.JCoutPatient;
 
 import interfaceUtilisateur.JListeDePatients;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import princetonPlainsboro.Connexion;
 import princetonPlainsboro.DossierPatient;
@@ -30,17 +32,18 @@ import princetonPlainsboro.SIH;
  * @author Aurélien
  */
 public abstract class ListenerRecherche {
-
+JConsulterDP_dans_le_dossier dossierPatient;
     JListeDePatients lp;
     Fen frame;
     SIH sih;
     JCoutPatient cp;
 
-    public ListenerRecherche(JListeDePatients lp, Fen jframe, SIH sih, JCoutPatient cp) {
+    public ListenerRecherche(JListeDePatients lp, Fen jframe, SIH sih, JCoutPatient cp, JConsulterDP_dans_le_dossier dossierPatient) {
         this.lp = lp;
         this.frame = frame;
         this.sih = sih;
         this.cp = cp;
+        this.dossierPatient=dossierPatient;
     }
 
     public void recherche(int f) {
@@ -68,6 +71,8 @@ public abstract class ListenerRecherche {
                 new String[]{
                     "Nom", "Prénom", "Date de naissance"
                 });
+        JTable jt = lp.getjTable1();
+        jt.addMouseListener(new tablesListenerBarreR(jt,frame, dossierPatient,sih,requete));
         System.out.println("test3");
         if (f == 1) {
             lp.getjTable1().setModel(model);
