@@ -6,6 +6,7 @@
 package Listenner;
 
 import interfaceUtilisateur.Fen;
+import interfaceUtilisateur.JAjouterActe;
 import interfaceUtilisateur.JCreerFDS;
 import interfaceUtilisateur.JFDSMedicalModifiable;
 import java.awt.event.ActionEvent;
@@ -18,8 +19,8 @@ import princetonPlainsboro.SIH;
  */
 public class BoutonValiderNouvFDS extends ListenerValiderNewFDS implements ActionListener{
 
-    public BoutonValiderNouvFDS(JCreerFDS jcfds, JFDSMedicalModifiable j, Fen frame, SIH sih) {
-        super(jcfds, j, frame, sih);
+    public BoutonValiderNouvFDS(JCreerFDS jcfds, JFDSMedicalModifiable j, Fen frame, SIH sih,JAjouterActe aa) {
+        super(jcfds, j, frame, sih,aa);
     }
 
     @Override

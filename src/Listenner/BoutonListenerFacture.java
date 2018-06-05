@@ -17,8 +17,8 @@ import java.awt.event.ActionListener;
  */
 public class BoutonListenerFacture implements ActionListener {
 
-      JConsulterDP_facture jcDPf = new JConsulterDP_facture();
-     JFDSMedicalModifiable jfdsmm = new JFDSMedicalModifiable();
+      JConsulterDP_facture jcDPf;
+     JFDSMedicalModifiable jfdsmm;
       Fen jframe;
  
     

@@ -25,9 +25,9 @@ import princetonPlainsboro.SIH;
  * @author teuliera
  */
 public class ListenerTableauLPPM implements MouseListener {
-    JListedePatientParMedecins jldppm = new JListedePatientParMedecins ();
+    JListedePatientParMedecins jldppm;
    
-  JConsulterDP_dans_le_dossier jcdpdld = new   JConsulterDP_dans_le_dossier ();
+  JConsulterDP_dans_le_dossier jcdpdld;
       Fen jframe;
           JTable table;
     SIH sih;

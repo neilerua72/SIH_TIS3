@@ -100,7 +100,7 @@ public class JAjouterActe extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Courier New", 1, 36)); // NOI18N
         jLabel1.setText("Ajouter un acte");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "C","CS","APC","APY","APU","CCP","U03","U45","COE","CSC","CNPSY","CDE","KA","KMB","Z","ORT","TO","SP","SF","SFI","AMS","AMC","AMI","DI","AMP","POD","AMO","AMY" }));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Diagnostique", "Thérapeutique" }));
 
@@ -148,7 +148,7 @@ public class JAjouterActe extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(233, 233, 233)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

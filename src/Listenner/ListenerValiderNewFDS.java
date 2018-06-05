@@ -6,8 +6,10 @@
 package Listenner;
 
 import interfaceUtilisateur.Fen;
+import interfaceUtilisateur.JAjouterActe;
 import interfaceUtilisateur.JCreerFDS;
 import interfaceUtilisateur.JFDSMedicalModifiable;
+import javax.swing.JButton;
 import princetonPlainsboro.Date;
 import princetonPlainsboro.DateH;
 import princetonPlainsboro.DossierPatient;
@@ -28,11 +30,13 @@ public abstract class ListenerValiderNewFDS {
     JFDSMedicalModifiable j;
     Fen frame;
     SIH sih;
-    public ListenerValiderNewFDS(JCreerFDS jcfds, JFDSMedicalModifiable j, Fen frame, SIH sih){
+    JAjouterActe aa;
+    public ListenerValiderNewFDS(JCreerFDS jcfds, JFDSMedicalModifiable j, Fen frame, SIH sih,JAjouterActe aa){
        this.jcfds=jcfds;
        this.j=j;
        this.frame=frame;
        this.sih=sih;
+       this.aa=aa;
        
     }
     public void valider(){
@@ -65,6 +69,8 @@ public abstract class ListenerValiderNewFDS {
                Medecin m = new Medecin(nom,prenom,spe);
                  FicheDeSoins f = new FicheDeSoins(dp.getPatient(),m,d);
                  dp.ajouterFiche(f);
+                 JButton jb = aa.getjButton2();
+                 jb.addActionListener(new BoutonListenerValiderAjouterActe(aa,frame,sih,f));
                  j.getNomPrenom().setText(dp.getPatient().getNom()+" "+dp.getPatient().getPrenom());
                  j.getDateFiche().setText("Fiche de soins du "+f.getDate());
                  j.getNumDeSS().setText(dp.getPatient().getNumDeSS().toString());

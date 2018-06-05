@@ -18,8 +18,8 @@ import java.awt.event.ActionListener;
  */
 public class BoutonListenerAnnulerActe implements ActionListener {
 
-    JAjouterActe jaa = new JAjouterActe();
-    JFDSMedicalModifiable jfdsmm = new JFDSMedicalModifiable();
+    JAjouterActe jaa;
+    JFDSMedicalModifiable jfdsmm;
     Fen jframe;
 
     public BoutonListenerAnnulerActe(Fen jframe, JAjouterActe jaa, JFDSMedicalModifiable jfdsmm) {

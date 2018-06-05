@@ -12,14 +12,17 @@ import interfaceUtilisateur.JCreerFDS;
 import interfaceUtilisateur.JFDSMedicalModifiable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import princetonPlainsboro.FicheDeSoins;
+import princetonPlainsboro.SIH;
 
 /**
  *
  * @author annelise
  */
 public class BoutonListenerAjouterActe implements ActionListener{
-    JFDSMedicalModifiable jfdsmm = new JFDSMedicalModifiable ();
-    JAjouterActe jaa= new   JAjouterActe ();
+    JFDSMedicalModifiable jfdsmm;
+    JAjouterActe jaa;
 Fen jframe;
 
     public BoutonListenerAjouterActe(Fen jframe,JFDSMedicalModifiable jfdsmm, JAjouterActe jaa) {
@@ -36,6 +39,8 @@ Fen jframe;
          jframe.toutFalse();
         jframe.add(jaa);
         
+        
+       
         jaa.setVisible(true);
    jframe.revalidate();
     jframe.repaint();
