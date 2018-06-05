@@ -30,6 +30,7 @@ import princetonPlainsboro.FicheDeSoins;
 import princetonPlainsboro.Medecin;
 import princetonPlainsboro.Patient;
 import princetonPlainsboro.SIH;
+import princetonPlainsboro.Spe;
 
 /**
  *
@@ -208,6 +209,25 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
 
             //Met Tout a false        
             frame.toutFalse();
+            String[][] tab;
+            tab = new String[sih.getLS().size()][2];
+            for (int i = 0; i < sih.getLS().size(); i++) {
+                Spe s = sih.getLS().get(i);
+                System.out.println("test1");
+                tab[i][0] = s.toString();
+                System.out.println("test2");
+                tab[i][1] = "" + sih.coutSpecialite(s);
+                System.out.println("test3");
+            }
+            DefaultTableModel model = new DefaultTableModel(
+                    tab,
+                    new String[]{
+                        "Spécialité", "Coût"
+                    });
+            jcs.getjTable1().setModel(model);
+            jcs.getjScrollPane4().setViewportView(jcs.getjTable1());
+            
+            
             jcs.setVisible(true);
 
             frame.repaint();

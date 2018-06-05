@@ -176,7 +176,13 @@ public class JCoutSpecialite1 extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
-
+public javax.swing.JScrollPane getjScrollPane4() {
+        return jScrollPane4;
+    }
+    
+    public javax.swing.JTable getjTable1() {
+        return jTable1;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;

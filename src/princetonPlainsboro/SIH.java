@@ -1,6 +1,7 @@
 package princetonPlainsboro;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
@@ -45,7 +46,7 @@ public class SIH {
         return cout;
     }
 
-    public double coutSpecialite(String specialite) {
+    public double coutSpecialite(Spe specialite) {
         double cout = 0;
         for (int i = 0; i < getLdp().size(); i++) {
             DossierPatient p = getLdp().get(i);
@@ -211,6 +212,15 @@ public class SIH {
        return liste; 
     }
      
+     public ArrayList<Spe> getLS(){
+         List<Spe> liste = Arrays.asList(Spe.values());
+         ArrayList<Spe> ls = new ArrayList<Spe>();
+         ls.addAll(liste);
+         return ls;
+     }
+     
+     
+     
      
      public ArrayList<DossierPatient> rechercheDP(String r){
          ArrayList<DossierPatient> result = new ArrayList<DossierPatient>();
@@ -244,6 +254,8 @@ return result;
 
 
 }
+
+
 }
     
 
