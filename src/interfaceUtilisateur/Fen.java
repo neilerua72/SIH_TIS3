@@ -14,14 +14,17 @@ import Listenner.BoutonListenerFacture;
 
 import Listenner.BoutonListenerNouvelleFDS;
 import Listenner.BoutonListenerRDP;
+import Listenner.BoutonListenerRetourFacture;
 import Listenner.BoutonListenerValiderDP;
 import Listenner.BoutonListenerValiderTri;
 import Listenner.BoutonValiderNouvFDS;
 import Listenner.ConnexionEntrerListener;
+import Listenner.ListenerTableauLPPM;
 import Listenner.ListenerValiderTri;
 
 import Listenner.RechercheEntrerListener;
 import Listenner.TableauListenerFDS;
+import Listenner.TableauListenerListeDeMedecins;
 import Listenner.tablesListener;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -60,8 +63,8 @@ public class Fen extends javax.swing.JFrame {
     JConsulterDP_facture jcDPf = new JConsulterDP_facture ();
     JCreerFDS jcFDS= new JCreerFDS ();
     JAjouterActe jaa= new JAjouterActe ();
+    JListedePatientParMedecins jldppm = new  JListedePatientParMedecins ();
     
-
     
   
 
@@ -88,6 +91,9 @@ public class Fen extends javax.swing.JFrame {
     private JButton annuleracte = jaa.getjButton1();
     private JButton validerTri = jfdsdofds.getButtonValider();
       private JTable jlistefiche = cdpdd.getjTable1();
+      private JTable jlistemedecin = lm.getjTable1();
+private JTable jlistedppm =  jldppm.getjTable1();
+      private JButton Boutonretour = jcDPf.getjButton1();
 
 //    /**
 //     * Creates new form Fen
@@ -112,6 +118,9 @@ public class Fen extends javax.swing.JFrame {
         creerFDS.addActionListener(new BoutonListenerNouvelleFDS(this,cdpdd,jcFDS));
         ajouteracte.addActionListener(new BoutonListenerAjouterActe(this,jfdsmm,jaa));
         annuleracte.addActionListener(new BoutonListenerAnnulerActe(this,jaa,jfdsmm));
+        jlistemedecin.addMouseListener(new TableauListenerListeDeMedecins (lm, this, jlistemedecin, jldppm,b ,jm, sih));
+        jlistedppm.addMouseListener(new ListenerTableauLPPM(this, jldppm,cdpdd, jlistedppm,sih,b));
+        Boutonretour.addActionListener(new BoutonListenerRetourFacture(this,jfdsmm,jcDPf));
         validerTri.addActionListener(new BoutonListenerValiderTri(jfdsdofds,this,sih));
         jlistefiche.addMouseListener(new TableauListenerFDS( cdpdd, this, jlistefiche ,jfdsmm,b, jm, sih));
         //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
@@ -193,7 +202,7 @@ public class Fen extends javax.swing.JFrame {
         jcDPf.setVisible(false);
         jcFDS.setVisible(false);
         jaa.setVisible(false);
-    
+           jldppm.setVisible(false);
     }
 
     /**
