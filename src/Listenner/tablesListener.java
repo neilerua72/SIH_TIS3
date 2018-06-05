@@ -112,7 +112,10 @@ JListeDePatients lp;
             dossierPatient.getjTable1().setModel(model);
             dossierPatient.getjScrollPane3().setViewportView(dossierPatient.getjTable1());
             
-            
+            if(jframe.getStates()==State.ADMIN){
+                dossierPatient.getjButton5().setVisible(false);
+                dossierPatient.getjLabel11().setVisible(false);
+            }
             
             
             
