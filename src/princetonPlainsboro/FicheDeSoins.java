@@ -100,5 +100,14 @@ public class FicheDeSoins {
             }
         return total;
         }
+    public String ficheDeSoinPourFact(){
+       String s="";
+       for(int i=0;i<this.actes.size();i++){
+           s+="Nom : "+actes.get(i).toString()+"\n";
+           s+="Coût : "+actes.get(i).cout()+"\n";
+       }
+       s+="                             "+this.coutTotal();
+       return s;
+    }
     }
 
