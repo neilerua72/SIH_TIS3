@@ -6,6 +6,7 @@
 package Listenner;
 
 import interfaceUtilisateur.Fen;
+import interfaceUtilisateur.JConsulterDP_dans_le_dossier;
 import interfaceUtilisateur.JConsulterDP_facture;
 import interfaceUtilisateur.JFDSMedicalModifiable;
 import java.awt.event.ActionEvent;
@@ -19,13 +20,16 @@ public class BoutonListenerFacture implements ActionListener {
 
       JConsulterDP_facture jcDPf;
      JFDSMedicalModifiable jfdsmm;
+     JConsulterDP_dans_le_dossier dp;
       Fen jframe;
  
     
-    public BoutonListenerFacture(Fen jframe,JConsulterDP_facture jcDPf,JFDSMedicalModifiable jfdsmm) {
+    public BoutonListenerFacture(Fen jframe,JConsulterDP_facture jcDPf,JFDSMedicalModifiable jfdsmm,JConsulterDP_dans_le_dossier dp) {
         this.jframe = jframe;
         this.jcDPf= jcDPf;
          this.jfdsmm=jfdsmm;
+         this.dp = dp;
+         
     }
     
   
@@ -35,6 +39,17 @@ public class BoutonListenerFacture implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
        jframe.toutFalse();
         jframe.add(jcDPf);
+        
+        jcDPf.getjLabel7().setText(jfdsmm.getNomPrenom().getText());
+        jcDPf.getjLabel6().setText(jfdsmm.getDateNais().getText());
+            jcDPf.getjLabel9().setText(dp.getAdresse().getText());
+             jcDPf.getjLabel12().setText(dp.getjLabel8().getText());
+             jcDPf.getjLabel13().setText(dp.getjLabel9().getText());
+        
+        
+        
+        
+        
          
         jcDPf.setVisible(true);
    jframe.revalidate();

@@ -122,7 +122,7 @@ private JTable jlistedppm =  jldppm.getjTable1();
         jlisteP.addMouseListener(new tablesListener(lp, this, jlisteP, cdpdd,sih));
         rechercheDP.addActionListener(new BoutonListenerRDP(lp,this,sih,jcp,cdpdd));
         jcreerFDSButton.addActionListener(new BoutonValiderNouvFDS(jcFDS, jfdsmm, this, sih,jaa));
-        facture.addActionListener(new BoutonListenerFacture(this,jcDPf,jfdsmm));
+        facture.addActionListener(new BoutonListenerFacture(this,jcDPf,jfdsmm,cdpdd));
         rechercheDPtext.addKeyListener(new RechercheEntrerListener(lp,this,sih,jcp,cdpdd));
         creerFDS.addActionListener(new BoutonListenerNouvelleFDS(this,cdpdd,jcFDS,jaa));
         ajouteracte.addActionListener(new BoutonListenerAjouterActe(this,jfdsmm,jaa));
