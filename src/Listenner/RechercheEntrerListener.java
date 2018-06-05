@@ -8,6 +8,7 @@ package Listenner;
 import interfaceUtilisateur.Barre;
 import interfaceUtilisateur.ConnexionInterface;
 import interfaceUtilisateur.Fen;
+import interfaceUtilisateur.JCoutPatient;
 import interfaceUtilisateur.JListeDePatients;
 import interfaceUtilisateur.Jmenu;
 import java.awt.Event;
@@ -22,8 +23,8 @@ import princetonPlainsboro.SIH;
  */
 public class RechercheEntrerListener extends ListenerRecherche implements KeyListener{
 
-    public RechercheEntrerListener(JListeDePatients lp,Fen jframe, SIH sih) {
-        super(lp,jframe,sih);
+    public RechercheEntrerListener(JListeDePatients lp,Fen jframe, SIH sih, JCoutPatient cp) {
+        super(lp,jframe,sih,cp);
     }
     
 
@@ -35,7 +36,7 @@ public class RechercheEntrerListener extends ListenerRecherche implements KeyLis
     @Override
     public void keyPressed(KeyEvent e) {
             if((e.getKeyCode()>64&&e.getKeyCode()<91)||e.getKeyCode()==8)
-            super.recherche();
+            super.recherche(1);
         
     }
 

@@ -9,6 +9,7 @@ import interfaceUtilisateur.ConnexionInterface;
 import interfaceUtilisateur.Fen;
 import interfaceUtilisateur.Accueil;
 import interfaceUtilisateur.Barre;
+import interfaceUtilisateur.JCoutPatient;
 import interfaceUtilisateur.JListeDePatients;
 import interfaceUtilisateur.Jmenu;
 import interfaceUtilisateur.State;
@@ -32,13 +33,13 @@ public class BoutonListenerRDP extends ListenerRecherche implements ActionListen
     JListeDePatients lp;
     Fen jframe;
     SIH sih;
+    JCoutPatient cp;
 
-    public BoutonListenerRDP(JListeDePatients lp,Fen jframe, SIH sih) {
-        super(lp,jframe,sih);
+    public BoutonListenerRDP(JListeDePatients lp,Fen jframe, SIH sih, JCoutPatient cp) {
+        super(lp,jframe,sih,cp);
     }
 
     public void actionPerformed(ActionEvent e) {
-       super.recherche();
-        
+       super.recherche(1);        
     }
 }

@@ -24,7 +24,7 @@ public class BoutonListenerRetourFacture implements ActionListener{
     public BoutonListenerRetourFacture(Fen jframe, JFDSMedicalModifiable jcFDS, JConsulterDP_facture jcdpf) {
         this.jframe = jframe;
         this.jcdpf = jcdpf;
-        this.jcfdsmm= jcfdsmm;
+        this.jcfdsmm= jcFDS;
         
     }
      Fen jframe;
@@ -34,7 +34,7 @@ public class BoutonListenerRetourFacture implements ActionListener{
 
     public void actionPerformed(ActionEvent ae) {
          jframe.toutFalse();
-        jframe.add(jcfdsmm);
+//        jframe.add(jcfdsmm);
         
         jcfdsmm.setVisible(true);
    jframe.revalidate();
