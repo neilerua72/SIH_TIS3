@@ -219,6 +219,15 @@ private JTable jlistedppm =  jldppm.getjTable1();
            jldppm.setVisible(false);
     }
 
+    public State getStates() {
+        return state;
+    }
+
+    /**
+     * @return the state
+     */
+   
+
     /**
      * @param state the state to set
      */
