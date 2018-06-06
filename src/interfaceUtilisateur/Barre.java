@@ -12,6 +12,13 @@ package interfaceUtilisateur;
 public class Barre extends javax.swing.JPanel {
 
     /**
+     * @return the jButton1
+     */
+    public javax.swing.JButton getjButton1() {
+        return jButton1;
+    }
+
+    /**
      * Creates new form Barre
      */
     public Barre() {

@@ -40,16 +40,16 @@ public abstract class ListenerConexion {
     public void connexion(){
          String id = c.getjTextField1().getText();
         String mdp = c.getjPasswordField1().getText();
-        Identification identif = new Identification(id, mdp);
+        Identification identif2 = new Identification(id, mdp);
         Connexion con = new Connexion("donneesperso.xml");
 
         
-            if (con.VerificationConnexion(identif) && identif.Type() == 1) {
+            if (con.VerificationConnexion(identif2) && identif2.Type() == 1) {
                 jframe.setState(State.MED);
                 jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 jframe.setLayout(new BorderLayout());
-                b.getjLabel2().setText(identif.getType());
-                b.getjLabel2().setIcon(new javax.swing.ImageIcon(getClass().getResource(identif.getPhoto())));
+                b.getjLabel2().setText(con.getType());
+                //b.getjLabel2().setIcon(new javax.swing.ImageIcon(getClass().getResource(con.getPhoto())));
                 jframe.add(m,BorderLayout.WEST);
                 jframe.add(jp,BorderLayout.CENTER);
                 jframe.add(b,BorderLayout.NORTH);
@@ -58,12 +58,12 @@ public abstract class ListenerConexion {
                 c.setVisible(false);
                 jframe.repaint();
                 
-            } else if (con.VerificationConnexion(identif) && identif.Type() == 2) {
+            } else if (con.VerificationConnexion(identif2) && identif2.Type() == 2) {
                jframe.setState(State.ADMIN);
                 jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 jframe.setLayout(new BorderLayout());
-                b.getjLabel2().setText(identif.getType());
-                b.getjLabel2().setIcon(new javax.swing.ImageIcon(getClass().getResource(identif.getPhoto())));
+                b.getjLabel2().setText(identif2.getType());
+               // b.getjLabel2().setIcon(new javax.swing.ImageIcon(getClass().getResource(identif2.getPhoto())));
                 jframe.add(m,BorderLayout.WEST);
                 jframe.add(jp,BorderLayout.CENTER);
                 jframe.add(b,BorderLayout.NORTH);

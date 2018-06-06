@@ -5,6 +5,8 @@
  */
 package Listenner;
 
+import interfaceUtilisateur.Barre;
+import interfaceUtilisateur.ConnexionInterface;
 import interfaceUtilisateur.Fen;
 import interfaceUtilisateur.State;
 import java.awt.event.ActionEvent;
@@ -17,19 +19,18 @@ import javax.swing.JPanel;
  * @author Aurélien
  */
 public class BoutonListenerDeco implements ActionListener{
-    JPanel m;
-     JPanel c;
+    Barre b;
+     ConnexionInterface c;
      Fen jframe;
-     public BoutonListenerDeco(JPanel m, JPanel c,Fen jframe){
-         this.m=m;
+     public BoutonListenerDeco( ConnexionInterface c,Fen jframe,Barre b){
+         this.b=b;
          this.c=c;
          this.jframe=jframe;
      }
     public void actionPerformed (ActionEvent e){
-        
-        jframe.setContentPane(m);
-        m.setVisible(true);
-    c.setVisible(false);
+        jframe.toutToutfalse();
+     c.setVisible(true);
+     jframe.setSize(950, 600);
     jframe.repaint();
     jframe.setState(State.NONCO);
     }
