@@ -259,7 +259,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
             String[][] tab;
             tab = new String[sih.getLdfs().size()][4];
             ArrayList<FicheDeSoins> a  = sih.getLdfs();
-            a=sih.trier(new ComparaisonFichesCouts(1));
+            
             for (int i = 0; i < a.size(); i++) {
                 FicheDeSoins f = a.get(i);
                 System.out.println("test" + i);
