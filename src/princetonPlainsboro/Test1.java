@@ -12,10 +12,13 @@ class Test1 {
         LectureXML test = new LectureXML("donnesApresSIH.xml");
         SIH dm = test.getDossier();
         System.out.println("test ultra bg");
-        printArray(dm.nombreFichesIntervalle (new Date(6,1,2006),new Date(31,8,2005)));
+       // printArray(dm.nombreFichesIntervalle (new Date(6,1,2006),new Date(31,8,2005)));
+        
+        
+        printArray(dm.rechercheDP("tr"));
      
     }
-    public static void printArray(ArrayList<FicheDeSoins> a){
+    public static void printArray(ArrayList<DossierPatient> a){
         for(int i=0; i<a.size();i++){
             System.out.println(a.get(i).getPatient());
         }
