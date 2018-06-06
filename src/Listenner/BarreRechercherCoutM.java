@@ -6,9 +6,8 @@
 package Listenner;
 
 import interfaceUtilisateur.Fen;
-import interfaceUtilisateur.JConsulterDP_dans_le_dossier;
-import interfaceUtilisateur.JCoutPatient;
-import interfaceUtilisateur.JListeDePatients;
+import interfaceUtilisateur.JCoutMedecin;
+import interfaceUtilisateur.JListeDeMedecins;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -17,16 +16,20 @@ import princetonPlainsboro.SIH;
 
 /**
  *
- * @author Manon
+ * @author teuliera
  */
-public class BoutonListenerRCoutPatient extends ListenerRecherche implements KeyListener {
+public class BarreRechercherCoutM extends ListenerRechercheMedecin implements KeyListener{
+      JListeDeMedecins lm;
     Fen frame;
     SIH sih;
-    JCoutPatient cp;
-    JListeDePatients lp;
+    JCoutMedecin cm;
     
-    public BoutonListenerRCoutPatient(JListeDePatients lp,Fen jframe, SIH sih, JCoutPatient cp,JConsulterDP_dans_le_dossier jpp) {
-        super(lp,jframe,sih,cp,jpp);
+    public BarreRechercherCoutM(JListeDeMedecins lm, Fen jframe, SIH sih, JCoutMedecin cm) {
+        super(lm,jframe,sih,cm);
+    }
+    
+    public void actionPerformed(ActionEvent e) {
+           
     }
 
     @Override
@@ -36,17 +39,13 @@ public class BoutonListenerRCoutPatient extends ListenerRecherche implements Key
 
     @Override
     public void keyPressed(KeyEvent e) {
-
         if((e.getKeyCode()>64&&e.getKeyCode()<91)||e.getKeyCode()==8);
          super.recherche(2);  
     }
 
-    
-
     @Override
     public void keyReleased(KeyEvent e) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
-

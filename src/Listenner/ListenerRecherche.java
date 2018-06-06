@@ -51,11 +51,11 @@ JConsulterDP_dans_le_dossier dossierPatient;
         ArrayList<DossierPatient> requete;
         if (f == 1) {
             requete = new ArrayList(sih.rechercheDP(lp.getRecherche().getText()));
-            System.out.println("test");
         }
+        
         else {
-            requete = new ArrayList(sih.rechercheDP(cp.getRecherche().getText()));
-            System.out.println("test1");
+            requete = new ArrayList(sih.rechercheDP(cp.getjTextField2().getText()));
+          
         }
         tab = new String[requete.size()][3];
         for (int i = 0; i < requete.size(); i++) {
@@ -64,7 +64,7 @@ JConsulterDP_dans_le_dossier dossierPatient;
             tab[i][0] = p.getNom();
             tab[i][1] = p.getPrenom();
             tab[i][2] = p.getDateDeNaissance().toString();
-            System.out.println("test2");
+          
         }
         DefaultTableModel model = new DefaultTableModel(
                 tab,
@@ -77,13 +77,14 @@ JConsulterDP_dans_le_dossier dossierPatient;
         if (f == 1) {
             lp.getjTable1().setModel(model);
             lp.getjScrollPane4().setViewportView(lp.getjTable1());
-            System.out.println("testojfglnfdg");
+           
         }
+                
         else {
             cp.getjTable1().setModel(model);
             cp.getjScrollPane4().setViewportView(cp.getjTable1());
-            System.out.println("test4");
+           
         }
-
+ 
     }
 }

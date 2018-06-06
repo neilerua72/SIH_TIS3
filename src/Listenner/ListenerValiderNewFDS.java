@@ -49,11 +49,11 @@ public abstract class ListenerValiderNewFDS {
          String smois=jcfds.getMois().getText();
          String sjour=jcfds.getAnnee().getText();
          String sheure=jcfds.getHeure().getText();
-         String sminutes=jcfds.getHeure().getText();
+         String sminutes=jcfds.getMinutes().getText();
          
          DossierPatient dp = sih.retrouverDossPat(new Patient(n));
          if(sannee.equals("")||smois.equals("")||sjour.equals("")||nom.equals("")||prenom.equals("")){
-             //POPOUP
+             //POPUP
          }else{
              int annee = Integer.parseInt(sannee);
         int mois = Integer.parseInt(smois);

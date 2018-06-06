@@ -5,6 +5,8 @@
  */
 package interfaceUtilisateur;
 
+import Listenner.BarreRechercheLm;
+import Listenner.BarreRechercherCoutM;
 import Listenner.BoutonListenerAjouterActe;
 import Listenner.BoutonListenerAnnulerActe;
 import Listenner.BoutonListenerGen;
@@ -14,7 +16,7 @@ import Listenner.BoutonListenerFacture;
 
 import Listenner.BoutonListenerNouvelleFDS;
 import Listenner.BoutonListenerRCoutPatient;
-import Listenner.BoutonListenerRDP;
+
 import Listenner.BoutonListenerRetoucreerFDDversDP;
 import Listenner.BoutonListenerRetourDpVersLP;
 import Listenner.BoutonListenerRetourFDSversDP;
@@ -94,7 +96,7 @@ public class Fen extends javax.swing.JFrame {
     private JButton facture = jfdsmm.getjButton3();
     private JButton rechercheDP = lp.getButtonR();
     private JTextField rechercheDPtext = lp.getRecherche();
-    private JTextField rechercheDPtextJCP = jcp.getRecherche();
+    private JTextField rechercheDPtextJCP = jcp.getjTextField2();
     private JButton creerFDS = cdpdd.getjButton5();
     private JButton ajouteracte =jfdsmm.getjButton4();
     private JButton annuleracte = jaa.getjButton1();
@@ -107,6 +109,9 @@ private JTable jlistedppm =  jldppm.getjTable1();
        private JButton retourfdsversdp = jfdsmm.getjButton1();
        private JButton retourcreerfdsversdp = jcFDS.getjButton1();
        private JButton retourjlmversjldppm = jldppm.getjButton1();
+       
+       private JTextField recherchelm =lm.getjTextField1();
+         private JTextField rechercheclm =jcm.getjTextField1();
 //    /**
 //     * Creates new form Fen
 //     */JFrame frame = this;
@@ -123,9 +128,9 @@ private JTable jlistedppm =  jldppm.getjTable1();
         validerDP.addActionListener(new BoutonListenerValiderDP(jcdp, this, sih));
         jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp, jcdp, jcp, lm, jcm, jcs, a, jm, this, jfdsdofds, sih));
         jlisteP.addMouseListener(new tablesListener(lp, this, jlisteP, cdpdd,sih));
-        rechercheDP.addActionListener(new BoutonListenerRDP(lp,this,sih,jcp,cdpdd));
+        
         jcreerFDSButton.addActionListener(new BoutonValiderNouvFDS(jcFDS, jfdsmm, this, sih,jaa));
-        facture.addActionListener(new BoutonListenerFacture(this,jcDPf,jfdsmm,cdpdd));
+     facture.addActionListener(new BoutonListenerFacture(this,jcDPf,jfdsmm,cdpdd));
         rechercheDPtext.addKeyListener(new RechercheEntrerListener(lp,this,sih,jcp,cdpdd));
         creerFDS.addActionListener(new BoutonListenerNouvelleFDS(this,cdpdd,jcFDS,jaa));
         ajouteracte.addActionListener(new BoutonListenerAjouterActe(this,jfdsmm,jaa));
@@ -135,11 +140,16 @@ private JTable jlistedppm =  jldppm.getjTable1();
         Boutonretour.addActionListener(new BoutonListenerRetourFacture(this,jfdsmm,jcDPf));
         validerTri.addActionListener(new BoutonListenerValiderTri(jfdsdofds,this,sih));
         jlistefiche.addMouseListener(new TableauListenerFDS( cdpdd, this, jlistefiche ,jfdsmm,b, jm, sih));
-        rechercheDPtextJCP.addActionListener(new BoutonListenerRCoutPatient(lp,this,sih,jcp,cdpdd));
+        rechercheDPtextJCP.addKeyListener(new BoutonListenerRCoutPatient(lp,this,sih,jcp,cdpdd));
         Boutonretourdpverslp.addActionListener(new BoutonListenerRetourDpVersLP(this,lp,cdpdd));
         retourfdsversdp.addActionListener(new BoutonListenerRetourFDSversDP(this,jfdsmm, cdpdd));
           retourcreerfdsversdp.addActionListener(new BoutonListenerRetoucreerFDDversDP(this,jcFDS,cdpdd));
           retourjlmversjldppm.addActionListener(new BoutonListenerretourLpmVersLm(jldppm,lm,this));
+          recherchelm.addKeyListener(new BarreRechercheLm(lm, this,sih, jcm));
+               rechercheclm.addKeyListener(new BarreRechercherCoutM(lm, this,sih, jcm));
+          
+          
+          
         //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
         //Définition de l'écouteur à l'aide d'une classe interne anonyme
         frame.addWindowListener(new WindowAdapter() {

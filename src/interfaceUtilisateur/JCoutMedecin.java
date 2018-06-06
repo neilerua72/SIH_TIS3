@@ -5,6 +5,8 @@
  */
 package interfaceUtilisateur;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author Manon
@@ -166,6 +168,10 @@ public class JCoutMedecin extends javax.swing.JPanel {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

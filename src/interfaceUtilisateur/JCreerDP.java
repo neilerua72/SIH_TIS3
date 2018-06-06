@@ -5,6 +5,8 @@
  */
 package interfaceUtilisateur;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author Manon
@@ -46,6 +48,22 @@ public class JCreerDP extends javax.swing.JPanel {
      */
     public javax.swing.JTextField getPrenom() {
         return prenom;
+    }
+
+    public JTextField getjTextField5() {
+        return jTextField5;
+    }
+
+    public JTextField getjTextField6() {
+        return jTextField6;
+    }
+
+    public JTextField getjTextField7() {
+        return jTextField7;
+    }
+
+    public JTextField getjTextField9() {
+        return jTextField9;
     }
 
     /**

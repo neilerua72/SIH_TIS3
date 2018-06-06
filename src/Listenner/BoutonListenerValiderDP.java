@@ -37,7 +37,7 @@ public class BoutonListenerValiderDP implements ActionListener{
         String nom = cdp.getNom().getText();
         String prenom = cdp.getPrenom().getText();
         
-         String adresse = cdp.getAdresse().getText();
+         String adresse = cdp.getAdresse().getText()+" "+cdp.getjTextField5().getText()+" "+cdp.getjTextField6().getText();
          String numDeSS = cdp.getNumSS().getText();
          String sannee=cdp.getAnnee().getText();
          String smois=cdp.getMois().getText();
@@ -46,7 +46,7 @@ public class BoutonListenerValiderDP implements ActionListener{
          
          //Verification données : 
          if(nom.equals("")||prenom.equals("")||sannee.equals("")||smois.equals("")||sjour.equals("")||adresse.equals("")||numDeSS.equals("")){
-             JOptionPane.showMessageDialog(null, "Une case n'est pas remplit");
+             JOptionPane.showMessageDialog(null, "Une case n'est pas remplie");
          }else{
              int annee = Integer.parseInt(sannee);
         int mois = Integer.parseInt(smois);
@@ -71,7 +71,24 @@ public class BoutonListenerValiderDP implements ActionListener{
              DossierPatient dp = new DossierPatient(pa);
              sih.ajouterDp(dp);
              JOptionPane.showMessageDialog(null, "Patient ajouté correctement");
+             cdp.getNom().setText("");
+         cdp.getPrenom().setText("");
+        
+       cdp.getAdresse().setText("");
+      cdp.getNumSS().setText("");
+         cdp.getAnnee().setText("");
+         cdp.getMois().setText("");
+      cdp.getJour().setText("");
+      cdp.getjTextField5().setText("");
+      cdp.getjTextField6().setText("");
+      cdp.getjTextField7().setText("");
+      cdp.getjTextField9().setText("");
+      
+       
+         
          }
+         
+         
          }
          
          

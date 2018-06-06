@@ -1,6 +1,11 @@
 
 package interfaceUtilisateur;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Manon
@@ -138,6 +143,11 @@ public class JListeDeMedecins extends javax.swing.JPanel {
         );
 
         jTextField1.setText("Rechercher par le nom");
+        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField1MouseClicked(evt);
+            }
+        });
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -229,6 +239,55 @@ public class JListeDeMedecins extends javax.swing.JPanel {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
+         if(this.jTextField1.getText().equals("Rechercher par le nom"))
+        this.jTextField1.setText("");
+    }//GEN-LAST:event_jTextField1MouseClicked
+
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public JButton getjButton5() {
+        return jButton5;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public JPanel getjPanel6() {
+        return jPanel6;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
