@@ -12,6 +12,10 @@ import javax.swing.table.DefaultTableModel;
  * @author Aurélien
  */
 public class ModelTable extends DefaultTableModel{
+
+    ModelTable(String[][] tab, String[] string) {
+        super(tab,string);
+    }
     
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex){

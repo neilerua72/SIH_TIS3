@@ -138,7 +138,7 @@ private JTable jlistedppm =  jldppm.getjTable1();
         jcreerFDSButton.addActionListener(new BoutonValiderNouvFDS(jcFDS, jfdsmm, this, sih,jaa));
      facture.addActionListener(new BoutonListenerFacture(this,jcDPf,jfdsmm,cdpdd));
         rechercheDPtext.addKeyListener(new RechercheEntrerListener(lp,this,sih,jcp,cdpdd));
-        creerFDS.addActionListener(new BoutonListenerNouvelleFDS(this,cdpdd,jcFDS,jaa));
+        creerFDS.addActionListener(new BoutonListenerNouvelleFDS(this,cdpdd,jcFDS,jaa,sih));
         ajouteracte.addActionListener(new BoutonListenerAjouterActe(this,jfdsmm,jaa));
         annuleracte.addActionListener(new BoutonListenerAnnulerActe(this,jaa,jfdsmm));
         jlistemedecin.addMouseListener(new TableauListenerListeDeMedecins (lm, this, jlistemedecin, jldppm,b ,jm, sih));

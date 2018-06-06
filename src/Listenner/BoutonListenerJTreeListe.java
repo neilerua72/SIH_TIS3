@@ -129,7 +129,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
                 tab[i][1] = p.getPrenom();
                 tab[i][2] = ""+dp.coutPatient();
             }
-            DefaultTableModel model = new DefaultTableModel(
+            ModelTable model = new ModelTable(
                     tab,
                     new String[]{
                         "Nom", "Prénom", "Coût"

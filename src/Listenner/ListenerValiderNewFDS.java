@@ -44,8 +44,8 @@ public abstract class ListenerValiderNewFDS {
         String prenom=jcfds.getPrenom().getText();
         String sannee=jcfds.getJour().getText();
         NumDeSS n = new NumDeSS(jcfds.getNum().getText());
-        String specialite = jcfds.getSpe().getItemAt(2);
-        specialite="GYN";
+        String sspecialite =  jcfds.getSpe().getSelectedItem().toString();
+       
          String smois=jcfds.getMois().getText();
          String sjour=jcfds.getAnnee().getText();
          String sheure=jcfds.getHeure().getText();
@@ -64,7 +64,7 @@ public abstract class ListenerValiderNewFDS {
              if(!d.dateCorrect()){
                  //POPup
              }else{
-                 Spe spe = Spe.recupEnum(specialite);
+                 Spe spe = Spe.recupEnum(sspecialite);
              
                Medecin m = new Medecin(nom,prenom,spe);
                  FicheDeSoins f = new FicheDeSoins(dp.getPatient(),m,d);
