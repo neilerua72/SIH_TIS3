@@ -37,27 +37,29 @@ public enum Spe {
         return super.toString();
     }
     public static Spe recupEnum(String code){
-         if (code.equals("ANE"))
+         if (code.equals("anesthésiologie"))
             return Spe.ANE;
-        if (code.equals("CAR"))
+        if (code.equals("cardiologie"))
             return Spe.CAR;
-        if (code.equals("DER"))
+        if (code.equals("dermatologie"))
             return Spe.DER;
-        if (code.equals("GER"))
+        if (code.equals("gérontologie"))
             return Spe.GER;
-        if (code.equals("GYN"))
+        if (code.equals("gynécologie"))
             return Spe.GYN;
-        if (code.equals("HEM"))
+        if (code.equals("hématologie"))
+            return Spe.HEM;
+        if(code.equals("neurologie"))
             return Spe.NEU;
-        if (code.equals("PED"))
+        if (code.equals("pédiatrie"))
             return Spe.PED;
-        if (code.equals("RAD"))
+        if (code.equals("radiologie"))
             return Spe.RAD;
-        if (code.equals("URO"))
+        if (code.equals("urologie"))
             return Spe.URO;
-        if (code.equals("ONC"))
+        if (code.equals("oncologie"))
             return Spe.ONC;
-        if (code.equals("ORL"))
+        if (code.equals("oto-rhino-laryngologie"))
             return Spe.ORL;
         
             

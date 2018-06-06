@@ -402,7 +402,7 @@
         <Container class="javax.swing.JScrollPane" name="PanelActes">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="260" y="250" width="760" height="440"/>
+              <AbsoluteConstraints x="10" y="220" width="1030" height="340"/>
             </Constraint>
           </Constraints>
 
@@ -416,7 +416,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="756" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1039" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">

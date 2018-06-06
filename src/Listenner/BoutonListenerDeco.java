@@ -32,6 +32,7 @@ public class BoutonListenerDeco implements ActionListener{
      c.setVisible(true);
      jframe.setSize(950, 600);
     jframe.repaint();
+   
     jframe.setState(State.NONCO);
     }
     

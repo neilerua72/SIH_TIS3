@@ -47,7 +47,7 @@ JListedePatientParMedecins jldppm;
         }
         
         else {
-            requete = new ArrayList(sih.rechercheMed(cm.getjTextField1().getText()));;
+            requete = new ArrayList(sih.rechercheMed(cm.getjTextField1().getText()));
           
         }
         tab = new String[requete.size()][3];
@@ -66,7 +66,7 @@ JListedePatientParMedecins jldppm;
                 });
         JTable jt = lm.getjTable1();
         jt.addMouseListener(new tableListeneBarreRmedecin(jt,frame,jldppm,sih,requete));
-        System.out.println("TESSSSSSSSSSSSSSSSSSSSSSSSST");
+ 
         
         
         

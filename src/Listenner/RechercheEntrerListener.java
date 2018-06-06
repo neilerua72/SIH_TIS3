@@ -36,8 +36,7 @@ public class RechercheEntrerListener extends ListenerRecherche implements KeyLis
 
     @Override
     public void keyPressed(KeyEvent e) {
-//            if((e.getKeyCode()>64&&e.getKeyCode()<91)||e.getKeyCode()==8)
-//            super.recherche(1);
+//           
 //        
     }
 

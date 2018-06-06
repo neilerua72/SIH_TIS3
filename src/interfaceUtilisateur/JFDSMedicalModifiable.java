@@ -310,7 +310,7 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
         PanActes.setLayout(PanActesLayout);
         PanActesLayout.setHorizontalGroup(
             PanActesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 756, Short.MAX_VALUE)
+            .addGap(0, 1039, Short.MAX_VALUE)
         );
         PanActesLayout.setVerticalGroup(
             PanActesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +320,7 @@ public class JFDSMedicalModifiable extends javax.swing.JPanel {
         PanelActes.setViewportView(PanActes);
         PanActes.setLayout(new BoxLayout(PanActes, BoxLayout.Y_AXIS));
 
-        jPanel2.add(PanelActes, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 760, 440));
+        jPanel2.add(PanelActes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 1030, 340));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

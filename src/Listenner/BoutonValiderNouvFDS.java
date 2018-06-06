@@ -11,6 +11,7 @@ import interfaceUtilisateur.JCreerFDS;
 import interfaceUtilisateur.JFDSMedicalModifiable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import princetonPlainsboro.SIH;
 
 /**
@@ -26,6 +27,7 @@ public class BoutonValiderNouvFDS extends ListenerValiderNewFDS implements Actio
     @Override
     public void actionPerformed(ActionEvent e) {
          super.valider();
+        
     }
     
 }

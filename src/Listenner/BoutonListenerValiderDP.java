@@ -62,7 +62,7 @@ public class BoutonListenerValiderDP implements ActionListener{
              
              
          }
-         //Pour pas se faire chier avec le num de SS
+         //Pour pas s'embêter avec le num de SS
          
          /*else if(numSS.verifNumS(d))
              JOptionPane.showMessageDialog(null, "Numéro de sécurité sociale impossible");*/

@@ -72,14 +72,14 @@ public abstract class ListenerValiderTri {
          String smois=lp.getMois().getText();
          String sjour=lp.getAnnee().getText();
          if(sannee.equals("")||smois.equals("")||sjour.equals("")){
-             //POPOUP
+             JOptionPane.showMessageDialog(null, "Une case n'est pas correctement remplie");
          }else{
              int annee = Integer.parseInt(sannee);
         int mois = Integer.parseInt(smois);
          int jour = Integer.parseInt(sjour);
              Date d = new Date(annee,mois,jour);
              if(!d.dateCorrect()){
-                 //POPup
+                JOptionPane.showMessageDialog(null, "Le format de la date est incorrecte");
              }else{
                  lfds=sih.lfdsDate(d);
              }

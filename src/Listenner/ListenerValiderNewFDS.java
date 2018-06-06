@@ -10,6 +10,7 @@ import interfaceUtilisateur.JAjouterActe;
 import interfaceUtilisateur.JCreerFDS;
 import interfaceUtilisateur.JFDSMedicalModifiable;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import princetonPlainsboro.Date;
 import princetonPlainsboro.DateH;
 import princetonPlainsboro.DossierPatient;
@@ -45,7 +46,7 @@ public abstract class ListenerValiderNewFDS {
         String sannee=jcfds.getJour().getText();
         NumDeSS n = new NumDeSS(jcfds.getNum().getText());
         String sspecialite =  jcfds.getSpe().getSelectedItem().toString();
-       
+       //sspecialite="";
          String smois=jcfds.getMois().getText();
          String sjour=jcfds.getAnnee().getText();
          String sheure=jcfds.getHeure().getText();
@@ -53,7 +54,7 @@ public abstract class ListenerValiderNewFDS {
          
          DossierPatient dp = sih.retrouverDossPat(new Patient(n));
          if(sannee.equals("")||smois.equals("")||sjour.equals("")||nom.equals("")||prenom.equals("")){
-             //POPUP
+            JOptionPane.showMessageDialog(null, "Une case n'est pas remplie");
          }else{
              int annee = Integer.parseInt(sannee);
         int mois = Integer.parseInt(smois);
@@ -62,13 +63,14 @@ public abstract class ListenerValiderNewFDS {
          int minutes = Integer.parseInt(sminutes);
              DateH d = new DateH(annee,mois,jour,heure,minutes);
              if(!d.dateCorrect()){
-                 //POPup
+                 JOptionPane.showMessageDialog(null, "Format de date incorrecte");
              }else{
                  Spe spe = Spe.recupEnum(sspecialite);
              
                Medecin m = new Medecin(nom,prenom,spe);
                  FicheDeSoins f = new FicheDeSoins(dp.getPatient(),m,d);
                  dp.ajouterFiche(f);
+                 System.out.println(f);
                  JButton jb = aa.getjButton2();
                  jb.addActionListener(new BoutonListenerValiderAjouterActe(aa,frame,sih,f));
                  j.getNomPrenom().setText(dp.getPatient().getNom()+" "+dp.getPatient().getPrenom());

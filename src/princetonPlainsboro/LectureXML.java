@@ -255,6 +255,8 @@ public class LectureXML {
         if (code.equals("GYN"))
             return Spe.GYN;
         if (code.equals("HEM"))
+            return Spe.HEM;
+        if(code.equals("NEU"))
             return Spe.NEU;
         if (code.equals("PED"))
             return Spe.PED;

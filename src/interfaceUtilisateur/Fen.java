@@ -71,15 +71,12 @@ public class Fen extends javax.swing.JFrame {
     Accueil a = new Accueil();
     JConsulterFDS_dans_ongletFDS jfdsdofds = new JConsulterFDS_dans_ongletFDS();
     JFDSMedicalModifiable jfdsmm = new JFDSMedicalModifiable();
-    JConsulterDP_facture jcDPf = new JConsulterDP_facture ();
-    JCreerFDS jcFDS= new JCreerFDS ();
-    JAjouterActe jaa= new JAjouterActe ();
-    JListedePatientParMedecins jldppm = new  JListedePatientParMedecins ();
-    
-    
-    
+    JConsulterDP_facture jcDPf = new JConsulterDP_facture();
+    JCreerFDS jcFDS = new JCreerFDS();
+    JAjouterActe jaa = new JAjouterActe();
+    JListedePatientParMedecins jldppm = new JListedePatientParMedecins();
+
     private FicheDeSoins f = null;
-  
 
     //Variable importante : 
     Jmenu jm = new Jmenu();
@@ -95,29 +92,29 @@ public class Fen extends javax.swing.JFrame {
     private State state;
     private JTable jlisteP = lp.getjTable1();
     private JTree jtreeliste = jm.getjTree2();
-   private JButton jcreerFDSButton = jcFDS.getValider();
+    private JButton jcreerFDSButton = jcFDS.getValider();
     private JButton facture = jfdsmm.getjButton3();
     private JButton rechercheDP = lp.getButtonR();
     private JTextField rechercheDPtext = lp.getRecherche();
     private JTextField rechercheDPtextJCP = jcp.getjTextField2();
     private JButton creerFDS = cdpdd.getjButton5();
-    private JButton ajouteracte =jfdsmm.getjButton4();
+    private JButton ajouteracte = jfdsmm.getjButton4();
     private JButton annuleracte = jaa.getjButton1();
     private JButton validerTri = jfdsdofds.getButtonValider();
-      private JTable jlistefiche = cdpdd.getjTable1();
-      private JTable jlistemedecin = lm.getjTable1();
-private JTable jlistedppm =  jldppm.getjTable1();
-      private JButton Boutonretour = jcDPf.getjButton1();
-       private JButton Boutonretourdpverslp = cdpdd.getjButton1();
-       private JButton retourfdsversdp = jfdsmm.getjButton1();
-       private JButton retourcreerfdsversdp = jcFDS.getjButton1();
-       private JButton retourjlmversjldppm = jldppm.getjButton1();
-       private JButton boutondeco = b.getjButton1();
-       private JTextField recherchelm =lm.getjTextField1();
-         private JTextField rechercheclm =jcm.getjTextField1();
-         private JTable tableongletFDS =jfdsdofds.getjTable1();
-         private JTable tableCoutPatient =jcp.getjTable1();
-         
+    private JTable jlistefiche = cdpdd.getjTable1();
+    private JTable jlistemedecin = lm.getjTable1();
+    private JTable jlistedppm = jldppm.getjTable1();
+    private JButton Boutonretour = jcDPf.getjButton1();
+    private JButton Boutonretourdpverslp = cdpdd.getjButton1();
+    private JButton retourfdsversdp = jfdsmm.getjButton1();
+    private JButton retourcreerfdsversdp = jcFDS.getjButton1();
+    private JButton retourjlmversjldppm = jldppm.getjButton1();
+    private JButton boutondeco = b.getjButton1();
+    private JTextField recherchelm = lm.getjTextField1();
+    private JTextField rechercheclm = jcm.getjTextField1();
+    private JTable tableongletFDS = jfdsdofds.getjTable1();
+    private JTable tableCoutPatient = jcp.getjTable1();
+
 //    /**
 //     * Creates new form Fen
 //     */JFrame frame = this;
@@ -132,32 +129,30 @@ private JTable jlistedppm =  jldppm.getjTable1();
         LectureXML lecture = new LectureXML("donnesApresSIH.xml");
         sih = lecture.getDossier();
         validerDP.addActionListener(new BoutonListenerValiderDP(jcdp, this, sih));
-        jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp, jcdp, jcp, lm, jcm, jcs, a, jm, this, jfdsdofds, sih,jfdsmm));
-        jlisteP.addMouseListener(new tablesListener(lp, this, jlisteP, cdpdd,sih));
-        boutondeco.addActionListener(new BoutonListenerDeco(c,this,b));
-        jcreerFDSButton.addActionListener(new BoutonValiderNouvFDS(jcFDS, jfdsmm, this, sih,jaa));
-     facture.addActionListener(new BoutonListenerFacture(this,jcDPf,jfdsmm,cdpdd));
-        rechercheDPtext.addKeyListener(new RechercheEntrerListener(lp,this,sih,jcp,cdpdd));
-        creerFDS.addActionListener(new BoutonListenerNouvelleFDS(this,cdpdd,jcFDS,jaa,sih));
-        ajouteracte.addActionListener(new BoutonListenerAjouterActe(this,jfdsmm,jaa));
-        annuleracte.addActionListener(new BoutonListenerAnnulerActe(this,jaa,jfdsmm));
-        jlistemedecin.addMouseListener(new TableauListenerListeDeMedecins (lm, this, jlistemedecin, jldppm,b ,jm, sih));
-        jlistedppm.addMouseListener(new ListenerTableauLPPM(this, jldppm,cdpdd, jlistedppm,sih,b));
-        Boutonretour.addActionListener(new BoutonListenerRetourFacture(this,jfdsmm,jcDPf));
-        validerTri.addActionListener(new BoutonListenerValiderTri(jfdsdofds,this,sih,jfdsmm));
-        jlistefiche.addMouseListener(new TableauListenerFDS( cdpdd, this, jlistefiche ,jfdsmm,b, jm, sih));
-        rechercheDPtextJCP.addKeyListener(new BoutonListenerRCoutPatient(lp,this,sih,jcp,cdpdd));
-        Boutonretourdpverslp.addActionListener(new BoutonListenerRetourDpVersLP(this,lp,cdpdd));
-        retourfdsversdp.addActionListener(new BoutonListenerRetourFDSversDP(this,jfdsmm, cdpdd));
-          retourcreerfdsversdp.addActionListener(new BoutonListenerRetoucreerFDDversDP(this,jcFDS,cdpdd));
-          retourjlmversjldppm.addActionListener(new BoutonListenerretourLpmVersLm(jldppm,lm,this));
-          recherchelm.addKeyListener(new BarreRechercheLm(lm, this,sih, jcm,jldppm));
-           rechercheclm.addKeyListener(new BarreRechercherCoutM(lm, this,sih, jcm,jldppm));
-          tableongletFDS.addMouseListener(new TableListenerFDSdansOngletFDS ( jfdsdofds, this,tableongletFDS, jfdsmm, sih));
-          tableCoutPatient.addMouseListener(new tableauListenerCoutPatient(jcp,this,tableCoutPatient,cdpdd,sih));
-          
-          
-          
+        jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp, jcdp, jcp, lm, jcm, jcs, a, jm, this, jfdsdofds, sih, jfdsmm));
+        jlisteP.addMouseListener(new tablesListener(lp, this, jlisteP, cdpdd, sih));
+        boutondeco.addActionListener(new BoutonListenerDeco(c, this, b));
+        jcreerFDSButton.addActionListener(new BoutonValiderNouvFDS(jcFDS, jfdsmm, this, sih, jaa));
+        facture.addActionListener(new BoutonListenerFacture(this, jcDPf, jfdsmm, cdpdd));
+        rechercheDPtext.addKeyListener(new RechercheEntrerListener(lp, this, sih, jcp, cdpdd));
+        creerFDS.addActionListener(new BoutonListenerNouvelleFDS(this, cdpdd, jcFDS, jaa, sih));
+        ajouteracte.addActionListener(new BoutonListenerAjouterActe(this, jfdsmm, jaa));
+        annuleracte.addActionListener(new BoutonListenerAnnulerActe(this, jaa, jfdsmm));
+        jlistemedecin.addMouseListener(new TableauListenerListeDeMedecins(lm, this, jlistemedecin, jldppm, b, jm, sih));
+        jlistedppm.addMouseListener(new ListenerTableauLPPM(this, jldppm, cdpdd, jlistedppm, sih, b));
+        Boutonretour.addActionListener(new BoutonListenerRetourFacture(this, jfdsmm, jcDPf));
+        validerTri.addActionListener(new BoutonListenerValiderTri(jfdsdofds, this, sih, jfdsmm));
+        jlistefiche.addMouseListener(new TableauListenerFDS(cdpdd, this, jlistefiche, jfdsmm, b, jm, sih));
+        rechercheDPtextJCP.addKeyListener(new BoutonListenerRCoutPatient(lp, this, sih, jcp, cdpdd));
+        Boutonretourdpverslp.addActionListener(new BoutonListenerRetourDpVersLP(this, lp, cdpdd));
+        retourfdsversdp.addActionListener(new BoutonListenerRetourFDSversDP(this, jfdsmm, cdpdd));
+        retourcreerfdsversdp.addActionListener(new BoutonListenerRetoucreerFDDversDP(this, jcFDS, cdpdd));
+        retourjlmversjldppm.addActionListener(new BoutonListenerretourLpmVersLm(jldppm, lm, this));
+        recherchelm.addKeyListener(new BarreRechercheLm(lm, this, sih, jcm, jldppm));
+        rechercheclm.addKeyListener(new BarreRechercherCoutM(lm, this, sih, jcm, jldppm));
+        tableongletFDS.addMouseListener(new TableListenerFDSdansOngletFDS(jfdsdofds, this, tableongletFDS, jfdsmm, sih));
+        tableCoutPatient.addMouseListener(new tableauListenerCoutPatient(jcp, this, tableCoutPatient, cdpdd, sih));
+
         //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
         //Définition de l'écouteur à l'aide d'une classe interne anonyme
         this.addWindowListener(new WindowAdapter() {
@@ -191,12 +186,12 @@ private JTable jlistedppm =  jldppm.getjTable1();
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -221,7 +216,7 @@ private JTable jlistedppm =  jldppm.getjTable1();
     public void setState(State state) {
         this.state = state;
     }
-    
+
     public void toutFalse() {
         lp.setVisible(false);
         jcdp.setVisible(false);
@@ -237,7 +232,7 @@ private JTable jlistedppm =  jldppm.getjTable1();
         jcDPf.setVisible(false);
         jcFDS.setVisible(false);
         jaa.setVisible(false);
-           jldppm.setVisible(false);
+        jldppm.setVisible(false);
     }
 
     public State getStates() {
@@ -258,22 +253,18 @@ private JTable jlistedppm =  jldppm.getjTable1();
         this.f = f;
     }
 
-    
-    
-       public void toutToutfalse(){
-           jm.setVisible(false);
-           c.setVisible(false);
-           this.toutFalse();
-       }
+    public void toutToutfalse() {
+        jm.setVisible(false);
+        c.setVisible(false);
+        this.toutFalse();
+    }
     /**
      * @return the state
      */
-   
 
     /**
      * @param state the state to set
      */
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
