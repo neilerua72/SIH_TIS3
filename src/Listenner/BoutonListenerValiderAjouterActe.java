@@ -41,9 +41,10 @@ public class BoutonListenerValiderAjouterActe implements ActionListener {
          int scoefficiant  = Integer.parseInt(coefficiant);
         
         String Type = (String) aa.getjComboBox1().getSelectedItem();
-       //Code code = (Code) aa.getjComboBox2().getSelectedItem();
-                
-        Code code = Code.AMO;
+       String scode =  aa.getjComboBox2().getSelectedItem().toString();
+                System.out.println("CS");
+        Code code=Code.AMC;
+        code = code.getCode("POD");
          
         // Verification données : 
          if(coefficiant.equals("")){

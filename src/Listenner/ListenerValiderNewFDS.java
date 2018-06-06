@@ -76,6 +76,7 @@ public abstract class ListenerValiderNewFDS {
                  j.getNumDeSS().setText(dp.getPatient().getNumDeSS().toString());
                  j.getDateNais().setText(dp.getPatient().getDateDeNaissance().toString());
                  frame.toutFalse();
+                 aa.getjButton2().addActionListener(new BoutonListenerValiderAjouterActe(aa,frame,sih,f));
                  frame.add(j);
                  j.setVisible(true);
                  frame.revalidate();
