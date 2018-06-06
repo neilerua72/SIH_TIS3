@@ -11,6 +11,7 @@ import interfaceUtilisateur.JCoutMedecin;
 import interfaceUtilisateur.JCoutPatient;
 import interfaceUtilisateur.JListeDeMedecins;
 import interfaceUtilisateur.JListeDePatients;
+import interfaceUtilisateur.JListedePatientParMedecins;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -26,27 +27,28 @@ public class BarreRechercheLm extends ListenerRechercheMedecin implements KeyLis
     Fen frame;
     SIH sih;
     JCoutMedecin cm;
+    JListedePatientParMedecins jldppm;
     
-    public BarreRechercheLm(JListeDeMedecins lm, Fen jframe, SIH sih, JCoutMedecin cm) {
-        super(lm,jframe,sih,cm);
+    public BarreRechercheLm( JListeDeMedecins lm, Fen jframe, SIH sih, JCoutMedecin cm,JListedePatientParMedecins jldppm) {
+        super(lm,jframe,sih,cm,jldppm);
     }
     
-   
+  
 
-    @Override
+   
     public void keyTyped(KeyEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-         if((e.getKeyCode()>64&&e.getKeyCode()<91)||e.getKeyCode()==8)
-            super.recherche(1);
+        
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       if((e.getKeyCode()>64&&e.getKeyCode()<91)||e.getKeyCode()==8)
+            super.recherche(1);
     }
     
 }

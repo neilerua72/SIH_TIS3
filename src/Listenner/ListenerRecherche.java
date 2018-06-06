@@ -9,9 +9,12 @@ import interfaceUtilisateur.Barre;
 import interfaceUtilisateur.ConnexionInterface;
 import interfaceUtilisateur.Fen;
 import interfaceUtilisateur.JConsulterDP_dans_le_dossier;
+import interfaceUtilisateur.JCoutMedecin;
 import interfaceUtilisateur.JCoutPatient;
+import interfaceUtilisateur.JListeDeMedecins;
 
 import interfaceUtilisateur.JListeDePatients;
+import interfaceUtilisateur.JListedePatientParMedecins;
 import interfaceUtilisateur.Jmenu;
 import interfaceUtilisateur.State;
 import java.awt.BorderLayout;
@@ -24,6 +27,7 @@ import javax.swing.table.DefaultTableModel;
 import princetonPlainsboro.Connexion;
 import princetonPlainsboro.DossierPatient;
 import princetonPlainsboro.Identification;
+import princetonPlainsboro.Medecin;
 import princetonPlainsboro.Patient;
 import princetonPlainsboro.SIH;
 
@@ -73,7 +77,7 @@ JConsulterDP_dans_le_dossier dossierPatient;
                 });
         JTable jt = lp.getjTable1();
         jt.addMouseListener(new tablesListenerBarreR(jt,frame, dossierPatient,sih,requete));
-        System.out.println("test3");
+    
         if (f == 1) {
             lp.getjTable1().setModel(model);
             lp.getjScrollPane4().setViewportView(lp.getjTable1());
@@ -88,3 +92,18 @@ JConsulterDP_dans_le_dossier dossierPatient;
  
     }
 }
+
+    
+        
+     
+       
+        
+        
+        
+        
+      
+           
+        
+     
+ 
+    

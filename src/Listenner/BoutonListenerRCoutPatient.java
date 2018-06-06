@@ -37,15 +37,15 @@ public class BoutonListenerRCoutPatient extends ListenerRecherche implements Key
     @Override
     public void keyPressed(KeyEvent e) {
 
-        if((e.getKeyCode()>64&&e.getKeyCode()<91)||e.getKeyCode()==8);
-         super.recherche(2);  
+      
     }
 
     
 
     @Override
     public void keyReleased(KeyEvent e) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         if((e.getKeyCode()>64&&e.getKeyCode()<91)||e.getKeyCode()==8);
+         super.recherche(2); 
     }
     
 }

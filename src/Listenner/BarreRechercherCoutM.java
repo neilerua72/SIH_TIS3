@@ -8,10 +8,15 @@ package Listenner;
 import interfaceUtilisateur.Fen;
 import interfaceUtilisateur.JCoutMedecin;
 import interfaceUtilisateur.JListeDeMedecins;
+import interfaceUtilisateur.JListedePatientParMedecins;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import princetonPlainsboro.Medecin;
 import princetonPlainsboro.SIH;
 
 /**
@@ -24,8 +29,9 @@ public class BarreRechercherCoutM extends ListenerRechercheMedecin implements Ke
     SIH sih;
     JCoutMedecin cm;
     
-    public BarreRechercherCoutM(JListeDeMedecins lm, Fen jframe, SIH sih, JCoutMedecin cm) {
-        super(lm,jframe,sih,cm);
+    public BarreRechercherCoutM(JListeDeMedecins lm, Fen jframe, SIH sih, JCoutMedecin cm, JListedePatientParMedecins jldppm)
+     {
+        super(lm,jframe,sih,cm,jldppm);
     }
     
     public void actionPerformed(ActionEvent e) {
@@ -39,13 +45,13 @@ public class BarreRechercherCoutM extends ListenerRechercheMedecin implements Ke
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if((e.getKeyCode()>64&&e.getKeyCode()<91)||e.getKeyCode()==8);
-         super.recherche(2);  
+          
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if((e.getKeyCode()>64&&e.getKeyCode()<91)||e.getKeyCode()==8);
+         super.recherche(2);
     }
     
 }
