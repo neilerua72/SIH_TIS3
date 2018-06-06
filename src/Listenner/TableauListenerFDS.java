@@ -12,6 +12,7 @@ import interfaceUtilisateur.JConsulterDP_dans_le_dossier;
 import interfaceUtilisateur.JFDSMedicalModifiable;
 import interfaceUtilisateur.JListeDePatients;
 import interfaceUtilisateur.Jmenu;
+import interfaceUtilisateur.State;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -84,7 +85,10 @@ public class TableauListenerFDS implements MouseListener{
      jfdsmm.setVisible(true);
             jframe.repaint();
             jframe.revalidate();
-           
+          if(jframe.getStates()==State.ADMIN){
+              jfdsmm.getButtonAjouter().setVisible(false);
+              jfdsmm.getjLabel11().setVisible(false);
+          }
     
 
 }
