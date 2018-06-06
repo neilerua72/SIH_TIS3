@@ -37,7 +37,11 @@ public class Acte {
     
     
     
-    
+    /**
+     * Constructeur de l'objet acte
+     * @param code de l'acte
+     * @param coef de l'acte
+     */
     public Acte(Code code, int coef) {
         this.code = code;
         this.coef = coef;

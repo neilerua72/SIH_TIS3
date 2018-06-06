@@ -15,10 +15,15 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
 /**
- *
+ * Classe qui sert à écrire dans un fichier XML
  * @author Aurélien
  */
 public class InscriptionFichierXML {
+    
+    /**Méthode qui transcrit tout le SI en un fichier XML, relisable par LectureXML.class
+     * 
+     * @param sih le système d'information à sauvegarder
+     */
     public void Xml(SIH sih){
     XMLOutputFactory xof = XMLOutputFactory.newInstance();
       //On crée notre objet qui va servir à écrire dans notre fichier

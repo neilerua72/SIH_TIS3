@@ -1,37 +1,40 @@
 package princetonPlainsboro;
-//Test 
+/**
+ * Classe qui modélise un patient
+ * @author Aurélien, AnneLise, Manon
+ */
 public class Patient {
 
-    /**
-     * @return the numDeSS
+    /** Méthode qui retourne le numéro de sécurité sociale
+     * @return le numéro de sécurité sociale
      */
     public NumDeSS getNumDeSS() {
         return numDeSS;
     }
 
-    /**
-     * @return the adresse
+    /** Méthode qui retourne l'adresse
+     * @return l'adresse
      */
     public String getAdresse() {
         return adresse;
     }
 
-    /**
-     * @return the dateDeNaissance
+    /**Méthode qui retourne la date de naissance
+     * @return la date de naissance
      */
     public Date getDateDeNaissance() {
         return dateDeNaissance;
     }
 
-    /**
-     * @return the nom
+    /** Méthode qui retourne le nom du patient
+     * @return le nom
      */
     public String getNom() {
         return nom;
     }
 
-    /**
-     * @return the prenom
+    /** Méthode qui retourne le prénom du patient
+     * @return le prenom
      */
     public String getPrenom() {
         return prenom;
@@ -41,15 +44,26 @@ public class Patient {
     private NumDeSS numDeSS;
     private String adresse;
 
+    
+    /**
+     * Constructeur du patient par son numéro de sécu (qui sert à identifier le patient)
+     * @param numDeSS du patient
+     */
     public Patient(NumDeSS numDeSS) {
         this.numDeSS=numDeSS;
     }
-     public Patient(String nom) {
-        this.nom=nom;
-    }
+    
+ 
     
     private Date dateDeNaissance;
-    
+    /**
+     * Méthode qui construit le patient
+     * @param nom du patient 
+     * @param prenom du patient
+     * @param numDeSS du patient
+     * @param adresse du patient
+     * @param dateDeNaissance du patient
+     */
     public Patient(String nom, String prenom, NumDeSS numDeSS, String adresse, Date dateDeNaissance) {
         this.nom = nom;
         this.prenom = prenom;
@@ -59,9 +73,17 @@ public class Patient {
         }
     
     
+    /**
+     * méthode qui retourne le nom puis le prénom du patient
+     * @return une chaîne de caractère
+     */
     public String nomPrenom(){
         return this.getNom() + " "+this.getPrenom();
     }
+    /**
+     * Méthode qui renvoit le patient sous forme de chaîne de caractère
+     * @return une chaîne de caractère
+     */
     public String toString() {
         String s="";
         s+="Nom : "+this.getNom()+"\n";
@@ -72,6 +94,12 @@ public class Patient {
         return s;
         }
     
+    
+    /**
+     * Méthode qui vérifie l'égalite entre 2 patients
+     * @param p le patient à comparer
+     * @return un boolean en fonction de l'égalité 
+     */
     public boolean equals(Patient p) {
         
             return this.numDeSS.equals(p.getNumDeSS());

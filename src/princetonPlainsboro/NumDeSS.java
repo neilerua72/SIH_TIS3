@@ -6,8 +6,8 @@
 package princetonPlainsboro;
 
 /**
- *
- * @author Aurélien
+ *Méthode qui modélise un numéro de sécurité sociale
+ * @author Aurélien, AnneLise, Manon
  */
 public class NumDeSS {
     private String num;
@@ -16,6 +16,11 @@ public class NumDeSS {
 //            this.num=num;
 //        }
 //    }
+    
+    /**
+     * Méthode qui construit le numéro de Sécu
+     * @param n le numéro de sécurité 
+     */
     public NumDeSS(String n){
 //        int num[] = new int[13];
 //        for(int i=0;i<num.length;i++ ){
@@ -30,26 +35,52 @@ public class NumDeSS {
         
     }
 
+    /**
+     * Méthode qui retourne le numéro de sécurité sociale
+     * @return 
+     */
     public String getNum() {
         return num;
     }
     
 
-    /**
-     * @param num the num to set
+    /**Méthode qui défini le numéro de sécurité sociale
+     * @param le numéro de sécurité à définir
      */
     public void setNum(String num) {
         this.num = num;
     }
+    
+    /**
+     * Méthode qui retourne le numéro de sécu sous la forme d'une chaîne de caractère
+     * @return une chaîne de caractère
+     */
     public String toString(){
         return num;
     }
+    
+/**
+ * Méthode qui retourne le numéro de sécurité pour un affichage plus jolie
+ * @return une chaîne de caractère
+ */    
     public String toStringBo(){
         return num.charAt(0)+" "+num.substring(1,3)+" "+num.substring(3,5)+" "+ num.substring(5,8)+" "+num.substring(8,11)+" "+num.substring(11,13);
     }
+    
+    /**
+     * Méthode qui vérifie l'egalité entre 2 numéro de sécurité sociale
+     * @param n le numéro à comparé 
+     * @return un boolean en fonction de l'égalite
+     */
     public boolean equals(NumDeSS n){
         return n.getNum().equals(this.num);
     }
+    
+    /**
+     * Méthode qui verifie que le numéro de sécurité est correct
+     * @param d la date d'anniversaire du patient
+     * @return un boolean en fonction de la vérification
+     */
     public boolean verifNumS(Date d){
         int ann = d.getAnnee()%100;
         int mois = d.getMois();

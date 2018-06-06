@@ -31,6 +31,12 @@ public class Date implements Comparable {
     private int mois;
     private int annee;
     
+    /**
+     * Constructeur de la classe
+     * @param jour le jour de la date
+     * @param mois le mois de la date
+     * @param annee l'année de la date
+     */
     public Date(int jour, int mois, int annee) {
         this.jour=jour;
         this.mois=mois;

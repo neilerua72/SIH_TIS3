@@ -8,6 +8,15 @@ public class DateH extends Date implements Comparable{
     private int heure;
     private int minutes;
     
+    /**
+     * Constructeur de la classe 
+     * 
+     * @param jour jour de la date
+     * @param mois mois de la date
+     * @param annee année de la date
+     * @param heure heure de la date
+     * @param minutes minutes de la date
+     */
     public DateH(int jour, int mois, int annee,int heure,int minutes) {
        super(jour,mois,annee);
        this.heure=heure;

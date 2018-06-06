@@ -129,6 +129,7 @@ public class Connexion {
     }
 
     /**
+     * Méthode qui retourne la photo
      * @return the photo
      */
     public String getPhoto() {
@@ -136,6 +137,7 @@ public class Connexion {
     }
 
     /**
+     * Méthode qui retourne le nom de la personne connecté 
      * @return the type
      */
     public String getType() {

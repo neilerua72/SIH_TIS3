@@ -22,7 +22,7 @@ import javax.xml.stream.XMLStreamReader;
 /**
  * Lecture d'un document XML et transformation en instances Java.
  *
- * @author promayon
+ * @author Aurélien, AnneLise, Manon
  */
 public class LectureXML {
     /// nom du document XML a analyser
@@ -30,10 +30,17 @@ public class LectureXML {
     private final static String repBase = "src/donnees/";
     
     // 'nomFichier' est le nom d'un fichier XML se trouvant dans le repertoire 'repBase' a lire :
+    /**
+     * Constructeur de la classe
+     * @param nomFichier nom du fichier à lire
+     */
     public LectureXML(String nomFichier) {
         this.nomFichier = nomFichier;
     }
-    
+    /**
+     * Méthode qui retourne le SI
+     * @return le SI
+     */
     public SIH getDossier() {
         SIH dossierCourant = null;
         DateH dateh = null;
@@ -182,7 +189,11 @@ public class LectureXML {
        
         return dossierCourant;
     }
-    
+    /**
+     * Méthode qui revoit le code pour une chaine de caractère
+     * @param code qui sera lu par cette classe
+     * @return un Code 
+     */
     private static Code getCode(String code) {
         if (code.equals("CS"))
             return Code.CS;
@@ -243,6 +254,12 @@ public class LectureXML {
         // probleme : code inconnu
         return null;            
     }
+    
+    /**
+     * Méthode qui retourne une Spe en fonction du code de la Spe passé en paramètre
+     * @param code de la spécialité à retrouver
+     * @return une Spe
+     */
      private Spe getSpe(String code) {
         if (code.equals("ANE"))
             return Spe.ANE;

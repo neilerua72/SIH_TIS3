@@ -6,8 +6,8 @@
 package princetonPlainsboro;
 
 /**
- *
- * @author Aurélien
+ *Méthode qui modélise les spécialités de l'hopital
+ * @author Aurélien, AnneLise, Manon
  */
 public enum Spe {
     ANE("anesthésiologie"),
@@ -24,18 +24,36 @@ public enum Spe {
     ORL("oto-rhino-laryngologie");
 
     String libelle;
-
+    
+    /**
+     * Méthode qui retourne le libelle de la spécialité 
+     * @param libelle 
+     */
     private Spe(String libelle) {
         this.libelle = libelle;
     }
 
+    /**
+     * Méthode qui retourne une chaîne de caractère de l'objet
+     * @return une chaîne de caractère
+     */
     public String toString() {
         return libelle;
     }
     
+    
+    /**
+     * méthode qui récupe le code sous forme de chaîne de caractère
+     * @return une chaîne de caractère
+     */
     public String reucpSpe(){
         return super.toString();
     }
+    /**
+     * Méthode qui retourne la Spe en fonction de la chaine de caractère passé en paramètre
+     * @param code que l'ont souhaite trouver
+     * @return un code
+     */
     public static Spe recupEnum(String code){
          if (code.equals("anesthésiologie"))
             return Spe.ANE;

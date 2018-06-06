@@ -43,12 +43,21 @@ public enum Code {
     private String libelle;
     private double cout;
     
-    // constructeur :
+    /**
+     * Constructeur de l'enum
+     * @param libelle de l'acte
+     * @param cout de l'acte
+     */
     private Code(String libelle, double cout) {
         this.libelle = libelle;
         this.cout = cout;
         }
 
+    
+    /**
+     * Retourne le libéllé
+     * @return une chaîne de caractère
+     */
     public String getLibelle() {
         return libelle;
     }
@@ -78,6 +87,12 @@ public enum Code {
     public String recupCode(){
         return super.toString();
     }
+    
+    /**
+     * Méthode qui retourne une valeur de l'enum code en fonction du code passé en paramètre
+     * @param code de l'acte
+     * @return 
+     */
     public Code getCode(String code) {
         if (code.equals("CS"))
             return Code.CS;

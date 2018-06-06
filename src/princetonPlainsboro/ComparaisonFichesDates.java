@@ -14,12 +14,22 @@ public class ComparaisonFichesDates implements ComparaisonFiches {
      */
     int i;
 
+    
+    /**
+     * Consutructeur de la classe 
+     * @param i 1 ou 2 afin de différencier les 2 types de cas
+     */
     public ComparaisonFichesDates(int i) {
         this.i = i;
     }
 
   
-    
+    /**
+     * Méthode qui compare 2 fiches de soins 
+     * @param fiche1 première fiche de soins à comparer
+     * @param fiche2 deuxième fiche de soins à comparer
+     * @return un entier de la différence entre les 2 fiches (soit en argent ou en temps)
+     */
     public int comparer(FicheDeSoins fiche1, FicheDeSoins fiche2) {
         if(i==1)
         return fiche1.getDate().compareTo(fiche2.getDate());

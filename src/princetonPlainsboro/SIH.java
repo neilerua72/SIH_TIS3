@@ -4,18 +4,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
-
+/**
+ * Classe qui modélise un SIH 
+ * @author Aurélien
+ */
 public class SIH {
 
     private ArrayList<DossierPatient> ldp;     // contient des objets de classe 'FicheDeSoins'
 
-
+/**
+ * Constructeur du SI
+ */
     public SIH() {
         ldp = new ArrayList<DossierPatient>();  // liste vide
        
     }
 
-    
+    /**
+     * Méthode qui affiche le SIH
+     */
 
     public void afficher() {
         System.out.println("Dossier medical informatise :");
@@ -28,7 +35,11 @@ public class SIH {
         }
     }
 
-   
+   /**
+    * Méthode qui calcule le coût pour un médecin
+    * @param m le médecin à qui on veut calculer le coût
+    * @return le coût du médecin
+    */
     public double coutMedecin(Medecin m) {
         double cout = 0;
         for (int i = 0; i < this.ldp.size(); i++) {
@@ -45,7 +56,13 @@ public class SIH {
         }
         return cout;
     }
-
+    
+    
+    /**
+     * Méthode qui retourne le coût d'une spécialité
+     * @param specialite la spécialité à qui ont veut effectuer le calcul
+     * @return le coût de la spécialité
+     */
     public double coutSpecialite(Spe specialite) {
         double cout = 0;
         for (int i = 0; i < getLdp().size(); i++) {
@@ -63,6 +80,12 @@ public class SIH {
         return cout;
     }
 
+    
+    /**
+     * Méthode qui retourne une liste de dossier patient pour un médecin
+     * @param m le medecin à qui on veut trouver ses patients
+     * @return une liste de dossier Patient
+     */
     public ArrayList<DossierPatient> ListePatients(Medecin m) {
         ArrayList<FicheDeSoins> fiches = new ArrayList<FicheDeSoins>(this.getLdfs());
          
@@ -82,6 +105,13 @@ public class SIH {
        return liste; 
     }
 
+    
+    /**
+     * Méthode qui retourne toutes les fiches de soins entre 2 intervalles
+     * @param d1 début de l'intervalle
+     * @param d2 fin de l'intervalle
+     * @return une liste de fiches de soins comprisent dans l'intervale
+     */
     public ArrayList<FicheDeSoins> nombreFichesIntervalle(Date d1, Date d2) {
         ArrayList<FicheDeSoins>fds = new ArrayList<FicheDeSoins>();
         
@@ -112,7 +142,11 @@ public class SIH {
    
     
 
-    // tri generique :
+    /**
+     * Méthode qui trie de façon général la liste de fiche de soins
+     * @param c le type de comparaison que l'on souhaite faire
+     * @return une liste de fiches de soins triées 
+     */
     public ArrayList<FicheDeSoins> trier(ComparaisonFiches c) {
         ArrayList <FicheDeSoins> fiches=new ArrayList<FicheDeSoins>(this.getLdfs());
         ArrayList <FicheDeSoins> copieFiches = new ArrayList<FicheDeSoins>(fiches);
@@ -139,9 +173,19 @@ public class SIH {
         return fichestries;
         
     }
+    /**
+     * Méthode qui ajoute un dossier patient au SIH
+     * @param dp le dossier patient à ajouter
+     */
     public void ajouterDp(DossierPatient dp){
         this.ldp.add(dp);
     }
+    
+    /**
+     * Méthode qui ajoute une fiche de soins pour un patient donné
+     * @param fiche la fiche de soins à ajouter
+     * @param p le patient a qui on souhaite ajouter la fiche de soins
+     */
     public void ajouterFiche(FicheDeSoins fiche,Patient p) {
             int i=0;
             boolean rep =false;
@@ -155,14 +199,18 @@ public class SIH {
 
     }
 
-    /**
-     * @return the ldp
+    /** Méthode qui retourne la liste de dossier patient
+     * @return la liste de dossier patient
      */
     public ArrayList<DossierPatient> getLdp() {
         return ldp;
     }
     
 
+    /**
+     * Méthode qui retourne toutes les fiches de soins du SIH
+     * @return liste de fiches de soins du SIH
+     */
     public ArrayList<FicheDeSoins> getLdfs(){
         ArrayList<FicheDeSoins> ldfs = new ArrayList<FicheDeSoins>();
         for(int i=0;i<this.ldp.size();i++){
@@ -174,7 +222,11 @@ public class SIH {
         return ldfs;
     } 
     
-    
+    /**
+     * Méthode qui retrouve un dossier patient pour un patient donné
+     * @param p le patient
+     * @return un dossier patient
+     */
     public DossierPatient retrouverDossPat(Patient p){
         int i =0;
         DossierPatient dp=null;
@@ -190,6 +242,11 @@ public class SIH {
         return dp;
         
     }
+    /**
+     * Méthode qui vérifie que un patient existe
+     * @param p un patient 
+     * @return un boolean en fonction de la vérification
+     */
     public boolean verifExistP(Patient p){
         int i =0;
         DossierPatient dp=null;
@@ -210,6 +267,10 @@ public class SIH {
         return rep;
         
     }
+    /**
+     * Méthode qui retourne la liste de médecin du SIH
+     * @return une liste de médecin
+     */
      public ArrayList<Medecin> getLm() {
         ArrayList<FicheDeSoins> fiches = new ArrayList<FicheDeSoins>(this.getLdfs());
         ArrayList<Medecin> liste = new ArrayList<Medecin>();
@@ -222,7 +283,10 @@ public class SIH {
         }
        return liste; 
     }
-     
+     /**
+      * Méthode qui retourne la liste des spécialités
+      * @return la liste de spécialité
+      */
      public ArrayList<Spe> getLS(){
          List<Spe> liste = Arrays.asList(Spe.values());
          ArrayList<Spe> ls = new ArrayList<Spe>();
@@ -232,7 +296,11 @@ public class SIH {
      
      
      
-     
+     /**
+      * Méthode qui recherche un dossier patient par une chaîne de caractère
+      * @param r la chaine de caractère de la recherche
+      * @return la liste de dossier patient correcpondant à la recherche
+      */
      public ArrayList<DossierPatient> rechercheDP(String r){
          ArrayList<DossierPatient> result = new ArrayList<DossierPatient>();
          
@@ -247,6 +315,12 @@ public class SIH {
          
      }  return result;
      }
+     
+       /**
+      * Méthode qui recherche un medecin par une chaîne de caractère
+      * @param r la chaine de caractère de la recherche
+      * @return la liste de medecin correcpondant à la recherche
+      */
      public ArrayList<Medecin> rechercheMed(String r){
          ArrayList<Medecin> result = new ArrayList<Medecin>();
          
@@ -263,7 +337,11 @@ public class SIH {
      
      
 }
-
+/**
+ * Méthode qui retourne les fiches de soins d'une date précise
+ * @param d la date que l'on souhaite séléctionner les fiches de soins
+ * @return la liste de fiches de soins 
+ */
 public ArrayList<FicheDeSoins> lfdsDate(Date d){
          ArrayList<FicheDeSoins> result= new ArrayList<FicheDeSoins>();
          for(int i=0;i<ldp.size();i++){
