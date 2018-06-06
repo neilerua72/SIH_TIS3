@@ -64,9 +64,9 @@ public abstract class ListenerValiderTri {
 
             }
         } else if (lp.getLe().isSelected()) {
-            String sannee=lp.getJdjour().getText();
-         String smois=lp.getJdmois().getText();
-         String sjour=lp.getJdannee().getText();
+            String sannee=lp.getJour().getText();
+         String smois=lp.getMois().getText();
+         String sjour=lp.getAnnee().getText();
          if(sannee.equals("")||smois.equals("")||sjour.equals("")){
              //POPOUP
          }else{
@@ -83,7 +83,21 @@ public abstract class ListenerValiderTri {
             
 
         } else {
-                    //DateIntervale
+            String sannee1=lp.getJour1().getText();
+         String smois1=lp.getMois1().getText();
+         String sjour1=lp.getAnnee1().getText();
+               String sannee2=lp.getJour2().getText();
+         String smois2=lp.getMois2().getText();
+         String sjour2=lp.getAnnee2().getText(); 
+          int annee1 = Integer.parseInt(sannee1);
+        int mois1 = Integer.parseInt(smois1);
+         int jour1 = Integer.parseInt(sjour1);
+          int annee2 = Integer.parseInt(sannee2);
+        int mois2 = Integer.parseInt(smois2);
+         int jour2 = Integer.parseInt(sjour2);
+             Date d1 = new Date(annee1,mois1,jour1);
+             Date d2 = new Date(annee2,mois2,jour2);
+             lfds=sih.nombreFichesIntervalle(d1, d2);
         }
 
         ArrayList<FicheDeSoins> requete = new ArrayList(lfds);

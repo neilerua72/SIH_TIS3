@@ -82,21 +82,32 @@ public class SIH {
        return liste; 
     }
 
-    public int nombreFichesIntervalle(DateH d1, DateH d2) {
-        int n = 0;
+    public ArrayList<FicheDeSoins> nombreFichesIntervalle(Date d1, Date d2) {
+        ArrayList<FicheDeSoins>fds = new ArrayList<FicheDeSoins>();
+        
         for (int i = 0; i < getLdp().size(); i++) {
             DossierPatient dp = getLdp().get(i);
             ArrayList<FicheDeSoins> ldfs=dp.getLfds();
             for(int j=0;j<ldfs.size();j++){
                 
             Date d = ldfs.get(j).getDate();
-            if (d.compareTo(d1) >= 0 && d.compareTo(d2) <= 0) {
-                n++;
+            if(d1.compareTo(d2)<=0){
+            if (d1.compareTo(d) <= 0 && d2.compareTo(d) >= 0) {
+                fds.add(ldfs.get(j));
+               
+               
+            }}
+            else{
+                if (d1.compareTo(d) >=0 && d2.compareTo(d) <= 0) {
+                fds.add(ldfs.get(j));
+               
+               
+            }
             }
         }
        
     }
-         return n;
+         return fds;
     }
    
     
@@ -258,11 +269,11 @@ public ArrayList<FicheDeSoins> lfdsDate(Date d){
          for(int i=0;i<ldp.size();i++){
              DossierPatient dp=ldp.get(i);
             for(int j=0;j<dp.getLfds().size();j++){
-                if(dp.getLfds().get(j).getDate().equals(d))
+                if(d.equals(dp.getLfds().get(j).getDate()))
                       result.add(dp.getLfds().get(j));
                     }
          }
-return result;  
+return result;      
 
 
 

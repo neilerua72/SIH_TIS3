@@ -86,68 +86,12 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         return intervalle;
     }
 
-    /**
-     * @return the jd1annee
-     */
-    public javax.swing.JFormattedTextField getJd1annee() {
-        return jd1annee;
-    }
 
-    /**
-     * @return the jd1jour
-     */
-    public javax.swing.JFormattedTextField getJd1jour() {
-        return jd1jour;
-    }
-
-    /**
-     * @return the jd1mois
-     */
-    public javax.swing.JFormattedTextField getJd1mois() {
-        return jd1mois;
-    }
-
-    /**
-     * @return the jd2annee
-     */
-    public javax.swing.JFormattedTextField getJd2annee() {
-        return jd2annee;
-    }
-
-    /**
-     * @return the jd2jour
-     */
-    public javax.swing.JFormattedTextField getJd2jour() {
-        return jd2jour;
-    }
-
-    /**
-     * @return the jd2mois
-     */
-    public javax.swing.JFormattedTextField getJd2mois() {
-        return jd2mois;
-    }
 
     /**
      * @return the jdannee
      */
-    public javax.swing.JFormattedTextField getJdannee() {
-        return jdannee;
-    }
-
-    /**
-     * @return the jdjour
-     */
-    public javax.swing.JFormattedTextField getJdjour() {
-        return jdjour;
-    }
-
-    /**
-     * @return the jdmois
-     */
-    public javax.swing.JFormattedTextField getJdmois() {
-        return jdmois;
-    }
+ 
 
     /**
      * @return the le
@@ -211,25 +155,25 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         CroissantD = new javax.swing.JRadioButton();
         Cout = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
-        jdjour = new javax.swing.JFormattedTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jdannee = new javax.swing.JFormattedTextField();
-        jdmois = new javax.swing.JFormattedTextField();
-        jLabel11 = new javax.swing.JLabel();
         intervalle = new javax.swing.JRadioButton();
-        jd1jour = new javax.swing.JFormattedTextField();
         jLabel12 = new javax.swing.JLabel();
-        jd1mois = new javax.swing.JFormattedTextField();
         jLabel13 = new javax.swing.JLabel();
-        jd1annee = new javax.swing.JFormattedTextField();
-        jd2jour = new javax.swing.JFormattedTextField();
-        jd2mois = new javax.swing.JFormattedTextField();
-        jd2annee = new javax.swing.JFormattedTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         CroissantC = new javax.swing.JRadioButton();
         DecroissantD = new javax.swing.JRadioButton();
         le = new javax.swing.JRadioButton();
+        jour = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        mois = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        annee = new javax.swing.JTextField();
+        jour1 = new javax.swing.JTextField();
+        mois1 = new javax.swing.JTextField();
+        annee2 = new javax.swing.JTextField();
+        jour2 = new javax.swing.JTextField();
+        mois2 = new javax.swing.JTextField();
+        annee1 = new javax.swing.JTextField();
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setLayout(new java.awt.BorderLayout());
@@ -241,7 +185,7 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(550, Short.MAX_VALUE)
+                .addContainerGap(563, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addGap(619, 619, 619))
         );
@@ -250,7 +194,7 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(302, 302, 302)
                 .addComponent(jLabel6)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel4, java.awt.BorderLayout.CENTER);
@@ -339,81 +283,14 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Le :");
 
-        jdjour.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        jdjour.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jdjourActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setText("/");
-
-        jdannee.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        jdannee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jdanneeActionPerformed(evt);
-            }
-        });
-
-        jdmois.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        jdmois.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jdmoisActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setText("/");
-
         intervalle.setBackground(java.awt.Color.lightGray);
         Tri.add(intervalle);
         intervalle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         intervalle.setText("Intervalle de temps");
 
-        jd1jour.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        jd1jour.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jd1jourActionPerformed(evt);
-            }
-        });
-
         jLabel12.setText("/");
 
-        jd1mois.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        jd1mois.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jd1moisActionPerformed(evt);
-            }
-        });
-
         jLabel13.setText("/");
-
-        jd1annee.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        jd1annee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jd1anneeActionPerformed(evt);
-            }
-        });
-
-        jd2jour.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        jd2jour.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jd2jourActionPerformed(evt);
-            }
-        });
-
-        jd2mois.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        jd2mois.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jd2moisActionPerformed(evt);
-            }
-        });
-
-        jd2annee.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        jd2annee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jd2anneeActionPerformed(evt);
-            }
-        });
 
         jLabel14.setText("/");
 
@@ -433,6 +310,10 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         le.setBackground(java.awt.Color.lightGray);
         Tri.add(le);
 
+        jLabel5.setText("/");
+
+        jLabel10.setText("/");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -440,36 +321,37 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jd2jour, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jd1jour, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jour2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jd1mois, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jd1annee, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(buttonValider))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(mois2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jd2mois, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
                                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(jd2annee, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(168, 168, 168))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(annee2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jour1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mois1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(annee1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)))
+                .addGap(168, 168, 168))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -485,26 +367,26 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
                             .addComponent(Date)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(le)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel4)))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jdjour, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jdmois, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jdannee, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
                                 .addComponent(CroissantD)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(DecroissantD)))))
-                .addContainerGap(109, Short.MAX_VALUE))
+                                .addComponent(DecroissantD))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(jour, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mois, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(annee, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -519,34 +401,34 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
                     .addComponent(Date)
                     .addComponent(CroissantD)
                     .addComponent(DecroissantD))
-                .addGap(4, 4, 4)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(le, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(le)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4)
-                        .addComponent(jdjour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jdannee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)
+                        .addComponent(mois, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel10)
-                        .addComponent(jdmois, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30)
+                        .addComponent(annee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27)
                 .addComponent(intervalle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jd1jour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jd1mois, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jd1annee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jour1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mois1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(annee1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jd2jour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jd2mois, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jd2annee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jour2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mois2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(annee2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(buttonValider)
                 .addContainerGap())
@@ -566,7 +448,7 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(100, 100, 100)
                         .addComponent(jLabel9)
-                        .addGap(0, 109, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -624,7 +506,7 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1067, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -640,42 +522,6 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonValiderActionPerformed
 
-    private void jdjourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jdjourActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jdjourActionPerformed
-
-    private void jdanneeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jdanneeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jdanneeActionPerformed
-
-    private void jdmoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jdmoisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jdmoisActionPerformed
-
-    private void jd1jourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jd1jourActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jd1jourActionPerformed
-
-    private void jd1moisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jd1moisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jd1moisActionPerformed
-
-    private void jd1anneeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jd1anneeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jd1anneeActionPerformed
-
-    private void jd2jourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jd2jourActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jd2jourActionPerformed
-
-    private void jd2moisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jd2moisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jd2moisActionPerformed
-
-    private void jd2anneeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jd2anneeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jd2anneeActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton Cout;
@@ -685,6 +531,9 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
     private javax.swing.JRadioButton DecroissantC;
     private javax.swing.JRadioButton DecroissantD;
     private javax.swing.ButtonGroup Tri;
+    private javax.swing.JTextField annee;
+    private javax.swing.JTextField annee1;
+    private javax.swing.JTextField annee2;
     private javax.swing.JButton buttonValider;
     private javax.swing.ButtonGroup cd;
     private javax.swing.ButtonGroup date;
@@ -693,7 +542,6 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -701,6 +549,7 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -712,15 +561,75 @@ public class JConsulterFDS_dans_ongletFDS extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JFormattedTextField jd1annee;
-    private javax.swing.JFormattedTextField jd1jour;
-    private javax.swing.JFormattedTextField jd1mois;
-    private javax.swing.JFormattedTextField jd2annee;
-    private javax.swing.JFormattedTextField jd2jour;
-    private javax.swing.JFormattedTextField jd2mois;
-    private javax.swing.JFormattedTextField jdannee;
-    private javax.swing.JFormattedTextField jdjour;
-    private javax.swing.JFormattedTextField jdmois;
+    private javax.swing.JTextField jour;
+    private javax.swing.JTextField jour1;
+    private javax.swing.JTextField jour2;
     private javax.swing.JRadioButton le;
+    private javax.swing.JTextField mois;
+    private javax.swing.JTextField mois1;
+    private javax.swing.JTextField mois2;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the jour
+     */
+    public javax.swing.JTextField getJour() {
+        return jour;
+    }
+
+    /**
+     * @return the mois
+     */
+    public javax.swing.JTextField getMois() {
+        return mois;
+    }
+
+    /**
+     * @return the annee
+     */
+    public javax.swing.JTextField getAnnee() {
+        return annee;
+    }
+
+    /**
+     * @return the annee1
+     */
+    public javax.swing.JTextField getAnnee1() {
+        return annee1;
+    }
+
+    /**
+     * @return the annee2
+     */
+    public javax.swing.JTextField getAnnee2() {
+        return annee2;
+    }
+
+    /**
+     * @return the jour1
+     */
+    public javax.swing.JTextField getJour1() {
+        return jour1;
+    }
+
+    /**
+     * @return the jour2
+     */
+    public javax.swing.JTextField getJour2() {
+        return jour2;
+    }
+
+    /**
+     * @return the mois1
+     */
+    public javax.swing.JTextField getMois1() {
+        return mois1;
+    }
+
+    /**
+     * @return the mois2
+     */
+    public javax.swing.JTextField getMois2() {
+        return mois2;
+    }
 }

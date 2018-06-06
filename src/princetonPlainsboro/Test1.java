@@ -11,24 +11,11 @@ class Test1 {
        // if(con.VerificationConnexion(new Identification(id,mdp))){
         LectureXML test = new LectureXML("donnesApresSIH.xml");
         SIH dm = test.getDossier();
-        System.out.println("RECHERCHE");
-        printArray(dm.rechercheDP("Des"));
-        Patient p1=dm.rechercheDP("Des").get(0).getPatient();
-        Patient p = new Patient(new NumDeSS("1254789654789"));
-        Patient p2 = new Patient(new NumDeSS("1254789654789"));
-        System.out.println(p.getNumDeSS());
-        System.out.println(p1.getNumDeSS());
-        NumDeSS ns = new NumDeSS("      214");
-        System.out.println(ns);
-        System.out.println(p1.equals(p));
-        System.out.println("RETROUVER DP");
-        System.out.println(dm.retrouverDossPat(p));
-        String s = "       56565dfsgd";
-        Calendar c = Calendar.getInstance ();
-        System.out.println(c.getTime().getYear());
+        System.out.println("test ultra bg");
+        printArray(dm.nombreFichesIntervalle (new Date(6,1,2006),new Date(31,8,2005)));
      
     }
-    public static void printArray(ArrayList<DossierPatient> a){
+    public static void printArray(ArrayList<FicheDeSoins> a){
         for(int i=0; i<a.size();i++){
             System.out.println(a.get(i).getPatient());
         }
