@@ -132,7 +132,7 @@ private JTable jlistedppm =  jldppm.getjTable1();
         LectureXML lecture = new LectureXML("donnesApresSIH.xml");
         sih = lecture.getDossier();
         validerDP.addActionListener(new BoutonListenerValiderDP(jcdp, this, sih));
-        jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp, jcdp, jcp, lm, jcm, jcs, a, jm, this, jfdsdofds, sih));
+        jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp, jcdp, jcp, lm, jcm, jcs, a, jm, this, jfdsdofds, sih,jfdsmm));
         jlisteP.addMouseListener(new tablesListener(lp, this, jlisteP, cdpdd,sih));
         boutondeco.addActionListener(new BoutonListenerDeco(c,this,b));
         jcreerFDSButton.addActionListener(new BoutonValiderNouvFDS(jcFDS, jfdsmm, this, sih,jaa));
@@ -144,7 +144,7 @@ private JTable jlistedppm =  jldppm.getjTable1();
         jlistemedecin.addMouseListener(new TableauListenerListeDeMedecins (lm, this, jlistemedecin, jldppm,b ,jm, sih));
         jlistedppm.addMouseListener(new ListenerTableauLPPM(this, jldppm,cdpdd, jlistedppm,sih,b));
         Boutonretour.addActionListener(new BoutonListenerRetourFacture(this,jfdsmm,jcDPf));
-        validerTri.addActionListener(new BoutonListenerValiderTri(jfdsdofds,this,sih));
+        validerTri.addActionListener(new BoutonListenerValiderTri(jfdsdofds,this,sih,jfdsmm));
         jlistefiche.addMouseListener(new TableauListenerFDS( cdpdd, this, jlistefiche ,jfdsmm,b, jm, sih));
         rechercheDPtextJCP.addKeyListener(new BoutonListenerRCoutPatient(lp,this,sih,jcp,cdpdd));
         Boutonretourdpverslp.addActionListener(new BoutonListenerRetourDpVersLP(this,lp,cdpdd));
@@ -153,7 +153,7 @@ private JTable jlistedppm =  jldppm.getjTable1();
           retourjlmversjldppm.addActionListener(new BoutonListenerretourLpmVersLm(jldppm,lm,this));
           recherchelm.addKeyListener(new BarreRechercheLm(lm, this,sih, jcm,jldppm));
            rechercheclm.addKeyListener(new BarreRechercherCoutM(lm, this,sih, jcm,jldppm));
-          tableongletFDS.addMouseListener(new TableListenerFDSdansOngletFDS ( jfdsdofds, this,tableongletFDS, jfdsmm,b, jm , sih));
+          tableongletFDS.addMouseListener(new TableListenerFDSdansOngletFDS ( jfdsdofds, this,tableongletFDS, jfdsmm, sih));
           tableCoutPatient.addMouseListener(new tableauListenerCoutPatient(jcp,this,tableCoutPatient,cdpdd,sih));
           
           

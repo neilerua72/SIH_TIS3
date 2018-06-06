@@ -2,6 +2,7 @@ package Listenner;
 
 import interfaceUtilisateur.Fen;
 import interfaceUtilisateur.JConsulterFDS_dans_ongletFDS;
+import interfaceUtilisateur.JFDSMedicalModifiable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import princetonPlainsboro.SIH;
@@ -18,8 +19,8 @@ import princetonPlainsboro.SIH;
  */
 public class BoutonListenerValiderTri extends ListenerValiderTri implements ActionListener{
     
-    public BoutonListenerValiderTri(JConsulterFDS_dans_ongletFDS lp, Fen jframe, SIH sih) {
-        super(lp, jframe, sih);
+    public BoutonListenerValiderTri(JConsulterFDS_dans_ongletFDS lp, Fen jframe, SIH sih,JFDSMedicalModifiable jfdsmm) {
+        super(lp, jframe, sih,jfdsmm);
     }
 
     @Override

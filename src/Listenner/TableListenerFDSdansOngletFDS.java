@@ -38,17 +38,15 @@ public class TableListenerFDSdansOngletFDS implements MouseListener {
     Fen jframe;
     JTable table;
     SIH sih;
-    Jmenu jmenu;
-    Barre barre;
+    
     FicheDeSoins f;
 
-    public TableListenerFDSdansOngletFDS(JConsulterFDS_dans_ongletFDS jcc, Fen jframe, JTable table, JFDSMedicalModifiable jfdsmm, Barre bar, Jmenu jmenu, SIH sih) {
+    public TableListenerFDSdansOngletFDS(JConsulterFDS_dans_ongletFDS jcc, Fen jframe, JTable table, JFDSMedicalModifiable jfdsmm, SIH sih) {
         this.jcc = jcc;
         this.jframe = jframe;
         this.table = table;
         this.jfdsmm = jfdsmm;
-        this.barre = barre;
-        this.jmenu = jmenu;
+    
         this.sih = sih;
     }
 

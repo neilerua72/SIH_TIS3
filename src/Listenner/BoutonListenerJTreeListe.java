@@ -14,6 +14,7 @@ import interfaceUtilisateur.JCoutMedecin;
 import interfaceUtilisateur.JCoutPatient;
 import interfaceUtilisateur.JCoutSpecialite1;
 import interfaceUtilisateur.JCreerDP;
+import interfaceUtilisateur.JFDSMedicalModifiable;
 import interfaceUtilisateur.Jmenu;
 import interfaceUtilisateur.State;
 import java.awt.event.ActionEvent;
@@ -49,8 +50,9 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
     Fen frame;
     JConsulterFDS_dans_ongletFDS jcfdsdofds;
     SIH sih;
+    JFDSMedicalModifiable jfdsmm;
 
-    public BoutonListenerJTreeListe(JListeDePatients lp, JCreerDP jcdp, JCoutPatient jcp, JListeDeMedecins lm, JCoutMedecin jcm, JCoutSpecialite1 jcs, Accueil a, Jmenu jm, Fen frame, JConsulterFDS_dans_ongletFDS jcfdsdofds, SIH sih) {
+    public BoutonListenerJTreeListe(JListeDePatients lp, JCreerDP jcdp, JCoutPatient jcp, JListeDeMedecins lm, JCoutMedecin jcm, JCoutSpecialite1 jcs, Accueil a, Jmenu jm, Fen frame, JConsulterFDS_dans_ongletFDS jcfdsdofds, SIH sih,JFDSMedicalModifiable jfdsmm) {
         this.lp = lp;
         this.jcdp = jcdp;
         this.jcp = jcp;
@@ -62,6 +64,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
         this.frame = frame;
         this.jcfdsdofds = jcfdsdofds;
         this.sih = sih;
+        this.jfdsmm= jfdsmm;
     }
 
     public void valueChanged(TreeSelectionEvent e) {
@@ -276,11 +279,13 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
                     });
             jcfdsdofds.getjTable1().setModel(model);
             jcfdsdofds.getjScrollPane3().setViewportView(jcfdsdofds.getjTable1());
+            
+            jcfdsdofds.getjTable1().addMouseListener(new TableListenerFDSdansOngletFDS ( jcfdsdofds, frame,jcfdsdofds.getjTable1(), jfdsmm, sih));
             frame.repaint();
             frame.revalidate();
 
         }
-        
+       
          if (obj.toString().equals("Patients")) {
          }
     }
