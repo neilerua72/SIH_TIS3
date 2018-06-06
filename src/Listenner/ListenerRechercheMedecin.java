@@ -25,18 +25,18 @@ import princetonPlainsboro.SIH;
  * @author teuliera
  */
 public abstract class ListenerRechercheMedecin  {
-
+JListedePatientParMedecins jldppm;
     JListeDeMedecins lm;
     Fen frame;
     SIH sih;
     JCoutMedecin cm;
 
-    public ListenerRechercheMedecin(JListeDeMedecins lm, Fen jframe, SIH sih, JCoutMedecin cm) {
+    public ListenerRechercheMedecin(JListeDeMedecins lm, Fen jframe, SIH sih, JCoutMedecin cm,JListedePatientParMedecins jldppm) {
         this.lm = lm;
         this.frame = jframe;
         this.sih = sih;
         this.cm = cm;
-      //  this.jldppm=jldppm;
+       this.jldppm=jldppm;
     }
 
     public void recherche(int f) {
@@ -47,7 +47,7 @@ public abstract class ListenerRechercheMedecin  {
         }
         
         else {
-            requete = new ArrayList(sih.rechercheMed(lm.getjTextField1().getText()));;
+            requete = new ArrayList(sih.rechercheMed(cm.getjTextField1().getText()));;
           
         }
         tab = new String[requete.size()][3];
@@ -65,8 +65,12 @@ public abstract class ListenerRechercheMedecin  {
                     "Nom", "Prénom", "Spécialité"
                 });
         JTable jt = lm.getjTable1();
- //       jt.addMouseListener(new tablesListenerBarreR(jt,frame,sih,requete));
-       
+        jt.addMouseListener(new tableListeneBarreRmedecin(jt,frame,jldppm,sih,requete));
+        System.out.println("TESSSSSSSSSSSSSSSSSSSSSSSSST");
+        
+        
+        
+        
         if (f == 1) {
             lm.getjTable1().setModel(model);
             lm.getjScrollPane4().setViewportView(lm.getjTable1());
@@ -81,3 +85,8 @@ public abstract class ListenerRechercheMedecin  {
  
     }
 }
+
+        
+       
+       
+            

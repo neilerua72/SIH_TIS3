@@ -65,7 +65,7 @@ public class SIH {
 
     public ArrayList<DossierPatient> ListePatients(Medecin m) {
         ArrayList<FicheDeSoins> fiches = new ArrayList<FicheDeSoins>(this.getLdfs());
-         System.out.println("> liste des patients du " + m.toString() + " :");
+         
         ArrayList<DossierPatient> liste = new ArrayList<DossierPatient>();
         // 'liste' contient tous les patients deja affiches
         // --> ceci permet de ne pas reafficher un patient deja affiche

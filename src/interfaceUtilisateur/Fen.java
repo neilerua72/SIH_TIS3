@@ -145,8 +145,8 @@ private JTable jlistedppm =  jldppm.getjTable1();
         retourfdsversdp.addActionListener(new BoutonListenerRetourFDSversDP(this,jfdsmm, cdpdd));
           retourcreerfdsversdp.addActionListener(new BoutonListenerRetoucreerFDDversDP(this,jcFDS,cdpdd));
           retourjlmversjldppm.addActionListener(new BoutonListenerretourLpmVersLm(jldppm,lm,this));
-          recherchelm.addKeyListener(new BarreRechercheLm(lm, this,sih, jcm));
-               rechercheclm.addKeyListener(new BarreRechercherCoutM(lm, this,sih, jcm));
+          recherchelm.addKeyListener(new BarreRechercheLm(lm, this,sih, jcm,jldppm));
+           rechercheclm.addKeyListener(new BarreRechercherCoutM(lm, this,sih, jcm,jldppm));
           
           
           

@@ -5,21 +5,14 @@
  */
 package Listenner;
 
-
-import interfaceUtilisateur.Barre;
 import interfaceUtilisateur.Fen;
 import interfaceUtilisateur.JConsulterDP_dans_le_dossier;
-import interfaceUtilisateur.JListeDePatients;
-import interfaceUtilisateur.Jmenu;
+import interfaceUtilisateur.JListedePatientParMedecins;
 import interfaceUtilisateur.State;
-import java.awt.BorderLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JTable;
-import javax.swing.event.TreeSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import princetonPlainsboro.DossierPatient;
 import princetonPlainsboro.FicheDeSoins;
@@ -29,29 +22,30 @@ import princetonPlainsboro.SIH;
 
 /**
  *
- * @author annelise
+ * @author teuliera
  */
-public class tablesListenerBarreR implements MouseListener{
+public class tableListeneBarreRmedecin implements MouseListener{
  
-     JConsulterDP_dans_le_dossier dossierPatient;
+     JListedePatientParMedecins jldppm;
     Fen jframe;
      JTable table;
      SIH sih;
      JTable jtable;
      
-     ArrayList<DossierPatient> ldp;
-    public tablesListenerBarreR(JTable jtable,Fen jframe,JConsulterDP_dans_le_dossier dossierPatient,SIH sih,ArrayList <DossierPatient> a) {
+     ArrayList<Medecin> ldm;
+    public tableListeneBarreRmedecin(JTable jtable,Fen jframe,JListedePatientParMedecins jldppm,SIH sih,ArrayList <Medecin> m) {
         
         this.jframe = jframe;
         this.jtable=jtable;
-        this.dossierPatient=dossierPatient;
+        this.jldppm=jldppm;
        
         this.sih=sih;
-ldp=new ArrayList<DossierPatient>(a);    }
+ldm=new ArrayList<Medecin>(m);    }
     
     
     private void tableauMouseClicked(java.awt.event.MouseEvent evt) {
     // gestion du simple clic
+
     }
 
     @Override
@@ -82,49 +76,31 @@ ldp=new ArrayList<DossierPatient>(a);    }
     
             //jframe.toutFalse();
             //jframe.add(dossierPatient);
-            DossierPatient dp = ldp.get(NumLigne);
-            dossierPatient.getNomPrenom().setText(dp.getPatient().getNom()+ " "+ dp.getPatient().getPrenom());
-            dossierPatient.getNumDeSS().setText(dp.getPatient().getNumDeSS().toString());
-            dossierPatient.getDate().setText(dp.getPatient().getDateDeNaissance().toString());
-            dossierPatient.getAdresse().setText(dp.getPatient().getAdresse());
-            
+            Medecin m = ldm.get(NumLigne);
+            jldppm.getjLabel2().setText(m.getNom());
+           
             String[][] tab;
-            tab = new String[dp.getLfds().size()][4];
-            for (int i = 0; i < dp.getLfds().size(); i++) {
-                Medecin m = dp.getLfds().get(i).getMedecin();
-                FicheDeSoins f = dp.getLfds().get(i);
-                tab[i][0] = m.getNom();
-                tab[i][1] = m.getPrenom();
-                tab[i][2] = f.getDate().toString();
-                tab[i][3]=""+f.coutTotal();
+            tab = new String[sih.ListePatients(m).size()][4];
+            for (int i = 0; i < sih.ListePatients(m).size(); i++) {
+                 DossierPatient dp = sih.ListePatients(m).get(i);
+            Patient p = dp.getPatient();
+                tab[i][0] = p.getNom();
+                tab[i][1] = p.getPrenom();
+                tab[i][2] = p.getDateDeNaissance().toString();
+                
             }
             DefaultTableModel model = new DefaultTableModel(
                     tab,
                     new String[]{
-                        "Nom", "Prénom", "Date","Coût"
+                        "Nom", "Prénom", "Date de Naissance"
                     });
-            dossierPatient.getjTable1().setModel(model);
-            dossierPatient.getjScrollPane3().setViewportView(dossierPatient.getjTable1());
-            
-            
-            if(jframe.getStates()==State.ADMIN){
-                dossierPatient.getjButton5().setVisible(false);
-                dossierPatient.getjLabel11().setVisible(false);
-           }
-            
-            
-            dossierPatient.setVisible(true);
+            jldppm.getjTable1().setModel(model);
+            jldppm.getjScrollPane1().setViewportView(jldppm.getjTable1());
+            System.out.println("TEST3");
             
             
             
-            
-           // jframe.repaint();
-            //jframe.revalidate();
-           
-    
-
-}}
- 
+            jldppm.setVisible(true);
             
             
           
@@ -133,3 +109,8 @@ ldp=new ArrayList<DossierPatient>(a);    }
             //jframe.revalidate();
            
     
+
+}}
+
+    
+
