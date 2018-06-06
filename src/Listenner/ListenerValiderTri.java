@@ -9,6 +9,7 @@ import interfaceUtilisateur.Barre;
 import interfaceUtilisateur.ConnexionInterface;
 import interfaceUtilisateur.Fen;
 import interfaceUtilisateur.JConsulterFDS_dans_ongletFDS;
+import interfaceUtilisateur.JFDSMedicalModifiable;
 import interfaceUtilisateur.JListeDePatients;
 import interfaceUtilisateur.Jmenu;
 import interfaceUtilisateur.State;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import princetonPlainsboro.ComparaisonFichesCouts;
 import princetonPlainsboro.ComparaisonFichesDates;
@@ -37,11 +39,13 @@ public abstract class ListenerValiderTri {
     JConsulterFDS_dans_ongletFDS lp;
     Fen frame;
     SIH sih;
+    JFDSMedicalModifiable jfdsmm;
 
-    public ListenerValiderTri(JConsulterFDS_dans_ongletFDS lp, Fen jframe, SIH sih) {
+    public ListenerValiderTri(JConsulterFDS_dans_ongletFDS lp, Fen jframe, SIH sih,JFDSMedicalModifiable jfdsmm) {
         this.lp = lp;
-        this.frame = frame;
+        this.frame =jframe;
         this.sih = sih;
+        this.jfdsmm=jfdsmm;
     }
 
     public void recherche() {
@@ -115,6 +119,13 @@ public abstract class ListenerValiderTri {
                 new String[]{
                     "Nom", "Prénom", "Date","Coût"
                 });
+        
+        
+        JTable jt = lp.getjTable1();
+        jt.addMouseListener(new tableauListenerFDSversDP(jt,frame,jfdsmm ,sih,requete));
+        
+        
+        
         lp.getjTable1().setModel(model);
         lp.getjScrollPane3().setViewportView(lp.getjTable1());
 
