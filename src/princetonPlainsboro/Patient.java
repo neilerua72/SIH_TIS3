@@ -44,6 +44,9 @@ public class Patient {
     public Patient(NumDeSS numDeSS) {
         this.numDeSS=numDeSS;
     }
+     public Patient(String nom) {
+        this.nom=nom;
+    }
     
     private Date dateDeNaissance;
     
@@ -54,6 +57,7 @@ public class Patient {
         this.adresse=adresse;
         this.dateDeNaissance=dateDeNaissance;
         }
+    
     
     public String nomPrenom(){
         return this.getNom() + " "+this.getPrenom();

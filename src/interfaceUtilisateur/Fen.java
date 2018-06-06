@@ -30,8 +30,10 @@ import Listenner.ListenerTableauLPPM;
 import Listenner.ListenerValiderTri;
 
 import Listenner.RechercheEntrerListener;
+import Listenner.TableListenerFDSdansOngletFDS;
 import Listenner.TableauListenerFDS;
 import Listenner.TableauListenerListeDeMedecins;
+import Listenner.tableauListenerCoutPatient;
 import Listenner.tablesListener;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -112,6 +114,9 @@ private JTable jlistedppm =  jldppm.getjTable1();
        
        private JTextField recherchelm =lm.getjTextField1();
          private JTextField rechercheclm =jcm.getjTextField1();
+         private JTable tableongletFDS =jfdsdofds.getjTable1();
+         private JTable tableCoutPatient =jcp.getjTable1();
+         
 //    /**
 //     * Creates new form Fen
 //     */JFrame frame = this;
@@ -147,6 +152,8 @@ private JTable jlistedppm =  jldppm.getjTable1();
           retourjlmversjldppm.addActionListener(new BoutonListenerretourLpmVersLm(jldppm,lm,this));
           recherchelm.addKeyListener(new BarreRechercheLm(lm, this,sih, jcm,jldppm));
            rechercheclm.addKeyListener(new BarreRechercherCoutM(lm, this,sih, jcm,jldppm));
+          tableongletFDS.addMouseListener(new TableListenerFDSdansOngletFDS ( jfdsdofds, this,tableongletFDS, jfdsmm,b, jm , sih));
+          tableCoutPatient.addMouseListener(new tableauListenerCoutPatient(jcp,this,tableCoutPatient,cdpdd,sih));
           
           
           
