@@ -21,7 +21,9 @@ public class Connexion {
     /// nom du document XML a analyser
     private String nomFichier;
     private final static String repBase = "src/donnees/";
-    
+    ArrayList<Identification> identif;
+    private String photo;
+    private String type;
     // 'nomFichier' est le nom d'un fichier XML se trouvant dans le repertoire 'repBase' a lire :
     public Connexion(String nomFichier) {
         this.nomFichier = nomFichier;
@@ -41,7 +43,7 @@ public class Connexion {
         String photo="";
         String donneesCourantes="";
         Identification identifCourant= new Identification("","");
-        ArrayList<Identification> identif=new ArrayList<Identification>();
+        identif=new ArrayList<Identification>();
         int i =0;
         
         // analyser le fichier par StAX
@@ -118,12 +120,26 @@ public class Connexion {
         }
         else{
             rep=true;
-            id.setType(type);
-            id.setPhoto(photo);
+            type=identif.get(i).getPhoto();
+           photo="/donnees/img/"+identif.get(i).getType();
         }
         
        
         return rep;
+    }
+
+    /**
+     * @return the photo
+     */
+    public String getPhoto() {
+        return photo;
+    }
+
+    /**
+     * @return the type
+     */
+    public String getType() {
+        return type;
     }
     
     

@@ -78,4 +78,64 @@ public enum Code {
     public String recupCode(){
         return super.toString();
     }
+    public Code getCode(String code) {
+        if (code.equals("CS"))
+            return Code.CS;
+        if (code.equals("CS"))
+            return Code.CS;
+        if (code.equals("APC"))
+            return Code.APC;
+        if (code.equals("APY"))
+            return Code.APY;
+        if (code.equals("APU"))
+            return Code.APU;
+        if (code.equals("CCP"))
+            return Code.CCP;
+        if (code.equals("U03"))
+            return Code.U03;
+        if (code.equals("U45"))
+            return Code.U45;
+        if (code.equals("COE"))
+            return Code.COE;
+        if (code.equals("CSC"))
+            return Code.CSC;
+        if (code.equals("CNPSY"))
+            return Code.CNPSY;
+        if (code.equals("CDE"))
+            return Code.CDE;
+        if (code.equals("KA"))
+            return Code.KA;
+        if (code.equals("KMB"))
+            return Code.KMB;
+        if (code.equals("Z"))
+            return Code.Z;
+        if (code.equals("ORT"))
+            return Code.ORT;
+        if (code.equals("TO"))
+            return Code.TO;
+        if (code.equals("SP"))
+            return Code.SP;
+        if (code.equals("SF"))
+            return Code.SF;
+        if (code.equals("SFI"))
+            return Code.SFI;
+        if (code.equals("AMS"))
+            return Code.AMS;
+        if (code.equals("AMC"))
+            return Code.AMC;
+        if (code.equals("AMI"))
+            return Code.AMI;
+        if (code.equals("DI"))
+            return Code.DI;
+        if (code.equals("AMP"))
+            return Code.AMP;
+        if (code.equals("POD"))
+            return Code.POD;
+        if (code.equals("AMO"))
+            return Code.AMO;
+        if (code.equals("AMY"))
+            return Code.AMY;
+        // probleme : code inconnu
+        return null;            
+    }
     }

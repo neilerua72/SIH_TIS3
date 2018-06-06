@@ -12,6 +12,7 @@ import Listenner.BoutonListenerAnnulerActe;
 import Listenner.BoutonListenerGen;
 import Listenner.BoutonListenerJTreeListe;
 import Listenner.BoutonListenerConnexion;
+import Listenner.BoutonListenerDeco;
 import Listenner.BoutonListenerFacture;
 
 import Listenner.BoutonListenerNouvelleFDS;
@@ -111,7 +112,7 @@ private JTable jlistedppm =  jldppm.getjTable1();
        private JButton retourfdsversdp = jfdsmm.getjButton1();
        private JButton retourcreerfdsversdp = jcFDS.getjButton1();
        private JButton retourjlmversjldppm = jldppm.getjButton1();
-       
+       private JButton boutondeco = b.getjButton1();
        private JTextField recherchelm =lm.getjTextField1();
          private JTextField rechercheclm =jcm.getjTextField1();
          private JTable tableongletFDS =jfdsdofds.getjTable1();
@@ -133,7 +134,7 @@ private JTable jlistedppm =  jldppm.getjTable1();
         validerDP.addActionListener(new BoutonListenerValiderDP(jcdp, this, sih));
         jtreeliste.addTreeSelectionListener(new BoutonListenerJTreeListe(lp, jcdp, jcp, lm, jcm, jcs, a, jm, this, jfdsdofds, sih));
         jlisteP.addMouseListener(new tablesListener(lp, this, jlisteP, cdpdd,sih));
-        
+        boutondeco.addActionListener(new BoutonListenerDeco(c,this,b));
         jcreerFDSButton.addActionListener(new BoutonValiderNouvFDS(jcFDS, jfdsmm, this, sih,jaa));
      facture.addActionListener(new BoutonListenerFacture(this,jcDPf,jfdsmm,cdpdd));
         rechercheDPtext.addKeyListener(new RechercheEntrerListener(lp,this,sih,jcp,cdpdd));
@@ -159,7 +160,7 @@ private JTable jlistedppm =  jldppm.getjTable1();
           
         //Ca s'est pour éviter que la fenêtre se ferme même si on clique sur "Non"
         //Définition de l'écouteur à l'aide d'une classe interne anonyme
-        frame.addWindowListener(new WindowAdapter() {
+        this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 int reponse = JOptionPane.showConfirmDialog(frame,
                         "Voulez-vous quitter l'application",
@@ -169,7 +170,7 @@ private JTable jlistedppm =  jldppm.getjTable1();
                 if (reponse == JOptionPane.YES_OPTION) {
                     InscriptionFichierXML sauvegarde = new InscriptionFichierXML();
                     sauvegarde.Xml(sih);
-                    frame.dispose();
+                    System.exit(0);
                 }
             }
         });
@@ -257,6 +258,13 @@ private JTable jlistedppm =  jldppm.getjTable1();
         this.f = f;
     }
 
+    
+    
+       public void toutToutfalse(){
+           jm.setVisible(false);
+           c.setVisible(false);
+           this.toutFalse();
+       }
     /**
      * @return the state
      */
