@@ -32,22 +32,22 @@ import princetonPlainsboro.SIH;
  * @author annelise
  */
 public class tablesListenerBarreR implements MouseListener{
- 
+  JListeDePatients jldp;
      JConsulterDP_dans_le_dossier dossierPatient;
     Fen jframe;
-     JTable table;
+  
      SIH sih;
      JTable jtable;
      
      ArrayList<DossierPatient> ldp;
-    public tablesListenerBarreR(JTable jtable,Fen jframe,JConsulterDP_dans_le_dossier dossierPatient,SIH sih,ArrayList <DossierPatient> a) {
+    public tablesListenerBarreR(JTable jtable,Fen jframe,JConsulterDP_dans_le_dossier dossierPatient,SIH sih,ArrayList <DossierPatient> a, JListeDePatients jldp) {
         
         this.jframe = jframe;
         this.jtable=jtable;
         this.dossierPatient=dossierPatient;
-       
+       this.jldp=jldp;
         this.sih=sih;
-ldp=new ArrayList<DossierPatient>(a);    }
+this.ldp=a;    }
     
     
     private void tableauMouseClicked(java.awt.event.MouseEvent evt) {
@@ -106,11 +106,12 @@ ldp=new ArrayList<DossierPatient>(a);    }
             dossierPatient.getjTable1().setModel(model);
             dossierPatient.getjScrollPane3().setViewportView(dossierPatient.getjTable1());
             
-            
-            if(jframe.getStates()==State.ADMIN){
-                dossierPatient.getjButton5().setVisible(false);
-                dossierPatient.getjLabel11().setVisible(false);
-           }
+              JTable jt = jldp.getjTable1();
+      jt.addMouseListener(new  tablesListener( jldp, jframe, jt,dossierPatient,sih));
+           // if(jframe.getStates()==State.ADMIN){
+               // dossierPatient.getjButton5().setVisible(false);
+              //  dossierPatient.getjLabel11().setVisible(false);
+          // }
             
             
             dossierPatient.setVisible(true);
@@ -119,7 +120,7 @@ ldp=new ArrayList<DossierPatient>(a);    }
             
             
            // jframe.repaint();
-            //jframe.revalidate();
+           // jframe.revalidate();
            
     
 

@@ -22,6 +22,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.table.DefaultTableModel;
@@ -92,7 +93,9 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
                     });
             lp.getjTable1().setModel(model);
             lp.getjScrollPane4().setViewportView(lp.getjTable1());
+            
 
+    
             lp.setVisible(true);
             frame.repaint();
             frame.revalidate();

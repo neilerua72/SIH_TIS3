@@ -12,6 +12,11 @@ import interfaceUtilisateur.JFDSMedicalModifiable;
 import interfaceUtilisateur.JListeDePatients;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import princetonPlainsboro.Medecin;
+import princetonPlainsboro.SIH;
 
 /**
  *
@@ -21,12 +26,13 @@ public class BoutonListenerRetourDpVersLP implements ActionListener{
       JListeDePatients jldp;
     JConsulterDP_dans_le_dossier jcdpdld;
       Fen jframe;
- 
-    
-    public BoutonListenerRetourDpVersLP(Fen jframe,JListeDePatients jldp,JConsulterDP_dans_le_dossier jcdpdld) {
+      SIH sih;
+      
+    public BoutonListenerRetourDpVersLP(Fen jframe,JListeDePatients jldp,JConsulterDP_dans_le_dossier jcdpdld,  SIH sih) {
         this.jframe = jframe;
         this.jldp=jldp;
          this.jcdpdld=jcdpdld;
+         this.sih=sih;
     }
     
   
@@ -37,10 +43,17 @@ public class BoutonListenerRetourDpVersLP implements ActionListener{
        jframe.toutFalse();
         jframe.add(jldp);
          
+      
+       
+      
+    
         jldp.setVisible(true);
    jframe.revalidate();
     jframe.repaint();
+      JTable jt = jldp.getjTable1();
+      jt.addMouseListener(new  tablesListener( jldp, jframe, jt,jcdpdld,sih));
     }
 }
+
 
 

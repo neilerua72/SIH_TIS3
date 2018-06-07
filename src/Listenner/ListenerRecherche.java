@@ -76,7 +76,7 @@ JConsulterDP_dans_le_dossier dossierPatient;
                     "Nom", "Prénom", "Date de naissance"
                 });
         JTable jt = lp.getjTable1();
-        jt.addMouseListener(new tablesListenerBarreR(jt,frame, dossierPatient,sih,requete));
+        jt.addMouseListener(new tablesListenerBarreR(jt,frame, dossierPatient,sih,requete,lp));
     
         if (f == 1) {
             lp.getjTable1().setModel(model);

@@ -105,8 +105,8 @@ ldm=new ArrayList<Medecin>(m);    }
             
           
                
-           // jframe.repaint();
-            //jframe.revalidate();
+           jframe.repaint();
+            jframe.revalidate();
            
     
 

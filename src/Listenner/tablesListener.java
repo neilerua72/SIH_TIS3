@@ -86,7 +86,7 @@ JListeDePatients lp;
     NumLigne = table.getSelectedRow();
        
            
-            jframe.toutFalse();
+           jframe.toutFalse();
             jframe.add(dossierPatient);
             DossierPatient dp = sih.getLdp().get(NumLigne);
             dossierPatient.getNomPrenom().setText(dp.getPatient().getNom()+ " "+ dp.getPatient().getPrenom());
@@ -112,10 +112,10 @@ JListeDePatients lp;
             dossierPatient.getjTable1().setModel(model);
             dossierPatient.getjScrollPane3().setViewportView(dossierPatient.getjTable1());
             
-            if(jframe.getStates()==State.ADMIN){
-                dossierPatient.getjButton5().setVisible(false);
-                dossierPatient.getjLabel11().setVisible(false);
-            }
+          //  if(jframe.getStates()==State.ADMIN){
+              //  dossierPatient.getjButton5().setVisible(false);
+              //  dossierPatient.getjLabel11().setVisible(false);
+        //    }
             
             
             

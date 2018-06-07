@@ -144,7 +144,7 @@ public class Fen extends javax.swing.JFrame {
         validerTri.addActionListener(new BoutonListenerValiderTri(jfdsdofds, this, sih, jfdsmm));
         jlistefiche.addMouseListener(new TableauListenerFDS(cdpdd, this, jlistefiche, jfdsmm, b, jm, sih));
         rechercheDPtextJCP.addKeyListener(new BoutonListenerRCoutPatient(lp, this, sih, jcp, cdpdd));
-        Boutonretourdpverslp.addActionListener(new BoutonListenerRetourDpVersLP(this, lp, cdpdd));
+        Boutonretourdpverslp.addActionListener(new BoutonListenerRetourDpVersLP(this, lp, cdpdd,sih));
         retourfdsversdp.addActionListener(new BoutonListenerRetourFDSversDP(this, jfdsmm, cdpdd));
         retourcreerfdsversdp.addActionListener(new BoutonListenerRetoucreerFDDversDP(this, jcFDS, cdpdd));
         retourjlmversjldppm.addActionListener(new BoutonListenerretourLpmVersLm(jldppm, lm, this));
@@ -218,6 +218,7 @@ public class Fen extends javax.swing.JFrame {
     }
 
     public void toutFalse() {
+        c.setVisible(false);
         lp.setVisible(false);
         jcdp.setVisible(false);
         jcp.setVisible(false);
@@ -234,6 +235,13 @@ public class Fen extends javax.swing.JFrame {
         jaa.setVisible(false);
         jldppm.setVisible(false);
     }
+    
+
+
+
+
+
+
 
     public State getStates() {
         return state;
