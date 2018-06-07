@@ -104,7 +104,7 @@ JListeDePatients lp;
                 tab[i][2] = f.getDate().toString();
                 tab[i][3]=""+f.coutTotal();
             }
-            DefaultTableModel model = new DefaultTableModel(
+           ModelTable model = new ModelTable(
                     tab,
                     new String[]{
                         "Nom", "Prénom", "Date","Coût"

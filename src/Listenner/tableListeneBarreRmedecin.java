@@ -89,7 +89,7 @@ ldm=new ArrayList<Medecin>(m);    }
                 tab[i][2] = p.getDateDeNaissance().toString();
                 
             }
-            DefaultTableModel model = new DefaultTableModel(
+            ModelTable model = new ModelTable(
                     tab,
                     new String[]{
                         "Nom", "Prénom", "Date de Naissance"

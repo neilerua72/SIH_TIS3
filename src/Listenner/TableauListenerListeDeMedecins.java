@@ -75,7 +75,7 @@ public class TableauListenerListeDeMedecins implements MouseListener {
             tab[i][2] = p.getDateDeNaissance().toString();
 
         }
-        DefaultTableModel model = new DefaultTableModel(
+        ModelTable model = new ModelTable(
                 tab,
                 new String[]{
                     "Nom", "Prénom", "Date de naissance"

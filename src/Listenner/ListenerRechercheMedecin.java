@@ -59,7 +59,7 @@ JListedePatientParMedecins jldppm;
             tab[i][2] = m.getSpecialite().toString();
           
         }
-        DefaultTableModel model = new DefaultTableModel(
+        ModelTable model = new ModelTable(
                 tab,
                 new String[]{
                     "Nom", "Prénom", "Spécialité"

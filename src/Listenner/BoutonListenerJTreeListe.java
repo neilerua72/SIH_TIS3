@@ -86,7 +86,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
                 tab[i][1] = p.getPrenom();
                 tab[i][2] = p.getDateDeNaissance().toString();
             }
-            DefaultTableModel model = new DefaultTableModel(
+            ModelTable model = new ModelTable(
                     tab,
                     new String[]{
                         "Nom", "Prénom", "Date de naissance"
@@ -164,7 +164,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
                 tab[i][1] = m.getPrenom();
                 tab[i][2] = m.getSpecialite().toString();
             }
-            DefaultTableModel model2 = new DefaultTableModel(
+            ModelTable model2 = new ModelTable(
                     tab,
                     new String[]{
                         "Nom", "Prénom", "Spécialité"
@@ -194,7 +194,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
                 tab[i][1] = dp.getPrenom();
                 tab[i][2] = ""+sih.coutMedecin(dp);
             }
-            DefaultTableModel model = new DefaultTableModel(
+            ModelTable model = new ModelTable(
                     tab,
                     new String[]{
                         "Nom", "Prénom", "Date de naissance"
@@ -225,7 +225,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
                 tab[i][1] = "" + sih.coutSpecialite(s);
                 System.out.println("test3");
             }
-            DefaultTableModel model = new DefaultTableModel(
+            ModelTable model = new ModelTable(
                     tab,
                     new String[]{
                         "Spécialité", "Coût"
@@ -275,7 +275,7 @@ public class BoutonListenerJTreeListe implements TreeSelectionListener {
                 tab[i][2] = f.getDate().toString();
                 tab[i][3]=""+f.coutTotal();
             }
-            DefaultTableModel model = new DefaultTableModel(
+           ModelTable model = new ModelTable(
                     tab,
                     new String[]{
                         "Nom", "Prénom", "Date","coût"

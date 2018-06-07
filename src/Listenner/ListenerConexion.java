@@ -48,7 +48,7 @@ public abstract class ListenerConexion {
                 jframe.setState(State.MED);
                 jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 jframe.setLayout(new BorderLayout());
-                b.getjLabel2().setText(con.getType());
+                b.getjLabel2().setText("Médical");
                 //b.getjLabel2().setIcon(new javax.swing.ImageIcon(getClass().getResource(con.getPhoto())));
                 jframe.add(m,BorderLayout.WEST);
                 jframe.add(jp,BorderLayout.CENTER);
@@ -62,7 +62,7 @@ public abstract class ListenerConexion {
                jframe.setState(State.ADMIN);
                 jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 jframe.setLayout(new BorderLayout());
-                b.getjLabel2().setText(identif2.getType());
+                b.getjLabel2().setText("Administratif");
                // b.getjLabel2().setIcon(new javax.swing.ImageIcon(getClass().getResource(identif2.getPhoto())));
                 jframe.add(m,BorderLayout.WEST);
                 jframe.add(jp,BorderLayout.CENTER);
