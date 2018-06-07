@@ -37,7 +37,7 @@ public class NumDeSS {
 
     /**
      * Méthode qui retourne le numéro de sécurité sociale
-     * @return 
+     * @return le numéro de sécurité sociale
      */
     public String getNum() {
         return num;
@@ -45,7 +45,7 @@ public class NumDeSS {
     
 
     /**Méthode qui défini le numéro de sécurité sociale
-     * @param le numéro de sécurité à définir
+     * @param num le numéro de sécurité à définir
      */
     public void setNum(String num) {
         this.num = num;

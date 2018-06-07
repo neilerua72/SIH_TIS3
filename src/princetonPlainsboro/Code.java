@@ -91,7 +91,7 @@ public enum Code {
     /**
      * Méthode qui retourne une valeur de l'enum code en fonction du code passé en paramètre
      * @param code de l'acte
-     * @return 
+     * @return le code
      */
     public Code getCode(String code) {
         if (code.equals("CS"))

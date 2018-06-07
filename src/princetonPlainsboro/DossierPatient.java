@@ -98,14 +98,14 @@ public class DossierPatient {
     }
 
     /**Méthode qui défini le patient
-     * @param le patient à finir
+     * @param patient le patient à finir
      */
     public void setPatient(Patient patient) {
         this.patient = patient;
     }
 
     /**Méthode qui défini la liste de fiches de soins 
-     * @param la liste de fiches de soins à définir
+     * @param lfds la liste de fiches de soins à définir
      */
     public void setLfds(ArrayList<FicheDeSoins> lfds) {
         this.lfds = lfds;

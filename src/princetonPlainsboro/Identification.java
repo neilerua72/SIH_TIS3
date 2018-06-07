@@ -87,7 +87,7 @@ public class Identification {
 
     /**
      * Méthode qui défini le type
-     * @param type 
+     * @param type le nom de l'utilisateur
      */
     public void setType(String type) {
         this.type = type;
@@ -102,7 +102,7 @@ public class Identification {
 
     /**
      * Méthode qui défini la photo
-     * @param la photo à définir 
+     * @param photo la photo à définir 
      */
     public void setPhoto(String photo) {
         this.photo ="/donnees/img/"+photo;
