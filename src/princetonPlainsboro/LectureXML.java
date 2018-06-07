@@ -86,7 +86,7 @@ public class LectureXML {
                             dpcourant.setPatient(patientCourant);
                             //dpcourant.setLfds(ldfscourant);
                             dossierCourant.ajouterDp(dpcourant);
-                            System.out.println(dpcourant);
+                           
                             
                         }
                         if (parser.getLocalName().equals("acte")) {
