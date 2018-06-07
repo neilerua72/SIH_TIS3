@@ -52,7 +52,7 @@ public class BoutonListenerFacture implements ActionListener {
             jcDPf.getjLabel9().setText(dp.getAdresse().getText());
              jcDPf.getjLabel12().setText(dp.getjLabel8().getText());
              jcDPf.getjLabel13().setText(dp.getjLabel9().getText());
-        
+        //jfdsmm.getDateFiche().setText("Fiche de soins du "+ fs.getDate().toString());
         FicheDeSoins f = jframe.getF();
         ArrayList<Acte> la = f.getActes();
         ActeF af = new ActeF();

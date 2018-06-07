@@ -65,7 +65,7 @@ public class tableauListenerFDSversDP implements MouseListener{
         jfdsmm.getNomPrenom().setText(fs.getPatient().getNom() + " " + fs.getPatient().getPrenom());
         jfdsmm.getNumDeSS().setText(fs.getPatient().getNumDeSS().toString());
         jfdsmm.getDateNais().setText(fs.getPatient().getDateDeNaissance().toString());
-
+        jfdsmm.getDateFiche().setText("Fiche de soins du "+ fs.getDate().toString());
         JScrollPane jsp = new JScrollPane();
         jsp = this.jfdsmm.getPanelActes();
 

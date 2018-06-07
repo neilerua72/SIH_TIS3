@@ -30,6 +30,8 @@ public class BoutonListenerDeco implements ActionListener{
     public void actionPerformed (ActionEvent e){
         jframe.toutToutfalse();
      c.setVisible(true);
+     c.getjPasswordField1().setText("");
+     c.getjTextField1().setText("");
      jframe.setSize(950, 600);
     jframe.repaint();
    
